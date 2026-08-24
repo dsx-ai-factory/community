@@ -1,0 +1,263 @@
+#!/usr/bin/env python3
+# SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: CC-BY-4.0
+"""Build the community site from Markdown articles.
+
+Deliberately dependency-free. This script uses only the Python standard library,
+and the site it produces is served by GitHub Pages directly from ``docs/`` with
+``.nojekyll`` set — no Jekyll, no theme, no gems, no static site generator, no
+package manifest.
+
+That is not an aesthetic choice. The repository's Open Source Review Board
+approval records this project as having **no third-party dependencies**. Adding a
+theme or a site generator would contradict that record and require re-opening the
+approval before the site could ship. See THIRD_PARTY_NOTICES.md.
+
+Markdown is rendered by GitHub's own ``/markdown`` API, so articles get real
+GitHub Flavored Markdown without vendoring a Markdown library. That is a service
+call, not a bundled component.
+
+Usage:
+    GH_TOKEN=<token> python3 site/build.py
+    python3 site/build.py --check      # validate front matter only, render nothing
+
+A token is needed only for the rendering API. Any token with public read scope
+works; ``gh auth token`` supplies one.
+"""
+
+import argparse
+import datetime
+import html
+import json
+import os
+import pathlib
+import re
+import sys
+import urllib.error
+import urllib.request
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+CONTENT = ROOT / "content" / "posts"
+OUT = ROOT / "docs"
+TEMPLATE = ROOT / "site" / "template.html"
+
+REQUIRED_FIELDS = ("title", "date", "author", "type", "last_reviewed")
+VALID_TYPES = {
+    "release-post",
+    "deep-dive",
+    "how-to",
+    "success-story",
+    "event",
+    "exploratory",
+    "spotlight",
+}
+STALE_AFTER_DAYS = 365
+
+
+class BuildError(Exception):
+    """A problem the author must fix. Never rendered into the site."""
+
+
+def parse_front_matter(text, path):
+    """Pull the ``---`` delimited header off an article.
+
+    Intentionally not YAML: the format is ``key: value``, one per line, so that
+    no YAML parser has to be added as a dependency.
+    """
+    if not text.startswith("---\n"):
+        raise BuildError(f"{path}: missing front matter (file must start with '---')")
+    end = text.find("\n---\n", 4)
+    if end == -1:
+        raise BuildError(f"{path}: front matter is not closed with '---'")
+
+    meta = {}
+    for lineno, line in enumerate(text[4:end].splitlines(), start=2):
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        if ":" not in line:
+            raise BuildError(f"{path}:{lineno}: front matter line is not 'key: value': {line!r}")
+        key, _, value = line.partition(":")
+        meta[key.strip()] = value.strip()
+
+    body = text[end + len("\n---\n"):]
+    return meta, body
+
+
+def validate(meta, path):
+    missing = [f for f in REQUIRED_FIELDS if f not in meta or not meta[f]]
+    if missing:
+        raise BuildError(f"{path}: front matter missing required field(s): {', '.join(missing)}")
+
+    if meta["type"] not in VALID_TYPES:
+        raise BuildError(
+            f"{path}: type {meta['type']!r} is not one of: {', '.join(sorted(VALID_TYPES))}"
+        )
+
+    for field in ("date", "last_reviewed"):
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", meta[field]):
+            raise BuildError(f"{path}: {field} must be YYYY-MM-DD, got {meta[field]!r}")
+        try:
+            datetime.date.fromisoformat(meta[field])
+        except ValueError as exc:
+            raise BuildError(f"{path}: {field} is not a real date: {exc}") from exc
+
+    return meta
+
+
+def staleness(meta):
+    """Return a banner for content the governance policy says to mark, or None.
+
+    Outdated articles are marked, never deleted — published URLs stay resolvable.
+    See GOVERNANCE.md.
+    """
+    if meta.get("status") == "archived":
+        return "This article describes a component that has been retired. It is kept for reference."
+    if meta.get("status") == "outdated":
+        note = meta.get("superseded_by")
+        tail = f' Current material: <a href="{html.escape(note)}">{html.escape(note)}</a>.' if note else ""
+        return "The commands, versions, or prerequisites in this article are no longer accurate." + tail
+
+    reviewed = datetime.date.fromisoformat(meta["last_reviewed"])
+    age = (datetime.date.today() - reviewed).days
+    if age > STALE_AFTER_DAYS:
+        return (
+            f"This article has not been reviewed in {age} days. "
+            "It may no longer reflect current versions or behaviour."
+        )
+    return None
+
+
+def render_markdown(md, token):
+    """Render GFM through GitHub's API. No Markdown library is vendored."""
+    payload = json.dumps({"text": md, "mode": "gfm"}).encode("utf-8")
+    req = urllib.request.Request(
+        "https://api.github.com/markdown",
+        data=payload,
+        headers={
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json",
+            "X-GitHub-Api-Version": "2022-11-28",
+            "User-Agent": "dsx-ai-factory-community-site-build",
+            **({"Authorization": f"Bearer {token}"} if token else {}),
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return resp.read().decode("utf-8")
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", "replace")[:200]
+        raise BuildError(f"GitHub markdown API returned {exc.code}: {detail}") from exc
+    except urllib.error.URLError as exc:
+        raise BuildError(f"could not reach the GitHub markdown API: {exc.reason}") from exc
+
+
+def page(template, *, title, body, banner=None, meta=None, is_index=False):
+    banner_html = ""
+    if banner:
+        banner_html = f'<div class="banner" role="note">{banner}</div>'
+
+    byline = ""
+    if meta and not is_index:
+        byline = (
+            f'<p class="byline">{html.escape(meta["author"])} &middot; '
+            f'<time datetime="{meta["date"]}">{meta["date"]}</time> &middot; '
+            f'{html.escape(meta["type"])}</p>'
+        )
+
+    return (
+        template.replace("{{TITLE}}", html.escape(title))
+        .replace("{{BANNER}}", banner_html)
+        .replace("{{BYLINE}}", byline)
+        .replace("{{BODY}}", body)
+        .replace("{{YEAR}}", str(datetime.date.today().year))
+    )
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument(
+        "--check",
+        action="store_true",
+        help="validate front matter and exit without rendering (needs no token)",
+    )
+    args = ap.parse_args()
+
+    if not CONTENT.is_dir():
+        print(f"No articles yet: {CONTENT} does not exist.", file=sys.stderr)
+        return 0
+
+    articles = sorted(CONTENT.rglob("*.md"))
+    articles = [a for a in articles if a.name.upper() != "README.MD"]
+
+    parsed, errors = [], []
+    for path in articles:
+        try:
+            meta, body = parse_front_matter(path.read_text(encoding="utf-8"), path.relative_to(ROOT))
+            validate(meta, path.relative_to(ROOT))
+            parsed.append((path, meta, body))
+        except BuildError as exc:
+            errors.append(str(exc))
+
+    if errors:
+        for e in errors:
+            print(f"error: {e}", file=sys.stderr)
+        return 1
+
+    if args.check:
+        print(f"OK: {len(parsed)} article(s) have valid front matter.")
+        return 0
+
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    template = TEMPLATE.read_text(encoding="utf-8")
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / ".nojekyll").write_text("", encoding="utf-8")
+
+    index_rows = []
+    for path, meta, body in sorted(parsed, key=lambda p: p[1]["date"], reverse=True):
+        slug = path.relative_to(CONTENT).with_suffix(".html")
+        dest = OUT / slug
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(
+            page(
+                template,
+                title=meta["title"],
+                body=render_markdown(body, token),
+                banner=staleness(meta),
+                meta=meta,
+            ),
+            encoding="utf-8",
+        )
+        index_rows.append(
+            f'<li><a href="{slug.as_posix()}">{html.escape(meta["title"])}</a>'
+            f'<span class="meta">{meta["date"]} &middot; {html.escape(meta["type"])}</span></li>'
+        )
+        print(f"built {slug.as_posix()}")
+
+    if index_rows:
+        listing = '<ul class="index">\n' + "\n".join(index_rows) + "\n</ul>"
+    else:
+        listing = (
+            "<p>No articles have been published yet. "
+            '<a href="https://github.com/dsx-ai-factory/community/discussions">'
+            "Join the discussion</a> in the meantime.</p>"
+        )
+
+    (OUT / "index.html").write_text(
+        page(
+            template,
+            title="DSX AI Factory Community",
+            body=(
+                "<p>Articles and discussion about the open-source components of the "
+                "NVIDIA DSX AI Factory.</p>\n" + listing
+            ),
+            is_index=True,
+        ),
+        encoding="utf-8",
+    )
+    print(f"built index.html ({len(parsed)} article(s))")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

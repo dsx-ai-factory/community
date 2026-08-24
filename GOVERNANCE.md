@@ -84,7 +84,7 @@ Out of scope, and redirected rather than answered in place:
 
 - Bug reports against a component — belong in that component's repository.
 - Support requests and account or entitlement questions — belong in NVIDIA support channels.
-- Security vulnerabilities — belong with NVIDIA PSIRT. See [SECURITY.md](../SECURITY.md).
+- Security vulnerabilities — belong with NVIDIA PSIRT. See [SECURITY.md](SECURITY.md).
 
 The POR names discussion drift as a risk. The redirect list above is the boundary; keep
 it current as the org grows.
@@ -94,7 +94,7 @@ it current as the org grows.
 Contributors keep the copyright in what they write. Sign-off under the Developer
 Certificate of Origin certifies the right to submit — it does not transfer ownership to
 NVIDIA. Everything merged is available to everyone under CC-BY-4.0 with attribution.
-See [CONTRIBUTING.md](../CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Changes that require re-opening OSRB approval
 

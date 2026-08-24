@@ -8,7 +8,7 @@
 # dsx-ai-factory organization owner before this file has any effect — GitHub
 # silently ignores CODEOWNERS entries that name a non-existent team. Until the
 # teams exist, this file documents the intended ownership model rather than
-# enforcing it. See docs/GOVERNANCE.md for the team-request list.
+# enforcing it. See GOVERNANCE.md for the team-request list.
 #
 # Role mapping to the POR staffing table:
 #   dsx-community-editors     -> Editor (overall PIC, roadmap and content)
@@ -45,4 +45,4 @@
 /CODE_OF_CONDUCT.md         @dsx-ai-factory/dsx-community-moderators @dsx-ai-factory/dsx-community-maintainers
 /SECURITY.md                @dsx-ai-factory/dsx-community-maintainers
 /.github/CODEOWNERS         @dsx-ai-factory/dsx-community-maintainers
-/docs/GOVERNANCE.md         @dsx-ai-factory/dsx-community-editors @dsx-ai-factory/dsx-community-maintainers
+/GOVERNANCE.md              @dsx-ai-factory/dsx-community-editors @dsx-ai-factory/dsx-community-maintainers

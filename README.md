@@ -29,7 +29,7 @@ Participation is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Governance
 
-[docs/GOVERNANCE.md](docs/GOVERNANCE.md) describes the roles, the content approval path,
+[GOVERNANCE.md](GOVERNANCE.md) describes the roles, the content approval path,
 the publishing schedule, and how outdated articles are marked.
 
 ## License
