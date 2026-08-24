@@ -10,6 +10,21 @@ dependencies, vendors no third-party code, and includes no copied third-party so
 The site published from this repository is built without a third-party theme, static
 site generator, or package manager, so there is no dependency manifest to enumerate.
 
+`site/build.py` uses only the Python standard library. The page shell in
+`site/template.html` is hand-written: no framework, no webfont, no analytics, no
+third-party stylesheet or script is loaded by the published pages.
+
+## Services used at build time
+
+These are network services called during the build, not components distributed with
+the content and not code vendored into this repository. They are recorded here for
+completeness rather than as license obligations.
+
+| Service | Used for |
+| --- | --- |
+| GitHub Markdown API (`api.github.com/markdown`) | Rendering GitHub Flavored Markdown to HTML, so that no Markdown library has to be added as a dependency |
+| GitHub Pages | Serving the contents of `docs/` |
+
 ## When this file must be updated
 
 Add an entry here whenever any of the following enters the repository:
