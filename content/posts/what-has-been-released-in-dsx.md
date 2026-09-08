@@ -17,15 +17,16 @@ follow have something to follow.
 
 38 DSX components are public today, spanning [KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)
 and the [DRA Driver for NVIDIA GPUs](https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu)
-at the Linux Foundation, to [Dynamo](https://github.com/ai-dynamo/dynamo) and
-[GPU Operator](https://github.com/NVIDIA/gpu-operator) under NVIDIA's own orgs, to the
-first components that have already moved into `dsx-ai-factory` itself:
-[infra-controller](https://github.com/dsx-ai-factory/infra-controller),
+at the Linux Foundation, to [Dynamo](https://github.com/ai-dynamo/dynamo) in the
+`ai-dynamo` org and [GPU Operator](https://github.com/NVIDIA/gpu-operator) in the
+`NVIDIA` org, to the first components that have already moved into `dsx-ai-factory`
+itself: [infra-controller](https://github.com/dsx-ai-factory/infra-controller),
 [fleet-intelligence-agent](https://github.com/dsx-ai-factory/fleet-intelligence-agent),
 [dsx-exchange](https://github.com/dsx-ai-factory/dsx-exchange), and others. Most of
-what's public today is still homed outside `dsx-ai-factory`, in the main `NVIDIA` org
-or in NVIDIA-controlled orgs that don't carry the NVIDIA name. That migration is
-ongoing, not finished, and the [DSX Repo and Materials Index](dsx-repo-and-materials-index.md)
+what's public today is still homed outside `dsx-ai-factory`, split across the main
+`NVIDIA` org and several other orgs (`ai-dynamo`, `run-ai`, `leptonai`,
+`kai-scheduler`, `kubernetes-sigs`, and the `NVIDIA-Omniverse` orgs). That migration
+is ongoing, not finished, and the [DSX Repo and Materials Index](dsx-repo-and-materials-index.md)
 tracks it as it happens.
 
 ## Where the components sit
