@@ -18,12 +18,16 @@ Usage:
 import argparse
 import datetime
 import pathlib
+import re
+import shutil
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "repos.txt"
 INDEX_POST = ROOT / "content" / "posts" / "dsx-repo-and-materials-index.md"
 README = ROOT / "README.md"
+ICON_SRC_DIR = ROOT / "site" / "icons"
+ICON_OUT_DIR = ROOT / "content" / "posts" / "assets" / "icons"
 
 SECTIONS = {
     "dsx-ai-factory": "dsx-ai-factory repos",
@@ -57,6 +61,30 @@ CATEGORY_ORDER = [
     "Developer Tooling",
     "Documentation",
 ]
+
+# One icon per functional category, from NVIDIA's "AI Developer Icon Library"
+# (see site/icons/README.md for provenance). Used unmodified (full NVIDIA
+# green coloring) next to each "### Category" heading in the listing — these
+# sit on the page background, not a colored band, so unlike BAND_ICON below
+# they don't need recoloring or background stripping.
+CATEGORY_ICON = {
+    "Cluster Orchestration & Provisioning": "Kubernetes.svg",
+    "Infrastructure Management": "Node Settings.svg",
+    "Monitoring & Observability": "Heartrate.svg",
+    "Resiliency & Remediation": "Reload.svg",
+    "Security & Confidential Computing": "Keys.svg",
+    "Core Operations": "Message Broker.svg",
+    "Scheduling & Workload Management": "Gears 1.svg",
+    "Optimized Inference": "AI Inference.svg",
+    "Validation & Testing": "Checklist.svg",
+    "Simulation": "Omniverse.svg",
+    "Developer Tooling": "Tooling.svg",
+    "Documentation": "File.svg",
+}
+
+
+def icon_slug(category):
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", category.lower())).strip("-")
 
 
 class DataError(Exception):
@@ -168,7 +196,8 @@ def render_functional_groups(sections):
             return f"- **[{r['name']}]({r['url']})**: {r['description']} ({r['license']}, {r['status']}{tag})"
 
         rows = "\n".join(row(r, section) for r, section in entries)
-        parts.append(f"### {category}\n\n{rows}\n")
+        icon = f'![{category} icon](assets/icons/{icon_slug(category)}.svg) '
+        parts.append(f"### {icon}{category}\n\n{rows}\n")
     return "\n".join(parts)
 
 
@@ -217,7 +246,32 @@ BRAND_DESCRIPTION = {
     "DSX MaxLPS": "Power architecture, cooling efficiency, and grid integration",
 }
 
+# Icon per band, from the same NVIDIA icon library as CATEGORY_ICON (see
+# site/icons/README.md). Unlike the category-heading icons, these composite
+# onto a solid-color band, so BAND_ICON_DROP strips any full-bleed background
+# path the source icon carries (Kubernetes.svg's first path is a green square
+# behind the white wheel glyph) and the remaining glyph is recolored to match
+# the band's text color rather than kept in its original NVIDIA green.
+BAND_ICON = {
+    "DSX Sim": "Omniverse.svg",
+    "DSX OS": "Kubernetes.svg",
+    "DSX Exchange": "Message Broker.svg",
+    "DSX Flex": "Pulse_Line.svg",
+    "DSX MaxLPS": "Lightbulb.svg",
+}
+BAND_ICON_DROP = {"DSX OS": {0}}
+
 DSX_STACK_SVG_PATH = ROOT / "content" / "posts" / "assets" / "dsx-stack.svg"
+
+
+def strip_icon_paths(svg_text, drop_indices=frozenset()):
+    """Pull the <path> elements out of a 40x40 icon SVG, drop the ones at
+    drop_indices (0-based, source order), and strip each remaining path's own
+    fill so it inherits color from whatever wraps it instead of keeping its
+    original NVIDIA green."""
+    paths = re.findall(r"<path\b[^>]*?/>", svg_text)
+    kept = [p for i, p in enumerate(paths) if i not in drop_indices]
+    return "\n".join(re.sub(r'\s+fill="[^"]*"', "", p) for p in kept)
 
 
 def count_by_brand(sections):
@@ -266,12 +320,21 @@ def render_stack_svg(sections):
         sub_text = BRAND_DESCRIPTION[brand]
         if highlighted:
             sub_text += f" &#8212; {n} open source"
+
+        icon_size = 32
+        icon_x, icon_y = x + 16, y + (h - icon_size) / 2
+        icon_svg = (ICON_SRC_DIR / BAND_ICON[brand]).read_text(encoding="utf-8")
+        icon_paths = strip_icon_paths(icon_svg, BAND_ICON_DROP.get(brand, frozenset()))
+        text_x = icon_x + icon_size + 12
+
         label_y, sub_y = y + h / 2 - 4, y + h / 2 + 16
         rects.append(
             f'  <rect class="band" x="{x}" y="{y}" width="{width}" height="{h}" rx="6" '
             f'fill="{fill}" stroke="{stroke}"/>\n'
-            f'  <text class="label" x="{x + 16}" y="{label_y:.0f}" fill="{text_fill}">{brand}</text>\n'
-            f'  <text class="sub" x="{x + 16}" y="{sub_y:.0f}" fill="{text_fill}">{sub_text}</text>'
+            f'  <g transform="translate({icon_x:.0f},{icon_y:.0f}) scale({icon_size / 40})" '
+            f'fill="{text_fill}">\n{icon_paths}\n  </g>\n'
+            f'  <text class="label" x="{text_x:.0f}" y="{label_y:.0f}" fill="{text_fill}">{brand}</text>\n'
+            f'  <text class="sub" x="{text_x:.0f}" y="{sub_y:.0f}" fill="{text_fill}">{sub_text}</text>'
         )
         y += h + gap
     total_height = y - gap + pad
@@ -416,6 +479,11 @@ def main():
     DSX_STACK_SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
     DSX_STACK_SVG_PATH.write_text(render_stack_svg(sections), encoding="utf-8")
     print(f"wrote {DSX_STACK_SVG_PATH.relative_to(ROOT)}")
+
+    ICON_OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for category, filename in CATEGORY_ICON.items():
+        shutil.copyfile(ICON_SRC_DIR / filename, ICON_OUT_DIR / f"{icon_slug(category)}.svg")
+    print(f"wrote {len(CATEGORY_ICON)} icon(s) to {ICON_OUT_DIR.relative_to(ROOT)}")
 
     if not README.exists():
         print(f"error: {README} does not exist", file=sys.stderr)

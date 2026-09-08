@@ -32,10 +32,11 @@ jobs:
       - name: Generated outputs are in sync with data/repos.txt
         run: |
           python3 site/render_index.py
-          git diff --exit-code -- content/posts/dsx-repo-and-materials-index.md content/posts/assets/dsx-stack.svg README.md || {
+          git add -A -N content/posts/assets/icons
+          git diff --exit-code -- content/posts/dsx-repo-and-materials-index.md content/posts/assets/dsx-stack.svg content/posts/assets/icons README.md || {
             echo "::error::content/posts/dsx-repo-and-materials-index.md, content/posts/assets/dsx-stack.svg," \
-                 "or the README repo table is out of sync with data/repos.txt or site/render_index.py." \
-                 "Run 'python3 site/render_index.py' and commit the result." >&2
+                 "content/posts/assets/icons/, or the README repo table is out of sync with data/repos.txt or" \
+                 "site/render_index.py. Run 'python3 site/render_index.py' and commit the result." >&2
             exit 1
           }
 
