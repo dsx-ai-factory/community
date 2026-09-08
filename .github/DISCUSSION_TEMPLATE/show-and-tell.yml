@@ -1,0 +1,27 @@
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Show off something you built with a `dsx-ai-factory` component. If it is
+        substantial, it might make a good Contributor spotlight or Success story
+        article — an editor may follow up to ask.
+  - type: textarea
+    id: what
+    attributes:
+      label: What you built
+    validations:
+      required: true
+  - type: input
+    id: component
+    attributes:
+      label: Component(s) used
+    validations:
+      required: false
+  - type: input
+    id: links
+    attributes:
+      label: Links
+      description: Repo, demo, write-up — whatever exists.
+    validations:
+      required: false

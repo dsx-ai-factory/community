@@ -3,10 +3,11 @@
 # SPDX-License-Identifier: CC-BY-4.0
 """Build the community site from Markdown articles.
 
-Deliberately dependency-free. This script uses only the Python standard library,
-and the site it produces is served by GitHub Pages directly from ``docs/`` with
-``.nojekyll`` set — no Jekyll, no theme, no gems, no static site generator, no
-package manifest.
+Deliberately dependency-free. This script uses only the Python standard library.
+Output lands in ``docs/`` (``.gitignore``d, not committed) with ``.nojekyll`` set,
+and ``.github/workflows/pages.yml`` uploads it as a Pages artifact and deploys it
+on every merge to main — no Jekyll, no theme, no gems, no static site generator,
+no package manifest.
 
 That is not an aesthetic choice. The repository's Open Source Review Board
 approval records this project as having **no third-party dependencies**. Adding a
@@ -41,7 +42,8 @@ CONTENT = ROOT / "content" / "posts"
 OUT = ROOT / "docs"
 TEMPLATE = ROOT / "site" / "template.html"
 
-REQUIRED_FIELDS = ("title", "date", "author", "type", "last_reviewed")
+REQUIRED_FIELDS = ("title", "date", "authors", "type", "last_reviewed")
+OPTIONAL_FIELDS = ("component", "tier", "pillar", "draft", "status", "superseded_by")
 VALID_TYPES = {
     "release-post",
     "deep-dive",
@@ -50,7 +52,13 @@ VALID_TYPES = {
     "event",
     "exploratory",
     "spotlight",
+    # Not one of the POR's seven content types. It points at other repos rather
+    # than narrating, and the POR has not ruled on whether it gets a type of its
+    # own or is "furniture that happens to have a post URL" (90-day plan, s.3).
+    # Treated as its own type until that ruling lands — see GOVERNANCE.md.
+    "index",
 }
+VALID_TIERS = {"1", "2", "3"}
 STALE_AFTER_DAYS = 365
 
 
@@ -88,6 +96,10 @@ def validate(meta, path):
     if missing:
         raise BuildError(f"{path}: front matter missing required field(s): {', '.join(missing)}")
 
+    unknown = [k for k in meta if k not in REQUIRED_FIELDS and k not in OPTIONAL_FIELDS]
+    if unknown:
+        raise BuildError(f"{path}: unrecognized front matter field(s): {', '.join(unknown)}")
+
     if meta["type"] not in VALID_TYPES:
         raise BuildError(
             f"{path}: type {meta['type']!r} is not one of: {', '.join(sorted(VALID_TYPES))}"
@@ -101,7 +113,23 @@ def validate(meta, path):
         except ValueError as exc:
             raise BuildError(f"{path}: {field} is not a real date: {exc}") from exc
 
+    if "tier" in meta and meta["tier"] not in VALID_TIERS:
+        raise BuildError(f"{path}: tier must be one of {sorted(VALID_TIERS)}, got {meta['tier']!r}")
+
+    if "draft" in meta and meta["draft"].lower() not in ("true", "false"):
+        raise BuildError(f"{path}: draft must be 'true' or 'false', got {meta['draft']!r}")
+
     return meta
+
+
+def is_draft(meta):
+    """Draft Mode (90-day plan, s.6): draft: true excludes a post from the build.
+
+    A review queue, not a staging area — the article still ships in the pull
+    request and still passes front matter validation, it just does not render
+    until someone flips the flag.
+    """
+    return meta.get("draft", "false").lower() == "true"
 
 
 def staleness(meta):
@@ -160,7 +188,7 @@ def page(template, *, title, body, banner=None, meta=None, is_index=False):
     byline = ""
     if meta and not is_index:
         byline = (
-            f'<p class="byline">{html.escape(meta["author"])} &middot; '
+            f'<p class="byline">{html.escape(meta["authors"])} &middot; '
             f'<time datetime="{meta["date"]}">{meta["date"]}</time> &middot; '
             f'{html.escape(meta["type"])}</p>'
         )
@@ -205,7 +233,8 @@ def main():
         return 1
 
     if args.check:
-        print(f"OK: {len(parsed)} article(s) have valid front matter.")
+        drafts = sum(1 for _, meta, _ in parsed if is_draft(meta))
+        print(f"OK: {len(parsed)} article(s) have valid front matter ({drafts} in draft).")
         return 0
 
     token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
@@ -213,8 +242,11 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
 
+    draft_count = sum(1 for _, meta, _ in parsed if is_draft(meta))
+    published = [p for p in parsed if not is_draft(p[1])]
+
     index_rows = []
-    for path, meta, body in sorted(parsed, key=lambda p: p[1]["date"], reverse=True):
+    for path, meta, body in sorted(published, key=lambda p: p[1]["date"], reverse=True):
         slug = path.relative_to(CONTENT).with_suffix(".html")
         dest = OUT / slug
         dest.parent.mkdir(parents=True, exist_ok=True)
@@ -255,7 +287,7 @@ def main():
         ),
         encoding="utf-8",
     )
-    print(f"built index.html ({len(parsed)} article(s))")
+    print(f"built index.html ({len(published)} article(s), {draft_count} draft(s) excluded)")
     return 0
 
 

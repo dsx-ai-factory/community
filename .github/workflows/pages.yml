@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: CC-BY-4.0
+#
+# Build workflow (90-day plan, s.6): validate on every pull request, deploy on
+# merge to main. Only official GitHub actions are used (checkout, Pages) — no
+# marketplace theme or build action, consistent with this repo's OSRB record of
+# zero third-party dependencies. See THIRD_PARTY_NOTICES.md.
+name: Pages
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Front matter schema
+        run: python3 site/build.py --check
+
+      - name: Materials index data
+        run: python3 site/render_index.py --check
+
+      - name: Generated outputs are in sync with data/repos.txt
+        run: |
+          python3 site/render_index.py
+          git diff --exit-code -- content/posts/dsx-repo-and-materials-index.md README.md || {
+            echo "::error::content/posts/dsx-repo-and-materials-index.md or the README repo table" \
+                 "is out of sync with data/repos.txt. Run 'python3 site/render_index.py' and commit" \
+                 "the result." >&2
+            exit 1
+          }
+
+      - name: Internal links
+        run: python3 site/linkcheck.py
+
+      - name: House style
+        run: python3 site/stylecheck.py
+
+  deploy:
+    name: Deploy
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Render materials index
+        run: python3 site/render_index.py
+
+      - name: Build site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 site/build.py
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
