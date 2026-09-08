@@ -117,7 +117,6 @@ serve, not by which GitHub org happens to hold the repo.
 ### Documentation
 
 - **[community](https://github.com/dsx-ai-factory/community)**: This repository. Community articles and discussions about the open-source components of the NVIDIA DSX AI Factory. (CC-BY-4.0, internal, not yet public, dsx-ai-factory)
-- **[DSX-DOCS](https://github.com/NVIDIA/dsx-docs)**: DSX common and cross-component documentation. Deliberately kept private/internal, the repo the DSX AI Factory org proposal keeps non-public. (unknown, internal, NVIDIA org)
 
 ## Everything else
 
@@ -127,4 +126,4 @@ To be added.
 
 ### Documentation
 
-To be added.
+- **[DSX Documentation](https://docs.nvidia.com/dsx)**: Public documentation for all DSX components, reference architectures, and partner resources. (N/A, public documentation site)
