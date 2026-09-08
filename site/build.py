@@ -133,6 +133,18 @@ def is_draft(meta):
     return meta.get("draft", "false").lower() == "true"
 
 
+MD_LINK_RE = re.compile(r"\]\((?!https?://|mailto:)([^)\s#]+)\.md(#[^)\s]*)?\)")
+
+
+def rewrite_md_links(body):
+    """Relative links between articles are written as ``other-post.md`` in the
+    source, so they resolve correctly when viewed on GitHub directly — but the
+    published site only has the rendered ``.html``. Rewrite them at build time
+    rather than asking authors to write two different link forms.
+    """
+    return MD_LINK_RE.sub(lambda m: f"]({m.group(1)}.html{m.group(2) or ''})", body)
+
+
 def staleness(meta):
     """Return a banner for content the governance policy says to mark, or None.
 
@@ -255,7 +267,7 @@ def main():
             page(
                 template,
                 title=meta["title"],
-                body=render_markdown(body, token),
+                body=render_markdown(rewrite_md_links(body), token),
                 banner=staleness(meta),
                 meta=meta,
             ),
