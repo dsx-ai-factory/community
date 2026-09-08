@@ -22,13 +22,18 @@ components themselves live in their own repositories in the
 | [libredfish](https://github.com/dsx-ai-factory/libredfish) | A Rust crate for interacting with DMTF Redfish endpoints. | MIT | open source |
 | [nv-redfish](https://github.com/dsx-ai-factory/nv-redfish) | NVIDIA's next-generation Redfish crate. | Apache-2.0 | open source |
 | [fleet-intelligence-agent](https://github.com/dsx-ai-factory/fleet-intelligence-agent) | Host agent for GPU telemetry collection and attestation. | Apache-2.0 | open source |
-| [infra-controller](https://github.com/dsx-ai-factory/infra-controller) | Hardware lifecycle management and multitenant networking. | Apache-2.0 | open source |
+| [infra-controller](https://github.com/dsx-ai-factory/infra-controller) | Hardware lifecycle management and multitenant networking (NiCo / Carbide). | Apache-2.0 | open source |
 | [nv-rms](https://github.com/dsx-ai-factory/nv-rms) | NVIDIA Rack Management Service. | Apache-2.0 | open source |
 | [nv-rms-client](https://github.com/dsx-ai-factory/nv-rms-client) | Rust language client crate for NVIDIA Rack Management Service. | Apache-2.0 | open source |
-| [nv-config-manager](https://github.com/dsx-ai-factory/nv-config-manager) | Switch infrastructure config manager. | Apache-2.0 | open source |
+| [nv-config-manager](https://github.com/dsx-ai-factory/nv-config-manager) | Switch infrastructure config manager (KIWI). | Apache-2.0 | open source |
 | [nv-telemetry](https://github.com/dsx-ai-factory/nv-telemetry) | Libraries for bare-metal telemetry collection. | Apache-2.0 | open source |
-| [dsx-exchange](https://github.com/dsx-ai-factory/dsx-exchange) | DSX Exchange. | Apache-2.0 | open source |
-| [dsx-github-actions](https://github.com/dsx-ai-factory/dsx-github-actions) | GitHub Actions infrastructure for DSX. | Apache-2.0 | open source |
+| [dsx-exchange](https://github.com/dsx-ai-factory/dsx-exchange) | DSX Exchange (event bus and schemas). | Apache-2.0 | open source |
+| [dsx-github-actions](https://github.com/dsx-ai-factory/dsx-github-actions) | Shared GitHub Actions CI library for DSX. | Apache-2.0 | open source |
+| [attribution](https://github.com/dsx-ai-factory/attribution) | NVIDIA Attribution (FACT). Private GitHub collaboration with customers. | unknown | internal, not yet public |
+| [health-validation](https://github.com/dsx-ai-factory/health-validation) | Hardware health check catalog and evaluation engine for NVIDIA GPU nodes. | unknown | internal, not yet public |
+| [fleet-intelligence-oob-collector](https://github.com/dsx-ai-factory/fleet-intelligence-oob-collector) | Fleet Intelligence out-of-band collector for BMC inventory, attestation, and telemetry. | Apache-2.0 | internal, not yet public |
+| [run-ai](https://github.com/dsx-ai-factory/run-ai) | Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org). | Apache-2.0 | internal, not yet public |
+| [testwave](https://github.com/dsx-ai-factory/testwave) | Cloud-native platform for automated testing across Kubernetes clusters. | Apache-2.0 | internal, not yet public |
 | [community](https://github.com/dsx-ai-factory/community) | This repository. Community articles and discussions about the open-source components of the NVIDIA DSX AI Factory. | CC-BY-4.0 | internal, not yet public |
 
 Full index, including NVIDIA org repos, upstream projects, video, and documentation: [DSX Repo and Materials Index](content/posts/dsx-repo-and-materials-index.md).
