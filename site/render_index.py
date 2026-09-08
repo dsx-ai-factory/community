@@ -206,6 +206,17 @@ BRAND_CATEGORIES = {
 BRAND_ORDER = ["DSX Sim", "DSX OS", "DSX Exchange", "DSX Flex", "DSX MaxLPS"]
 BRAND_HEIGHT = {"DSX OS": 90}  # all others default to 50, set below
 
+# What each brand covers, independent of open-source status — every band
+# explains itself even when its component count is zero (operator direction
+# 2026-09-08: describe the layer, don't just say "no open-source components").
+BRAND_DESCRIPTION = {
+    "DSX Sim": "Models the stack, so a factory can be validated before it is built",
+    "DSX OS": "Orchestration, monitoring, scheduling, and inference software",
+    "DSX Exchange": "IT/OT communication: event bus and agent gateway",
+    "DSX Flex": "Dynamic power orchestration with grid and energy providers",
+    "DSX MaxLPS": "Power architecture, cooling efficiency, and grid integration",
+}
+
 DSX_STACK_SVG_PATH = ROOT / "content" / "posts" / "assets" / "dsx-stack.svg"
 
 
@@ -244,21 +255,23 @@ def render_stack_svg(sections):
         h = BRAND_HEIGHT.get(brand, 50)
         n = counts[brand]
         highlighted = brand in ("DSX OS", "DSX Exchange")
-        if n == 0:
-            fill, stroke, dash, text_fill = "#e2e2e2", "#9a9a9a", ' stroke-dasharray="6 4"', "#4a4a4a"
-            count_text = "no open-source components yet"
-        elif highlighted:
-            fill, stroke, dash, text_fill = "#76b900", "#ffffff", "", "#ffffff"
-            count_text = f"{n} open-source component{'s' if n != 1 else ''}"
+        if highlighted:
+            fill, stroke, text_fill = "#76b900", "#ffffff", "#ffffff"
+        elif n > 0:
+            fill, stroke, text_fill = "#a8d977", "#ffffff", "#1b1b1b"
         else:
-            fill, stroke, dash, text_fill = "#a8d977", "#ffffff", "", "#1b1b1b"
-            count_text = f"{n} open-source component{'s' if n != 1 else ''}"
+            fill, stroke, text_fill = "#e2e2e2", "#9a9a9a", "#4a4a4a"
+        # Every band explains what it does; the highlighted ones additionally
+        # name their open-source count, since that's what's being highlighted.
+        sub_text = BRAND_DESCRIPTION[brand]
+        if highlighted:
+            sub_text += f" &#8212; {n} open source"
         label_y, sub_y = y + h / 2 - 4, y + h / 2 + 16
         rects.append(
             f'  <rect class="band" x="{x}" y="{y}" width="{width}" height="{h}" rx="6" '
-            f'fill="{fill}" stroke="{stroke}"{dash}/>\n'
+            f'fill="{fill}" stroke="{stroke}"/>\n'
             f'  <text class="label" x="{x + 16}" y="{label_y:.0f}" fill="{text_fill}">{brand}</text>\n'
-            f'  <text class="sub" x="{x + 16}" y="{sub_y:.0f}" fill="{text_fill}">{count_text}</text>'
+            f'  <text class="sub" x="{x + 16}" y="{sub_y:.0f}" fill="{text_fill}">{sub_text}</text>'
         )
         y += h + gap
     total_height = y - gap + pad
@@ -269,9 +282,9 @@ def render_stack_svg(sections):
      aria-labelledby="dsx-stack-title dsx-stack-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="dsx-stack-title">The DSX Portfolio, by Brand</title>
   <desc id="dsx-stack-desc">
-    DSX Sim, DSX OS, DSX Exchange, DSX Flex, and DSX MaxLPS, each shown with how many
-    of its components have been released as open source today. DSX OS and DSX Exchange
-    are highlighted: that is where the open-source components are concentrated.
+    DSX Sim, DSX OS, DSX Exchange, DSX Flex, and DSX MaxLPS, each shown with what it
+    covers. DSX OS and DSX Exchange are highlighted and labeled with an open-source
+    component count: that is where the open-source components are concentrated.
   </desc>
   <style>
     text {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }}
