@@ -13,9 +13,10 @@ draft: true
 
 ## What is DSX
 
-DSX is NVIDIA's AI Factory platform: everything needed to plan, build, and run a
-GPU-accelerated data center, from the physical site up through simulation. It is
-organized into a handful of named brands, each covering part of that job:
+DSX is NVIDIA's overarching brand for AI Factories: it spans hardware, data center
+power and cooling infrastructure, and software, everything needed to plan, build, and
+run a GPU-accelerated data center. It is organized into a handful of named brands,
+each covering part of that scope:
 
 ![The DSX portfolio by brand: DSX Sim on top, DSX OS (highlighted, the largest concentration of open-source components) below it, then DSX Exchange (also highlighted), DSX Flex, and DSX MaxLPS.](assets/dsx-stack.svg)
 
@@ -24,11 +25,13 @@ organized into a handful of named brands, each covering part of that job:
 - **DSX Flex** and **DSX MaxLPS** cover power: grid integration, cooling efficiency, and dynamic power orchestration.
 - **DSX Sim** models the other four, so an AI factory can be validated before it is built.
 
-Most of DSX is not open source. DSX OS and DSX Exchange are where that changes: as of
-this page's last render, DSX OS accounts for 44 open-source
-components and DSX Exchange 1, which is why they are
-highlighted above. DSX Flex and DSX MaxLPS do not have open-source components in this
-index yet. The full list, each shown against the DSX layer it occupies, is below.
+Some of DSX is open source, alongside domains such as hardware and facilities that are
+not released as source code by their nature. DSX OS and DSX Exchange are where the
+open-source components are concentrated: as of this page's last render, DSX OS
+accounts for 44 open-source components and DSX Exchange
+1, which is why they are highlighted above. DSX Flex and
+DSX MaxLPS do not have open-source components in this index yet. The full list, each
+shown against the DSX layer it occupies, is below.
 
 ## DSX components released as open source, by layer
 
