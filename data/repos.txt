@@ -271,6 +271,13 @@ category: Infrastructure Management
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/multi-storage-client
 ---
+name: NVIDIA Cluster Readiness Engine (NCRE)
+description: Kubernetes controller for GPU cluster burn-in certification, orchestrated benchmarking, and hardware failure detection.
+license: Apache-2.0
+category: Validation & Testing
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/cluster-readiness-engine
+---
 name: Omniverse DSX Blueprint
 description: Omniverse Libraries and OpenUSD workflows for coordinated AI factory planning and digital twins.
 license: unknown
@@ -334,6 +341,13 @@ license: Apache-2.0
 category: Optimized Inference
 status: open source, NVIDIA-controlled (run-ai org, not NVIDIA-branded)
 url: https://github.com/run-ai/runai-model-streamer
+---
+name: Karta
+description: Translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure.
+license: Apache-2.0
+category: Scheduling & Workload Management
+status: open source, NVIDIA-controlled (run-ai org, not NVIDIA-branded)
+url: https://github.com/run-ai/karta
 
 ## video
 # TODO(jason): "The NVIDIA YouTube channel and the DSX playlist. Arun's ask."
@@ -445,3 +459,14 @@ url: https://docs.nvidia.com/dsx
 #    components, reference architectures, and partner resources), not at the
 #    private authoring repo. This also settles note 5/8's "documentation"
 #    open item.
+#
+# 10. Operator-flagged additions, 2026-09-08, verified live before adding:
+#     run-ai/karta (Apache-2.0, 63 stars) - CRD translation layer, public under
+#     the run-ai org - and NVIDIA/cluster-readiness-engine, the NVCRE named in
+#     "DSX Stack (1).pptx" s.18/33 (Apache-2.0, 50 stars, public NVIDIA org).
+#     Operator also confirmed Nodewright (already listed, note 8's portal
+#     reconciliation) and Run:ai are open source; the core Run:ai control
+#     plane itself is dsx-ai-factory/run-ai, still internal as of this date
+#     (re-verified, not flipped to open source without live confirmation) -
+#     what is public today under the run-ai org is runai-model-streamer and
+#     karta, both already listed.

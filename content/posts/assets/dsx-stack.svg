@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 640 300" width="640" height="300" role="img"
+<svg viewBox="0 0 640 326" width="640" height="326" role="img"
      aria-labelledby="dsx-stack-title dsx-stack-desc" xmlns="http://www.w3.org/2000/svg">
-  <title id="dsx-stack-title">The DSX Stack</title>
+  <title id="dsx-stack-title">The DSX Portfolio, by Brand</title>
   <desc id="dsx-stack-desc">
-    Five layers, foundation to top: Facilities Infrastructure, Hardware, Software -
-    Infrastructure, Software - Platform, and Simulation, which models the other four.
+    DSX Sim, DSX OS, DSX Exchange, DSX Flex, and DSX MaxLPS, each shown with how many
+    of its components have been released as open source today. DSX OS and DSX Exchange
+    are highlighted: that is where the open-source components are concentrated.
   </desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    .band { stroke: #ffffff; stroke-width: 2; }
-    .label { font-size: 15px; font-weight: 600; fill: #ffffff; }
-    .sub { font-size: 12px; fill: #f0f0f0; }
+    .band { stroke-width: 2; }
+    .label { font-size: 15px; font-weight: 600; }
+    .sub { font-size: 12px; }
   </style>
-  <rect class="band" x="20" y="10"  width="600" height="50" rx="6" fill="#a8d977"/>
-  <text class="label" x="36" y="32">Simulation</text>
-  <text class="sub"   x="36" y="49">DSX Air, Omniverse Blueprints, SimReady assets</text>
+  <rect class="band" x="20" y="10" width="600" height="50" rx="6" fill="#a8d977" stroke="#ffffff"/>
+  <text class="label" x="36" y="31" fill="#1b1b1b">DSX Sim</text>
+  <text class="sub" x="36" y="51" fill="#1b1b1b">2 open-source components</text>
 
-  <rect class="band" x="20" y="64"  width="600" height="50" rx="6" fill="#76b900"/>
-  <text class="label" x="36" y="86">Software &#8212; Platform</text>
-  <text class="sub"   x="36" y="103">Scheduling, workload management, optimized inference</text>
+  <rect class="band" x="20" y="64" width="600" height="90" rx="6" fill="#76b900" stroke="#ffffff"/>
+  <text class="label" x="36" y="105" fill="#ffffff">DSX OS</text>
+  <text class="sub" x="36" y="125" fill="#ffffff">44 open-source components</text>
 
-  <rect class="band" x="20" y="118" width="600" height="50" rx="6" fill="#2e6b1f"/>
-  <text class="label" x="36" y="140">Software &#8212; Infrastructure</text>
-  <text class="sub"   x="36" y="157">Orchestration, provisioning, monitoring, resiliency, security</text>
+  <rect class="band" x="20" y="158" width="600" height="50" rx="6" fill="#76b900" stroke="#ffffff"/>
+  <text class="label" x="36" y="179" fill="#ffffff">DSX Exchange</text>
+  <text class="sub" x="36" y="199" fill="#ffffff">1 open-source component</text>
 
-  <rect class="band" x="20" y="172" width="600" height="50" rx="6" fill="#6a6a6a"/>
-  <text class="label" x="36" y="194">Hardware</text>
-  <text class="sub"   x="36" y="211">Compute, network, storage</text>
+  <rect class="band" x="20" y="212" width="600" height="50" rx="6" fill="#e2e2e2" stroke="#9a9a9a" stroke-dasharray="6 4"/>
+  <text class="label" x="36" y="233" fill="#4a4a4a">DSX Flex</text>
+  <text class="sub" x="36" y="253" fill="#4a4a4a">no open-source components yet</text>
 
-  <rect class="band" x="20" y="226" width="600" height="50" rx="6" fill="#4a4a4a"/>
-  <text class="label" x="36" y="248">Facilities Infrastructure</text>
-  <text class="sub"   x="36" y="265">Land, connectivity, power, shell</text>
+  <rect class="band" x="20" y="266" width="600" height="50" rx="6" fill="#e2e2e2" stroke="#9a9a9a" stroke-dasharray="6 4"/>
+  <text class="label" x="36" y="287" fill="#4a4a4a">DSX MaxLPS</text>
+  <text class="sub" x="36" y="307" fill="#4a4a4a">no open-source components yet</text>
 </svg>

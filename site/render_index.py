@@ -172,57 +172,122 @@ def render_functional_groups(sections):
     return "\n".join(parts)
 
 
-# A standalone SVG file, referenced from the article as an <img> (see
-# render_index_post). NOT embedded inline in the article's Markdown: GitHub's
-# markdown renderer (both github.com and the api.github.com/markdown endpoint
-# site/build.py itself calls) sanitizes raw <svg>/<style>/<title>/<desc> tags
-# out of rendered Markdown but leaves their TEXT CONTENT behind — verified by
-# rendering this exact content through the API on 2026-09-08 and finding the
-# tags stripped, the CSS and title/desc text left as garbled visible text, and
-# no image. An <img src="..."> tag from Markdown image syntax is on GitHub's
-# sanitizer allowlist and is not affected.
-DSX_STACK_SVG = """<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 640 300" width="640" height="300" role="img"
-     aria-labelledby="dsx-stack-title dsx-stack-desc" xmlns="http://www.w3.org/2000/svg">
-  <title id="dsx-stack-title">The DSX Stack</title>
-  <desc id="dsx-stack-desc">
-    Five layers, foundation to top: Facilities Infrastructure, Hardware, Software -
-    Infrastructure, Software - Platform, and Simulation, which models the other four.
-  </desc>
-  <style>
-    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    .band { stroke: #ffffff; stroke-width: 2; }
-    .label { font-size: 15px; font-weight: 600; fill: #ffffff; }
-    .sub { font-size: 12px; fill: #f0f0f0; }
-  </style>
-  <rect class="band" x="20" y="10"  width="600" height="50" rx="6" fill="#a8d977"/>
-  <text class="label" x="36" y="32">Simulation</text>
-  <text class="sub"   x="36" y="49">DSX Air, Omniverse Blueprints, SimReady assets</text>
-
-  <rect class="band" x="20" y="64"  width="600" height="50" rx="6" fill="#76b900"/>
-  <text class="label" x="36" y="86">Software &#8212; Platform</text>
-  <text class="sub"   x="36" y="103">Scheduling, workload management, optimized inference</text>
-
-  <rect class="band" x="20" y="118" width="600" height="50" rx="6" fill="#2e6b1f"/>
-  <text class="label" x="36" y="140">Software &#8212; Infrastructure</text>
-  <text class="sub"   x="36" y="157">Orchestration, provisioning, monitoring, resiliency, security</text>
-
-  <rect class="band" x="20" y="172" width="600" height="50" rx="6" fill="#6a6a6a"/>
-  <text class="label" x="36" y="194">Hardware</text>
-  <text class="sub"   x="36" y="211">Compute, network, storage</text>
-
-  <rect class="band" x="20" y="226" width="600" height="50" rx="6" fill="#4a4a4a"/>
-  <text class="label" x="36" y="248">Facilities Infrastructure</text>
-  <text class="sub"   x="36" y="265">Land, connectivity, power, shell</text>
-</svg>
-"""
+# Which functional categories (CATEGORY_ORDER) roll up into which DSX brand,
+# per "DSX Stack (1).pptx" slide 21 ("DSX Portfolio... layers and
+# functionalities grouped by DSX brands"). Documentation isn't a brand with
+# open-source components of its own (it's this repo plus a pointer to
+# docs.nvidia.com/dsx) so it is deliberately left out of every bucket below.
+BRAND_CATEGORIES = {
+    "DSX OS": [
+        "Cluster Orchestration & Provisioning",
+        "Infrastructure Management",
+        "Monitoring & Observability",
+        "Resiliency & Remediation",
+        "Security & Confidential Computing",
+        "Scheduling & Workload Management",
+        "Optimized Inference",
+        "Validation & Testing",
+        "Developer Tooling",
+    ],
+    "DSX Exchange": ["Core Operations"],
+    "DSX Sim": ["Simulation"],
+    # No category currently rolls up to these two — no dsx-ai-factory/nvidia-org/
+    # upstream repo in data/repos.txt is a DSX Flex or DSX MaxLPS component yet.
+    # Left in the diagram (both are named on slide 21) rather than dropped, so
+    # the diagram doesn't quietly imply they don't exist.
+    "DSX Flex": [],
+    "DSX MaxLPS": [],
+}
+# Diagram order, top to bottom: Simulation on top (models everything below),
+# then DSX OS (by far the most open-source components, so drawn tallest and
+# highlighted), then Exchange (also highlighted, per operator direction, even
+# though its count is currently small), then Flex/MaxLPS at the bottom nearest
+# the physical/power layer they represent.
+BRAND_ORDER = ["DSX Sim", "DSX OS", "DSX Exchange", "DSX Flex", "DSX MaxLPS"]
+BRAND_HEIGHT = {"DSX OS": 90}  # all others default to 50, set below
 
 DSX_STACK_SVG_PATH = ROOT / "content" / "posts" / "assets" / "dsx-stack.svg"
+
+
+def count_by_brand(sections):
+    counts = {brand: 0 for brand in BRAND_ORDER}
+    for section in CATEGORIZED_SECTIONS:
+        for r in sections[section] or []:
+            for brand, categories in BRAND_CATEGORIES.items():
+                if r["category"] in categories:
+                    counts[brand] += 1
+    return counts
+
+
+def render_stack_svg(sections):
+    """A standalone SVG file, referenced from the article as an <img> (see
+    render_index_post). NOT embedded inline in the article's Markdown: GitHub's
+    markdown renderer (both github.com and the api.github.com/markdown endpoint
+    site/build.py itself calls) sanitizes raw <svg>/<style>/<title>/<desc> tags
+    out of rendered Markdown but leaves their TEXT CONTENT behind — verified by
+    rendering this exact content through the API on 2026-09-08 and finding the
+    tags stripped, the CSS and title/desc text left as garbled visible text, and
+    no image. An <img src="..."> tag from Markdown image syntax is on GitHub's
+    sanitizer allowlist and is not affected.
+
+    Grouped by DSX brand (slide 21), not by generic stack layer, per operator
+    direction 2026-09-08. DSX OS and DSX Exchange are highlighted because they
+    are where a large number of components have already been open sourced;
+    counts are computed live from data/repos.txt so the diagram cannot drift
+    from the listing below it.
+    """
+    counts = count_by_brand(sections)
+    x, width, gap, pad = 20, 600, 4, 10
+    y = pad
+    rects = []
+    for brand in BRAND_ORDER:
+        h = BRAND_HEIGHT.get(brand, 50)
+        n = counts[brand]
+        highlighted = brand in ("DSX OS", "DSX Exchange")
+        if n == 0:
+            fill, stroke, dash, text_fill = "#e2e2e2", "#9a9a9a", ' stroke-dasharray="6 4"', "#4a4a4a"
+            count_text = "no open-source components yet"
+        elif highlighted:
+            fill, stroke, dash, text_fill = "#76b900", "#ffffff", "", "#ffffff"
+            count_text = f"{n} open-source component{'s' if n != 1 else ''}"
+        else:
+            fill, stroke, dash, text_fill = "#a8d977", "#ffffff", "", "#1b1b1b"
+            count_text = f"{n} open-source component{'s' if n != 1 else ''}"
+        label_y, sub_y = y + h / 2 - 4, y + h / 2 + 16
+        rects.append(
+            f'  <rect class="band" x="{x}" y="{y}" width="{width}" height="{h}" rx="6" '
+            f'fill="{fill}" stroke="{stroke}"{dash}/>\n'
+            f'  <text class="label" x="{x + 16}" y="{label_y:.0f}" fill="{text_fill}">{brand}</text>\n'
+            f'  <text class="sub" x="{x + 16}" y="{sub_y:.0f}" fill="{text_fill}">{count_text}</text>'
+        )
+        y += h + gap
+    total_height = y - gap + pad
+    bands = "\n\n".join(rects)
+
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 {total_height}" width="640" height="{total_height}" role="img"
+     aria-labelledby="dsx-stack-title dsx-stack-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="dsx-stack-title">The DSX Portfolio, by Brand</title>
+  <desc id="dsx-stack-desc">
+    DSX Sim, DSX OS, DSX Exchange, DSX Flex, and DSX MaxLPS, each shown with how many
+    of its components have been released as open source today. DSX OS and DSX Exchange
+    are highlighted: that is where the open-source components are concentrated.
+  </desc>
+  <style>
+    text {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }}
+    .band {{ stroke-width: 2; }}
+    .label {{ font-size: 15px; font-weight: 600; }}
+    .sub {{ font-size: 12px; }}
+  </style>
+{bands}
+</svg>
+"""
 
 
 def render_index_post(sections):
     today = datetime.date.today().isoformat()
     functional_body = render_functional_groups(sections).strip()
+    brand_counts = count_by_brand(sections)
     video_records = sections["video"] or []
     video_body = (
         "\n".join(
@@ -248,20 +313,21 @@ draft: true
 ## What is DSX
 
 DSX is NVIDIA's AI Factory platform: everything needed to plan, build, and run a
-GPU-accelerated data center, from the physical site up through simulation. It runs in
-five layers:
+GPU-accelerated data center, from the physical site up through simulation. It is
+organized into a handful of named brands, each covering part of that job:
 
-![The DSX Stack: five layers, Facilities Infrastructure and Hardware at the foundation, Software - Infrastructure and Software - Platform above them, Simulation on top modeling the other four.](assets/dsx-stack.svg)
+![The DSX portfolio by brand: DSX Sim on top, DSX OS (highlighted, the largest concentration of open-source components) below it, then DSX Exchange (also highlighted), DSX Flex, and DSX MaxLPS.](assets/dsx-stack.svg)
 
-- **Facilities Infrastructure** covers the physical site: land, connectivity, power, and shell.
-- **Hardware** is compute, network, and storage.
-- **Software - Infrastructure** provisions and runs the cluster: cluster orchestration and provisioning, infrastructure management, monitoring and observability, resiliency and remediation, security, and core operations.
-- **Software - Platform** is scheduling, workload management, and optimized inference, the layer that turns a provisioned cluster into one that serves workloads.
-- **Simulation** models the other four layers, so an AI factory can be validated before it is built.
+- **DSX OS** is the open-source IaaS/PaaS software that provisions, orchestrates, monitors, and serves inference across a cluster: cluster orchestration, infrastructure management, monitoring, resiliency, security, scheduling, workload management, and optimized inference.
+- **DSX Exchange** is IT/OT infrastructure communication: the event bus and agent gateway that connect DSX clusters to building management and grid systems.
+- **DSX Flex** and **DSX MaxLPS** cover power: grid integration, cooling efficiency, and dynamic power orchestration.
+- **DSX Sim** models the other four, so an AI factory can be validated before it is built.
 
-Most of DSX is not open source. The components below are the ones that are: DSX
-components released as open source, plus the NVIDIA-org and upstream projects they
-depend on, each shown against the DSX layer it occupies.
+Most of DSX is not open source. DSX OS and DSX Exchange are where that changes: as of
+this page's last render, DSX OS accounts for {brand_counts['DSX OS']} open-source
+components and DSX Exchange {brand_counts['DSX Exchange']}, which is why they are
+highlighted above. DSX Flex and DSX MaxLPS do not have open-source components in this
+index yet. The full list, each shown against the DSX layer it occupies, is below.
 
 ## DSX components released as open source, by layer
 
@@ -332,7 +398,7 @@ def main():
     print(f"wrote {INDEX_POST.relative_to(ROOT)}")
 
     DSX_STACK_SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
-    DSX_STACK_SVG_PATH.write_text(DSX_STACK_SVG, encoding="utf-8")
+    DSX_STACK_SVG_PATH.write_text(render_stack_svg(sections), encoding="utf-8")
     print(f"wrote {DSX_STACK_SVG_PATH.relative_to(ROOT)}")
 
     if not README.exists():

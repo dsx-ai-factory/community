@@ -14,20 +14,21 @@ draft: true
 ## What is DSX
 
 DSX is NVIDIA's AI Factory platform: everything needed to plan, build, and run a
-GPU-accelerated data center, from the physical site up through simulation. It runs in
-five layers:
+GPU-accelerated data center, from the physical site up through simulation. It is
+organized into a handful of named brands, each covering part of that job:
 
-![The DSX Stack: five layers, Facilities Infrastructure and Hardware at the foundation, Software - Infrastructure and Software - Platform above them, Simulation on top modeling the other four.](assets/dsx-stack.svg)
+![The DSX portfolio by brand: DSX Sim on top, DSX OS (highlighted, the largest concentration of open-source components) below it, then DSX Exchange (also highlighted), DSX Flex, and DSX MaxLPS.](assets/dsx-stack.svg)
 
-- **Facilities Infrastructure** covers the physical site: land, connectivity, power, and shell.
-- **Hardware** is compute, network, and storage.
-- **Software - Infrastructure** provisions and runs the cluster: cluster orchestration and provisioning, infrastructure management, monitoring and observability, resiliency and remediation, security, and core operations.
-- **Software - Platform** is scheduling, workload management, and optimized inference, the layer that turns a provisioned cluster into one that serves workloads.
-- **Simulation** models the other four layers, so an AI factory can be validated before it is built.
+- **DSX OS** is the open-source IaaS/PaaS software that provisions, orchestrates, monitors, and serves inference across a cluster: cluster orchestration, infrastructure management, monitoring, resiliency, security, scheduling, workload management, and optimized inference.
+- **DSX Exchange** is IT/OT infrastructure communication: the event bus and agent gateway that connect DSX clusters to building management and grid systems.
+- **DSX Flex** and **DSX MaxLPS** cover power: grid integration, cooling efficiency, and dynamic power orchestration.
+- **DSX Sim** models the other four, so an AI factory can be validated before it is built.
 
-Most of DSX is not open source. The components below are the ones that are: DSX
-components released as open source, plus the NVIDIA-org and upstream projects they
-depend on, each shown against the DSX layer it occupies.
+Most of DSX is not open source. DSX OS and DSX Exchange are where that changes: as of
+this page's last render, DSX OS accounts for 44 open-source
+components and DSX Exchange 1, which is why they are
+highlighted above. DSX Flex and DSX MaxLPS do not have open-source components in this
+index yet. The full list, each shown against the DSX layer it occupies, is below.
 
 ## DSX components released as open source, by layer
 
@@ -83,6 +84,7 @@ depend on, each shown against the DSX layer it occupies.
 - **[run-ai](https://github.com/dsx-ai-factory/run-ai)**: Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org). (Apache-2.0, internal, not yet public, dsx-ai-factory)
 - **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)**: Kubernetes-native scheduler for AI workloads at scale. CNCF Sandbox project, a Series of LF Projects, LLC; NVIDIA does not hold the merge gate. (Apache-2.0, foundation-governed (CNCF / Linux Foundation))
 - **[Grove](https://github.com/ai-dynamo/grove)**: Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling. (Apache-2.0, open source, NVIDIA-controlled (ai-dynamo org, not NVIDIA-branded))
+- **[Karta](https://github.com/run-ai/karta)**: Translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure. (Apache-2.0, open source, NVIDIA-controlled (run-ai org, not NVIDIA-branded))
 
 ### Optimized Inference
 
@@ -96,6 +98,7 @@ depend on, each shown against the DSX layer it occupies.
 - **[testwave](https://github.com/dsx-ai-factory/testwave)**: Cloud-native platform for automated testing across Kubernetes clusters. (Apache-2.0, internal, not yet public, dsx-ai-factory)
 - **[Exemplar Performance](https://github.com/NVIDIA/exemplar-performance)**: Ready-to-use recipes for evaluating AI use case performance across hardware and software combinations. Renamed from dgxc-benchmarking. (unknown, open source, NVIDIA org)
 - **[AI Cloud-Ready Validation](https://github.com/NVIDIA/ai-cloud-validation)**: Validation and management tools for NVIDIA AI Cloud environments. Renamed from ISV-NCP-Validation-Suite. (Apache-2.0, open source, NVIDIA org)
+- **[NVIDIA Cluster Readiness Engine (NCRE)](https://github.com/NVIDIA/cluster-readiness-engine)**: Kubernetes controller for GPU cluster burn-in certification, orchestrated benchmarking, and hardware failure detection. (Apache-2.0, open source, NVIDIA org)
 
 ### Simulation
 
