@@ -55,14 +55,22 @@ def strip_code_blocks(text):
 
 
 def main():
-    if not CONTENT.is_dir():
+    findings = 0
+
+    # The repo-root README is reader-facing prose (it now carries the full
+    # materials index plus a hand-written introduction), so it gets the same
+    # checks as an article — unlike content/posts/README.md, which is
+    # contributor-facing authoring instructions with code-syntax examples and
+    # stays excluded below.
+    targets = [ROOT / "README.md"] if (ROOT / "README.md").exists() else []
+
+    if CONTENT.is_dir():
+        targets += [p for p in sorted(CONTENT.rglob("*.md")) if p.name.upper() != "README.MD"]
+    elif not targets:
         print("No articles yet: nothing to check.")
         return 0
 
-    findings = 0
-    for path in sorted(CONTENT.rglob("*.md")):
-        if path.name.upper() == "README.MD":
-            continue
+    for path in targets:
         raw = path.read_text(encoding="utf-8")
         body = strip_code_blocks(strip_front_matter(raw))
         for pattern, message, blocking in CHECKS:
