@@ -40,14 +40,17 @@ def strip_front_matter(text):
 
 
 def strip_code_blocks(text):
-    """Do not flag style issues inside fenced or inline code.
+    """Do not flag style issues inside fenced or inline code, or embedded markup.
 
     Replaces with a same-width placeholder word rather than deleting or
     inserting a space, so stripping a code span does not manufacture a double
     space out of the spacing already around it (e.g. "the `x` thing" must not
-    become "the  thing" or "the   thing").
+    become "the  thing" or "the   thing"). Embedded raw HTML/SVG (e.g. the
+    materials index's stack diagram) is markup, not prose — its own internal
+    alignment spacing and blank lines are not house-style issues.
     """
     text = re.sub(r"```.*?```", "codeblock", text, flags=re.S)
+    text = re.sub(r"<svg\b.*?</svg>", "svgblock", text, flags=re.S)
     return re.sub(r"`[^`]*`", "code", text)
 
 

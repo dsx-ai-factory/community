@@ -33,6 +33,29 @@ SECTIONS = {
     "documentation": "Documentation",
 }
 REQUIRED_RECORD_FIELDS = ("name", "description", "license", "status", "url")
+# Only dsx-ai-factory/nvidia-org/upstream records get grouped by function in the
+# pinned index post (90-day plan's DSX Stack functional grouping, added
+# 2026-09-08) — video/documentation records don't carry a category.
+CATEGORIZED_SECTIONS = ("dsx-ai-factory", "nvidia-org", "upstream")
+
+# Rendering order for the functional grouping, following the DSX Stack's own
+# rough layer flow (facilities/hardware infra -> software infra -> software
+# platform -> simulation), with two pragmatic buckets tacked on at the end for
+# repos that don't map onto a stack layer.
+CATEGORY_ORDER = [
+    "Cluster Orchestration & Provisioning",
+    "Infrastructure Management",
+    "Monitoring & Observability",
+    "Resiliency & Remediation",
+    "Security & Confidential Computing",
+    "Core Operations",
+    "Scheduling & Workload Management",
+    "Optimized Inference",
+    "Validation & Testing",
+    "Simulation",
+    "Developer Tooling",
+    "Documentation",
+]
 
 
 class DataError(Exception):
@@ -55,9 +78,12 @@ def parse(text):
                 raise DataError(f"malformed record line (not 'key: value'): {line!r}")
             key, _, value = line.partition(":")
             rec[key.strip()] = value.strip()
-        missing = [f for f in REQUIRED_RECORD_FIELDS if f not in rec or not rec[f]]
+        required = REQUIRED_RECORD_FIELDS + (("category",) if current in CATEGORIZED_SECTIONS else ())
+        missing = [f for f in required if f not in rec or not rec[f]]
         if missing:
             raise DataError(f"record missing field(s) {missing}: {rec}")
+        if "category" in rec and rec["category"] not in CATEGORY_ORDER:
+            raise DataError(f"record has unknown category {rec['category']!r}: {rec}")
         records.append(rec)
         record_lines.clear()
 
@@ -100,9 +126,92 @@ def render_section_md(title, records):
     return f"### {title}\n\n{rows}\n"
 
 
+# Where a record came from, shown alongside each functionally-grouped entry so
+# "which layer is this" and "who owns the repo" stay visible together.
+HOME_LABEL = {
+    "dsx-ai-factory": "dsx-ai-factory",
+    "nvidia-org": "NVIDIA org",
+    "upstream": "upstream",
+}
+
+
+def render_functional_groups(sections):
+    """Group dsx-ai-factory/nvidia-org/upstream records by DSX Stack function.
+
+    Added 2026-09-08 per "DSX Stack (1).pptx" (Jason Perlow / DSX Stack Framework
+    deck, reviewed Jul 29 2026): the deck breaks Software - Infrastructure and
+    Software - Platform into named functional categories (s.18-19) rather than
+    by which GitHub org happens to hold the repo. CATEGORY_ORDER in this module
+    is that taxonomy, condensed to fit the repos actually in data/repos.txt, plus
+    Validation & Testing, Developer Tooling, and Documentation for repos the
+    deck does not cover. The category assignment for each repo is a judgment
+    call recorded as the record's own `category` field in data/repos.txt, not
+    re-derived here — change it there, not in this function.
+    """
+    by_category = {c: [] for c in CATEGORY_ORDER}
+    for section in CATEGORIZED_SECTIONS:
+        for r in sections[section] or []:
+            by_category[r["category"]].append((r, section))
+
+    parts = []
+    for category in CATEGORY_ORDER:
+        entries = by_category[category]
+        if not entries:
+            continue
+        def row(r, section):
+            # dsx-ai-factory status is bare ("open source") with no org context,
+            # so tag it explicitly. nvidia-org/upstream status already names the
+            # org/governance model (e.g. "open source, NVIDIA org"); appending
+            # HOME_LABEL there would just repeat it.
+            tag = f", {HOME_LABEL[section]}" if section == "dsx-ai-factory" else ""
+            return f"- **[{r['name']}]({r['url']})**: {r['description']} ({r['license']}, {r['status']}{tag})"
+
+        rows = "\n".join(row(r, section) for r, section in entries)
+        parts.append(f"### {category}\n\n{rows}\n")
+    return "\n".join(parts)
+
+
+DSX_STACK_SVG = """<svg viewBox="0 0 640 300" width="100%" role="img"
+     aria-labelledby="dsx-stack-title dsx-stack-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="dsx-stack-title">The DSX Stack</title>
+  <desc id="dsx-stack-desc">
+    Five layers, foundation to top: Facilities Infrastructure, Hardware, Software -
+    Infrastructure, Software - Platform, and Simulation, which models the other four.
+  </desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .band { stroke: #ffffff; stroke-width: 2; }
+    .label { font-size: 15px; font-weight: 600; fill: #ffffff; }
+    .sub { font-size: 12px; fill: #f0f0f0; }
+  </style>
+  <rect class="band" x="20" y="10"  width="600" height="50" rx="6" fill="#a8d977"/>
+  <text class="label" x="36" y="32">Simulation</text>
+  <text class="sub"   x="36" y="49">DSX Air, Omniverse Blueprints, SimReady assets</text>
+
+  <rect class="band" x="20" y="64"  width="600" height="50" rx="6" fill="#76b900"/>
+  <text class="label" x="36" y="86">Software &#8212; Platform</text>
+  <text class="sub"   x="36" y="103">Scheduling, workload management, optimized inference</text>
+
+  <rect class="band" x="20" y="118" width="600" height="50" rx="6" fill="#2e6b1f"/>
+  <text class="label" x="36" y="140">Software &#8212; Infrastructure</text>
+  <text class="sub"   x="36" y="157">Orchestration, provisioning, monitoring, resiliency, security</text>
+
+  <rect class="band" x="20" y="172" width="600" height="50" rx="6" fill="#6a6a6a"/>
+  <text class="label" x="36" y="194">Hardware</text>
+  <text class="sub"   x="36" y="211">Compute, network, storage</text>
+
+  <rect class="band" x="20" y="226" width="600" height="50" rx="6" fill="#4a4a4a"/>
+  <text class="label" x="36" y="248">Facilities Infrastructure</text>
+  <text class="sub"   x="36" y="265">Land, connectivity, power, shell</text>
+</svg>"""
+
+
 def render_index_post(sections):
     today = datetime.date.today().isoformat()
-    body = "\n".join(render_section_md(SECTIONS[key], sections[key]) for key in SECTIONS)
+    functional_body = render_functional_groups(sections).strip()
+    trailing_body = "\n".join(
+        render_section_md(SECTIONS[key], sections[key]) for key in ("video", "documentation")
+    ).strip()
     return f"""---
 title: DSX Repo and Materials Index
 date: {today}
@@ -120,7 +229,32 @@ does not go stale as components ship (90-day plan, s.4). It is generated from
 [`data/repos.txt`](https://github.com/dsx-ai-factory/community/blob/main/data/repos.txt).
 Edit that file, not this one.
 
-{body}
+## What is DSX OS
+
+DSX OS is the open-source IaaS and PaaS layer of the DSX AI Factory platform: the
+components that provision, orchestrate, monitor, and serve inference across a
+GPU-accelerated cluster. It sits inside the wider DSX Stack, which runs from the
+physical facility up through simulation:
+
+{DSX_STACK_SVG}
+
+- **Facilities Infrastructure** covers the physical site: land, connectivity, power, and shell.
+- **Hardware** is compute, network, and storage.
+- **Software - Infrastructure** is the layer most of the repos below live in: cluster orchestration and provisioning, infrastructure management, monitoring and observability, resiliency and remediation, security, and core operations.
+- **Software - Platform** is scheduling, workload management, and optimized inference, the layer that turns a provisioned cluster into one that serves workloads.
+- **Simulation** models the other four layers, so an AI factory can be validated before it is built.
+
+Every open-source `dsx-ai-factory` component, and the NVIDIA-org and upstream
+projects DSX OS depends on, are grouped below by which of these functions they
+serve, not by which GitHub org happens to hold the repo.
+
+## DSX OS components, by function
+
+{functional_body}
+
+## Everything else
+
+{trailing_body}
 """
 
 

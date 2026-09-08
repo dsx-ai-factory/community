@@ -14,96 +14,112 @@
 name: libredfish
 description: A Rust crate for interacting with DMTF Redfish endpoints.
 license: MIT
+category: Infrastructure Management
 status: open source
 url: https://github.com/dsx-ai-factory/libredfish
 ---
 name: nv-redfish
 description: NVIDIA's next-generation Redfish crate.
 license: Apache-2.0
+category: Infrastructure Management
 status: open source
 url: https://github.com/dsx-ai-factory/nv-redfish
 ---
 name: fleet-intelligence-agent
 description: Host agent for GPU telemetry collection and attestation.
 license: Apache-2.0
+category: Monitoring & Observability
 status: open source
 url: https://github.com/dsx-ai-factory/fleet-intelligence-agent
 ---
 name: infra-controller
 description: Hardware lifecycle management and multitenant networking (NiCo / Carbide).
 license: Apache-2.0
+category: Cluster Orchestration & Provisioning
 status: open source
 url: https://github.com/dsx-ai-factory/infra-controller
 ---
 name: nv-rms
 description: NVIDIA Rack Management Service.
 license: Apache-2.0
+category: Infrastructure Management
 status: open source
 url: https://github.com/dsx-ai-factory/nv-rms
 ---
 name: nv-rms-client
 description: Rust language client crate for NVIDIA Rack Management Service.
 license: Apache-2.0
+category: Infrastructure Management
 status: open source
 url: https://github.com/dsx-ai-factory/nv-rms-client
 ---
 name: nv-config-manager
 description: Switch infrastructure config manager (KIWI). Note: the DSX OS Programs portal links the KIWI program to a different, internal/archived repo, NVIDIA/kiwi-platform. Unresolved whether that is the same project; see the reconciliation notes at the end of this file (note 8).
 license: Apache-2.0
+category: Infrastructure Management
 status: open source
 url: https://github.com/dsx-ai-factory/nv-config-manager
 ---
 name: nv-telemetry
 description: Libraries for bare-metal telemetry collection.
 license: Apache-2.0
+category: Monitoring & Observability
 status: open source
 url: https://github.com/dsx-ai-factory/nv-telemetry
 ---
 name: dsx-exchange
 description: DSX Exchange (event bus and schemas).
 license: Apache-2.0
+category: Core Operations
 status: open source
 url: https://github.com/dsx-ai-factory/dsx-exchange
 ---
 name: dsx-github-actions
 description: Shared GitHub Actions CI library for DSX.
 license: Apache-2.0
+category: Developer Tooling
 status: open source
 url: https://github.com/dsx-ai-factory/dsx-github-actions
 ---
 name: attribution
 description: NVIDIA Attribution (FACT). Private GitHub collaboration with customers.
 license: unknown
+category: Monitoring & Observability
 status: internal, not yet public
 url: https://github.com/dsx-ai-factory/attribution
 ---
 name: health-validation
 description: Hardware health check catalog and evaluation engine for NVIDIA GPU nodes.
 license: unknown
+category: Monitoring & Observability
 status: internal, not yet public
 url: https://github.com/dsx-ai-factory/health-validation
 ---
 name: fleet-intelligence-oob-collector
 description: Fleet Intelligence out-of-band collector for BMC inventory, attestation, and telemetry.
 license: Apache-2.0
+category: Monitoring & Observability
 status: internal, not yet public
 url: https://github.com/dsx-ai-factory/fleet-intelligence-oob-collector
 ---
 name: run-ai
 description: Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org).
 license: Apache-2.0
+category: Scheduling & Workload Management
 status: internal, not yet public
 url: https://github.com/dsx-ai-factory/run-ai
 ---
 name: testwave
 description: Cloud-native platform for automated testing across Kubernetes clusters.
 license: Apache-2.0
+category: Validation & Testing
 status: internal, not yet public
 url: https://github.com/dsx-ai-factory/testwave
 ---
 name: community
 description: This repository. Community articles and discussions about the open-source components of the NVIDIA DSX AI Factory.
 license: CC-BY-4.0
+category: Documentation
 status: internal, not yet public
 url: https://github.com/dsx-ai-factory/community
 
@@ -111,144 +127,168 @@ url: https://github.com/dsx-ai-factory/community
 name: AICR (AI Cluster Runtime)
 description: Tooling for optimized, validated, and reproducible GPU-accelerated AI runtime in Kubernetes.
 license: Apache-2.0
+category: Cluster Orchestration & Provisioning
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/aicr
 ---
 name: NVSentinel
 description: Detects and remediates GPU faults on Kubernetes nodes.
 license: Apache-2.0
+category: Resiliency & Remediation
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/NVSentinel
 ---
 name: NVCF (Cloud Functions)
 description: Platform for deploying and routing GPU-accelerated inference, streaming, and batch workloads at scale.
 license: Apache-2.0
+category: Optimized Inference
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/nvcf
 ---
 name: Exemplar Performance
 description: Ready-to-use recipes for evaluating AI use case performance across hardware and software combinations. Renamed from dgxc-benchmarking.
 license: unknown
+category: Validation & Testing
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/exemplar-performance
 ---
 name: DPF (DOCA Platform Framework)
 description: Manages provisioning and service orchestration for BlueField DPUs.
 license: Apache-2.0
+category: Cluster Orchestration & Provisioning
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/doca-platform
 ---
 name: NiCo REST (Infra Controller REST)
 description: NVIDIA Infra Controller REST API. Public but archived; disposition (move, stay archived, or superseded) is an open question in the Org POR.
 license: Apache-2.0
+category: Cluster Orchestration & Provisioning
 status: archived, NVIDIA org
 url: https://github.com/NVIDIA/infra-controller-rest
 ---
 name: AI Cloud-Ready Validation
 description: Validation and management tools for NVIDIA AI Cloud environments. Renamed from ISV-NCP-Validation-Suite.
 license: Apache-2.0
+category: Validation & Testing
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/ai-cloud-validation
 ---
 name: Kata Containers (NVIDIA fork)
 description: NVIDIA's fork of the lightweight-VM container runtime Kata Containers.
 license: Apache-2.0
+category: Security & Confidential Computing
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/kata-containers
 ---
 name: DSX-DOCS
 description: DSX common and cross-component documentation. Deliberately kept private/internal, the repo the DSX AI Factory org proposal keeps non-public.
 license: unknown
+category: Documentation
 status: internal, NVIDIA org
 url: https://github.com/NVIDIA/dsx-docs
 ---
 name: Project Topograph
 description: Toolkit for discovering cluster network topology. Topology input to KAI Scheduler.
 license: unknown
+category: Cluster Orchestration & Provisioning
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/topograph
 ---
 name: Nautobot FSUs Plugin
 description: Field Serviceable Units data models for Nautobot. Part of the Nautobot NVDataModels family.
 license: unknown
+category: Infrastructure Management
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/nautobot-app-fsus
 ---
 name: Nautobot NVDataModels Plugin
 description: Nautobot plugin providing data models for NVIDIA products.
 license: unknown
+category: Infrastructure Management
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/nautobot-app-nvdatamodels
 ---
 name: Nautobot NATS Broker
 description: Event broker for Nautobot that publishes events to NATS. Part of the Nautobot NVDataModels family.
 license: unknown
+category: Infrastructure Management
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/nautobot-broker-nats
 ---
 name: NVTrust Attestation
 description: Ancillary open source software to support confidential computing on NVIDIA GPUs.
 license: Apache-2.0
+category: Security & Confidential Computing
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/nvtrust
 ---
 name: Terraform Provider - MCAHR
 description: Terraform provider for MCAHR. Archived.
 license: Apache-2.0
+category: Developer Tooling
 status: archived, NVIDIA org
 url: https://github.com/NVIDIA/terraform-provider-mcahr
 ---
 name: Terraform Provider - NGC
 description: Terraform provider for managing NGC (NVIDIA GPU Cloud) resources.
 license: Apache-2.0
+category: Developer Tooling
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/terraform-provider-ngc
 ---
 name: Terraform Provider - Shoreline
 description: Terraform provider for Shoreline. Archived.
 license: Apache-2.0
+category: Developer Tooling
 status: archived, NVIDIA org
 url: https://github.com/NVIDIA/terraform-provider-shoreline
 ---
 name: FARM
 description: Job scheduler for cloud-based workloads. Archived.
 license: Apache-2.0
+category: Cluster Orchestration & Provisioning
 status: archived, NVIDIA org
 url: https://github.com/NVIDIA/farm
 ---
 name: Nodewright (Project Skyhook)
 description: Kubernetes Operator to manage node OS customizations.
 license: Apache-2.0
+category: Cluster Orchestration & Provisioning
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/nodewright
 ---
 name: GPU Operator
 description: Creates, configures, and manages GPUs in Kubernetes.
 license: Apache-2.0
+category: Cluster Orchestration & Provisioning
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/gpu-operator
 ---
 name: NIM Operator
 description: Operator for deployment and maintenance of NVIDIA NIMs and NeMo microservices in Kubernetes.
 license: Apache-2.0
+category: Optimized Inference
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/k8s-nim-operator
 ---
 name: Multi Storage Client (MSC)
 description: Unified high-performance Python client for object and file stores.
 license: Apache-2.0
+category: Infrastructure Management
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/multi-storage-client
 ---
 name: Omniverse DSX Blueprint
 description: Omniverse Libraries and OpenUSD workflows for coordinated AI factory planning and digital twins.
 license: unknown
+category: Simulation
 status: open source, NVIDIA-Omniverse-blueprints org
 url: https://github.com/NVIDIA-Omniverse-blueprints/omniverse-dsx-blueprint-for-ai-factories
 ---
 name: AIF Digital Twin Pipeline Samples
 description: Sample scripts and presets for SimReady USD assets in Omniverse, focused on CAD ingestion for AI Factory digital twins.
 license: MIT
+category: Simulation
 status: open source, NVIDIA-Omniverse org
 url: https://github.com/NVIDIA-Omniverse/aif-pipeline-samples
 
@@ -256,42 +296,49 @@ url: https://github.com/NVIDIA-Omniverse/aif-pipeline-samples
 name: KAI Scheduler
 description: Kubernetes-native scheduler for AI workloads at scale. CNCF Sandbox project, a Series of LF Projects, LLC; NVIDIA does not hold the merge gate.
 license: Apache-2.0
+category: Scheduling & Workload Management
 status: foundation-governed (CNCF / Linux Foundation)
 url: https://github.com/kai-scheduler/KAI-Scheduler
 ---
 name: DRA Driver for NVIDIA GPUs
 description: Dynamic Resource Allocation driver for NVIDIA GPUs on Kubernetes, donated to kubernetes-sigs.
 license: Apache-2.0
+category: Cluster Orchestration & Provisioning
 status: foundation-governed (Kubernetes SIGs / CNCF)
 url: https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu
 ---
 name: Kata Containers
 description: Standard implementation of lightweight VMs with container-like performance and VM-grade isolation. The upstream community project; NVIDIA's own fork is listed separately in the nvidia-org section.
 license: Apache-2.0
+category: Security & Confidential Computing
 status: open source, community-governed
 url: https://github.com/kata-containers/kata-containers
 ---
 name: GPUd
 description: Automates monitoring, diagnostics, and issue identification for GPUs. DSX OS program name Lepton / GPU'd.
 license: Apache-2.0
+category: Monitoring & Observability
 status: open source, NVIDIA-controlled (leptonai org, not NVIDIA-branded)
 url: https://github.com/leptonai/gpud
 ---
 name: Dynamo
 description: Datacenter-scale distributed inference serving framework.
 license: unknown
+category: Optimized Inference
 status: open source, NVIDIA-controlled (ai-dynamo org, not NVIDIA-branded)
 url: https://github.com/ai-dynamo/dynamo
 ---
 name: Grove
 description: Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
 license: Apache-2.0
+category: Scheduling & Workload Management
 status: open source, NVIDIA-controlled (ai-dynamo org, not NVIDIA-branded)
 url: https://github.com/ai-dynamo/grove
 ---
 name: Run:ai Model Streamer
 description: Fast model-weight loading library for GPU inference serving.
 license: Apache-2.0
+category: Optimized Inference
 status: open source, NVIDIA-controlled (run-ai org, not NVIDIA-branded)
 url: https://github.com/run-ai/runai-model-streamer
 

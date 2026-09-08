@@ -31,9 +31,30 @@ Sections, matching the POR's index scope (90-day plan, s.4):
 | `video` | NVIDIA YouTube channel and the DSX playlist |
 | `documentation` | DSX-DOCS and other reference documentation |
 
-Record fields: `name`, `description`, `license`, `status`, `url`. `license` is the
-SPDX identifier reported by the GitHub API (e.g. `Apache-2.0`, `MIT`) — use `unknown`
-rather than guessing if a repo has no detected license. A section with no confirmed
-entries yet carries a `# TODO(...)` comment line instead of records — the renderer
-prints that section as "to be added" rather than inventing a placeholder link. See
-`repos.txt` for what is still open.
+Record fields: `name`, `description`, `license`, `status`, `url`, plus `category` for
+records in `dsx-ai-factory`, `nvidia-org`, and `upstream` (not required in `video` or
+`documentation`, which don't have components to categorize). `license` is the SPDX
+identifier reported by the GitHub API (e.g. `Apache-2.0`, `MIT`) — use `unknown` rather
+than guessing if a repo has no detected license. A section with no confirmed entries
+yet carries a `# TODO(...)` comment line instead of records — the renderer prints that
+section as "to be added" rather than inventing a placeholder link. See `repos.txt` for
+what is still open.
+
+## Functional grouping (`category`)
+
+The pinned index post groups `dsx-ai-factory`/`nvidia-org`/`upstream` components by
+function, not by which GitHub org holds the repo — see "DSX Stack (1).pptx" (DSX Stack
+Framework deck, reviewed Jul 29 2026), which breaks the Software - Infrastructure and
+Software - Platform layers into named functional categories. `category` must be one of
+the values in `CATEGORY_ORDER` in `site/render_index.py`:
+
+Cluster Orchestration & Provisioning, Infrastructure Management, Monitoring &
+Observability, Resiliency & Remediation, Security & Confidential Computing, Core
+Operations, Scheduling & Workload Management, Optimized Inference, Validation &
+Testing, Simulation, Developer Tooling, Documentation.
+
+The last three (Validation & Testing, Developer Tooling, Documentation) are not in the
+deck's own taxonomy — they exist here for repos that don't map onto a DSX Stack layer
+(test harnesses, CI/IaC tooling, docs repos). Assigning a repo's category is a judgment
+call recorded on the record itself; if a repo plausibly fits two categories, pick the
+one that describes what the repo does for DSX OS, not how it is implemented.
