@@ -15,7 +15,7 @@ follow have something to follow.
 
 ## The count, as of today
 
-38 DSX components are public today, spanning [KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)
+37 DSX components are public today, spanning [KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)
 and the [DRA Driver for NVIDIA GPUs](https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu)
 at the Linux Foundation, to [Dynamo](https://github.com/ai-dynamo/dynamo) in the
 `ai-dynamo` org and [GPU Operator](https://github.com/NVIDIA/gpu-operator) in the
@@ -40,7 +40,7 @@ Manager](https://github.com/dsx-ai-factory/nv-config-manager), the Nautobot
 NVDataModels family), monitoring and observability ([NVSentinel](https://github.com/NVIDIA/NVSentinel),
 Fleet Intelligence), scheduling and inference (KAI Scheduler, Grove, Dynamo, [Run:ai
 Model Streamer](https://github.com/run-ai/runai-model-streamer)), and security
-([NVTrust Attestation](https://github.com/NVIDIA/nvtrust), the Kata Containers forks).
+([NVTrust Attestation](https://github.com/NVIDIA/nvtrust), NVIDIA's Kata Containers fork).
 
 DSX Exchange has one component public so far: the event bus and schemas in
 DSX Exchange itself. DSX Sim has two, both Omniverse-based (the [DSX Blueprint for AI
