@@ -54,7 +54,7 @@ status: open source
 url: https://github.com/dsx-ai-factory/nv-rms-client
 ---
 name: nv-config-manager
-description: Switch infrastructure config manager (KIWI). Note: the DSX OS Programs portal links the KIWI program to a different, internal/archived repo, NVIDIA/kiwi-platform, whose description ("network automation platform... datacenter networks") does not obviously match this repo. Unresolved whether these are the same project under two names or two different things; needs a human call, not a guess.
+description: Switch infrastructure config manager for large-scale datacenter operations.
 license: Apache-2.0
 category: Infrastructure Management
 status: open source
@@ -160,7 +160,7 @@ status: open source, NVIDIA org
 url: https://github.com/NVIDIA/doca-platform
 ---
 name: NiCo REST (Infra Controller REST)
-description: NVIDIA Infra Controller REST API. Public but archived; disposition (move, stay archived, or superseded) is an open question in the Org POR.
+description: NVIDIA Infra Controller REST API. Public but archived; whether it moves, stays archived, or is superseded is still an open decision.
 license: Apache-2.0
 category: Cluster Orchestration & Provisioning
 status: archived, NVIDIA org
@@ -434,13 +434,12 @@ url: https://docs.nvidia.com/dsx
 #      NVIDIA/kata-containers, stays a separate nvidia-org entry) and
 #      leptonai/gpud (the portal's "GPU'd" program, matches "Lepton" in the
 #      source doc's roadmap; non-NVIDIA org, so upstream not nvidia-org).
-#    - NVIDIA/kiwi-platform, which the portal links for the KIWI program, is
-#      internal AND archived, and its description ("network automation
-#      platform... datacenter networks") does not obviously match
-#      dsx-ai-factory/nv-config-manager, which is also called KIWI in this
-#      file (note in the dsx-ai-factory section). Not added: internal,
-#      archived, and possibly a different project reusing the same codename.
-#      Needs a human call, not a guess, on whether these are the same thing.
+#    - The portal links one program's row to an internal, non-public,
+#      archived repo whose description doesn't obviously match
+#      dsx-ai-factory/nv-config-manager. Not added: internal repo, and
+#      possibly a different project entirely. Needs a human call, not a
+#      guess, on whether these are the same thing — ask Jason, don't name
+#      the internal repo or its internal codename in this public file.
 #    - The portal's own "Grove" row links to ai-dynamo/dynamo, not
 #      ai-dynamo/grove, which looks like a copy-paste error in the portal
 #      data. Kept the ai-dynamo/grove entry already in this file (matches the
