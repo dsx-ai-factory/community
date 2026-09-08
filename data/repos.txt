@@ -25,35 +25,35 @@ category: Infrastructure Management
 status: open source
 url: https://github.com/dsx-ai-factory/nv-redfish
 ---
-name: fleet-intelligence-agent
+name: Fleet Intelligence
 description: Host agent for GPU telemetry collection and attestation.
 license: Apache-2.0
 category: Monitoring and Observability
 status: open source
 url: https://github.com/dsx-ai-factory/fleet-intelligence-agent
 ---
-name: infra-controller
-description: Hardware lifecycle management and multitenant networking (NiCo / Carbide).
+name: NiCo
+description: Hardware lifecycle management and multitenant networking. Includes the REST API; the separate NVIDIA/infra-controller-rest repo is archived and superseded by this repo's own rest-api directory.
 license: Apache-2.0
 category: Cluster Orchestration and Provisioning
 status: open source
 url: https://github.com/dsx-ai-factory/infra-controller
 ---
-name: nv-rms
+name: Rack Management Service (RMS)
 description: NVIDIA Rack Management Service.
 license: Apache-2.0
 category: Infrastructure Management
 status: open source
 url: https://github.com/dsx-ai-factory/nv-rms
 ---
-name: nv-rms-client
+name: RMS Client
 description: Rust language client crate for NVIDIA Rack Management Service.
 license: Apache-2.0
 category: Infrastructure Management
 status: open source
 url: https://github.com/dsx-ai-factory/nv-rms-client
 ---
-name: nv-config-manager
+name: Switch Infrastructure Config Manager
 description: Switch infrastructure config manager for large-scale datacenter operations.
 license: Apache-2.0
 category: Infrastructure Management
@@ -67,49 +67,49 @@ category: Monitoring and Observability
 status: open source
 url: https://github.com/dsx-ai-factory/nv-telemetry
 ---
-name: dsx-exchange
+name: DSX Exchange
 description: DSX Exchange (event bus and schemas).
 license: Apache-2.0
 category: Core Operations
 status: open source
 url: https://github.com/dsx-ai-factory/dsx-exchange
 ---
-name: dsx-github-actions
+name: DSX GitHub Actions
 description: Shared GitHub Actions CI library for DSX.
 license: Apache-2.0
 category: Developer Tooling
 status: open source
 url: https://github.com/dsx-ai-factory/dsx-github-actions
 ---
-name: attribution
+name: Attribution (FACT)
 description: NVIDIA Attribution (FACT). Private GitHub collaboration with customers.
 license: unknown
 category: Monitoring and Observability
 status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/attribution
 ---
-name: health-validation
+name: Health Validation
 description: Hardware health check catalog and evaluation engine for NVIDIA GPU nodes.
 license: unknown
 category: Monitoring and Observability
 status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/health-validation
 ---
-name: fleet-intelligence-oob-collector
+name: Fleet Intelligence OOB Collector
 description: Fleet Intelligence out-of-band collector for BMC inventory, attestation, and telemetry.
 license: Apache-2.0
 category: Monitoring and Observability
 status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/fleet-intelligence-oob-collector
 ---
-name: run-ai
+name: Run:ai
 description: Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org).
 license: Apache-2.0
 category: Scheduling and Workload Management
 status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/run-ai
 ---
-name: testwave
+name: TestWave
 description: Cloud-native platform for automated testing across Kubernetes clusters.
 license: Apache-2.0
 category: Validation and Testing
@@ -158,13 +158,6 @@ license: Apache-2.0
 category: Cluster Orchestration and Provisioning
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/doca-platform
----
-name: NiCo REST (Infra Controller REST, superseded)
-description: NVIDIA Infra Controller REST API. Archived; superseded by the rest-api directory now built and deployed from dsx-ai-factory/infra-controller itself.
-license: Apache-2.0
-category: Cluster Orchestration and Provisioning
-status: archived, NVIDIA org
-url: https://github.com/NVIDIA/infra-controller-rest
 ---
 name: AI Cloud-Ready Validation
 description: Validation and management tools for NVIDIA AI Cloud environments. Renamed from ISV-NCP-Validation-Suite.
@@ -415,17 +408,17 @@ url: https://docs.nvidia.com/dsx
 #    dsx-ai-factory per note 1, not to a same-org rename). Current names used
 #    above; old names kept here only as a paper trail.
 #
-# 7. NVIDIA/infra-controller-rest is public but archived. Included above with
-#    status "archived" per the source doc's own judgment call ("counted here
-#    because it is public today"). If archived repos are ruled out of scope,
-#    remove this record. UPDATE 2026-09-08: the "disposition" question this
-#    note originally flagged as open is resolved - checked
-#    dsx-ai-factory/infra-controller directly and it has its own top-level
-#    rest-api/ directory, and its README documents "NICo REST" as one of
-#    three layers (Common services / NICo Core / NICo REST) built and
-#    deployed from that same repo. The REST API has been folded into the
-#    main repo; NVIDIA/infra-controller-rest is superseded, not just archived
-#    pending a decision.
+# 7. NVIDIA/infra-controller-rest was initially included above as a separate
+#    "archived" record, per the source doc's own judgment call ("counted
+#    here because it is public today"), with its disposition (move, stay
+#    archived, or superseded) flagged as an open question. UPDATE
+#    2026-09-08: resolved and removed. Checked dsx-ai-factory/infra-controller
+#    (NiCo) directly: it has its own top-level rest-api/ directory, and its
+#    README documents "NICo REST" as one of three layers (Common services /
+#    NICo Core / NICo REST) built and deployed from that same repo. The REST
+#    API has been folded into NiCo itself; NVIDIA/infra-controller-rest is
+#    superseded, not a separate live component, so it no longer gets its own
+#    index entry. Noted instead in NiCo's own description.
 #
 # 8. Reconciled 2026-09-08 against the canonical DSX OS Programs portal export
 #    (dsx-oss-programs-2026-09-08.csv, 64 DSX-tagged programs), the source the

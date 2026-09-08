@@ -20,9 +20,9 @@ and the [DRA Driver for NVIDIA GPUs](https://github.com/kubernetes-sigs/dra-driv
 at the Linux Foundation, to [Dynamo](https://github.com/ai-dynamo/dynamo) in the
 `ai-dynamo` org and [GPU Operator](https://github.com/NVIDIA/gpu-operator) in the
 `NVIDIA` org, to the first components that have already moved into `dsx-ai-factory`
-itself: [infra-controller](https://github.com/dsx-ai-factory/infra-controller),
-[fleet-intelligence-agent](https://github.com/dsx-ai-factory/fleet-intelligence-agent),
-[dsx-exchange](https://github.com/dsx-ai-factory/dsx-exchange), and others. Most of
+itself: [NiCo](https://github.com/dsx-ai-factory/infra-controller),
+[Fleet Intelligence](https://github.com/dsx-ai-factory/fleet-intelligence-agent),
+[DSX Exchange](https://github.com/dsx-ai-factory/dsx-exchange), and others. Most of
 what's public today is still homed outside `dsx-ai-factory`, split across the main
 `NVIDIA` org and several other orgs (`ai-dynamo`, `run-ai`, `leptonai`,
 `kai-scheduler`, `kubernetes-sigs`, and the `NVIDIA-Omniverse` orgs). That migration
@@ -33,7 +33,7 @@ tracks it as it happens.
 
 Sorted by DSX brand rather than by which GitHub org happens to hold the repo, most of
 what's public clusters into DSX OS: cluster orchestration and provisioning (GPU
-Operator, the DRA Driver, [Project Topograph](https://github.com/NVIDIA/topograph),
+Operator, the DRA Driver, [Topograph](https://github.com/NVIDIA/topograph),
 [Nodewright](https://github.com/NVIDIA/nodewright)), infrastructure management
 (the Rack Management Service and its client, [Switch Infrastructure Config
 Manager](https://github.com/dsx-ai-factory/nv-config-manager), the Nautobot
@@ -43,7 +43,7 @@ Model Streamer](https://github.com/run-ai/runai-model-streamer)), and security
 ([NVTrust Attestation](https://github.com/NVIDIA/nvtrust), the Kata Containers forks).
 
 DSX Exchange has one component public so far: the event bus and schemas in
-`dsx-exchange`. DSX Sim has two, both Omniverse-based (the [DSX Blueprint for AI
+DSX Exchange itself. DSX Sim has two, both Omniverse-based (the [DSX Blueprint for AI
 Factories](https://github.com/NVIDIA-Omniverse-blueprints/omniverse-dsx-blueprint-for-ai-factories)
 and the [AIF Digital Twin Pipeline Samples](https://github.com/NVIDIA-Omniverse/aif-pipeline-samples)).
 DSX Flex and DSX MaxLPS, the power and cooling side of DSX, don't have open-source
