@@ -40,7 +40,7 @@ each covering part of that scope:
 Some of DSX is open source, alongside domains such as hardware and facilities that are
 not released as source code by their nature. DSX OS and DSX Exchange are where the
 open-source components are concentrated: as of this page's last render, DSX OS
-accounts for 43 open-source components and DSX Exchange
+accounts for 41 open-source components and DSX Exchange
 1, which is why they are highlighted above. DSX Flex and
 DSX MaxLPS do not have open-source components in this index yet. The full list, each
 shown against the DSX layer it occupies, is below.
@@ -87,7 +87,6 @@ shown against the DSX layer it occupies, is below.
 
 - **[Kata Containers (NVIDIA fork)](https://github.com/NVIDIA/kata-containers)**: NVIDIA's fork of the lightweight-VM container runtime Kata Containers. (Apache-2.0, open source, NVIDIA org)
 - **[NVTrust Attestation](https://github.com/NVIDIA/nvtrust)**: Ancillary open source software to support confidential computing on NVIDIA GPUs. (Apache-2.0, open source, NVIDIA org)
-- **[Kata Containers](https://github.com/kata-containers/kata-containers)**: Standard implementation of lightweight VMs with container-like performance and VM-grade isolation. The upstream community project; NVIDIA's own fork is listed separately in the nvidia-org section. (Apache-2.0, open source, community-governed)
 
 ### ![Core Operations icon](content/posts/assets/icons/core-operations.svg) Core Operations
 
@@ -95,7 +94,6 @@ shown against the DSX layer it occupies, is below.
 
 ### ![Scheduling and Workload Management icon](content/posts/assets/icons/scheduling-and-workload-management.svg) Scheduling and Workload Management
 
-- **[Run:ai](https://github.com/dsx-ai-factory/run-ai)**: Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org). (Apache-2.0, INTERNAL, TO BE RELEASED, dsx-ai-factory)
 - **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)**: Kubernetes-native scheduler for AI workloads at scale. CNCF Sandbox project, a Series of LF Projects, LLC; NVIDIA does not hold the merge gate. (Apache-2.0, foundation-governed (CNCF / Linux Foundation))
 - **[Grove](https://github.com/ai-dynamo/grove)**: Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling. (Apache-2.0, open source, ai-dynamo org)
 - **[Karta](https://github.com/run-ai/karta)**: Translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure. (Apache-2.0, open source, run-ai org)
