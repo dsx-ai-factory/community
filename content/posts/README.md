@@ -13,6 +13,22 @@ The `components/` and `partners/` subdirectories are not cosmetic: `.github/CODE
 routes them to the product delegate and the partner delegate respectively, so putting an
 article in the right place is what pulls in the right reviewer.
 
+## Images
+
+Reference images with standard Markdown image syntax and a path relative to the
+article: an image at `content/posts/assets/diagram.svg` is referenced from the article
+next to it as `![alt text](assets/diagram.svg)`. `site/build.py` copies each published article's
+own `assets/` directory alongside its rendered HTML.
+
+**Never embed raw `<svg>`, `<style>`, or other non-`<img>` HTML directly in an
+article's Markdown.** GitHub's markdown renderer, both on github.com and the
+`api.github.com/markdown` endpoint this site's build uses, sanitizes those tags out of
+the output but leaves their text content behind, producing garbled visible text and no
+image (confirmed 2026-09-08 rendering `dsx-repo-and-materials-index.md`). An `<img
+src="...">` produced by Markdown image syntax is on the sanitizer's allowlist and
+renders correctly; save the graphic as its own `.svg`/`.png` file under an `assets/`
+directory next to the article instead.
+
 ## Front matter
 
 Every article starts with a `---` delimited header. It is `key: value`, one per line —

@@ -22,39 +22,7 @@ components that provision, orchestrate, monitor, and serve inference across a
 GPU-accelerated cluster. It sits inside the wider DSX Stack, which runs from the
 physical facility up through simulation:
 
-<svg viewBox="0 0 640 300" width="100%" role="img"
-     aria-labelledby="dsx-stack-title dsx-stack-desc" xmlns="http://www.w3.org/2000/svg">
-  <title id="dsx-stack-title">The DSX Stack</title>
-  <desc id="dsx-stack-desc">
-    Five layers, foundation to top: Facilities Infrastructure, Hardware, Software -
-    Infrastructure, Software - Platform, and Simulation, which models the other four.
-  </desc>
-  <style>
-    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    .band { stroke: #ffffff; stroke-width: 2; }
-    .label { font-size: 15px; font-weight: 600; fill: #ffffff; }
-    .sub { font-size: 12px; fill: #f0f0f0; }
-  </style>
-  <rect class="band" x="20" y="10"  width="600" height="50" rx="6" fill="#a8d977"/>
-  <text class="label" x="36" y="32">Simulation</text>
-  <text class="sub"   x="36" y="49">DSX Air, Omniverse Blueprints, SimReady assets</text>
-
-  <rect class="band" x="20" y="64"  width="600" height="50" rx="6" fill="#76b900"/>
-  <text class="label" x="36" y="86">Software &#8212; Platform</text>
-  <text class="sub"   x="36" y="103">Scheduling, workload management, optimized inference</text>
-
-  <rect class="band" x="20" y="118" width="600" height="50" rx="6" fill="#2e6b1f"/>
-  <text class="label" x="36" y="140">Software &#8212; Infrastructure</text>
-  <text class="sub"   x="36" y="157">Orchestration, provisioning, monitoring, resiliency, security</text>
-
-  <rect class="band" x="20" y="172" width="600" height="50" rx="6" fill="#6a6a6a"/>
-  <text class="label" x="36" y="194">Hardware</text>
-  <text class="sub"   x="36" y="211">Compute, network, storage</text>
-
-  <rect class="band" x="20" y="226" width="600" height="50" rx="6" fill="#4a4a4a"/>
-  <text class="label" x="36" y="248">Facilities Infrastructure</text>
-  <text class="sub"   x="36" y="265">Land, connectivity, power, shell</text>
-</svg>
+![The DSX Stack: five layers, Facilities Infrastructure and Hardware at the foundation, Software - Infrastructure and Software - Platform above them, Simulation on top modeling the other four.](assets/dsx-stack.svg)
 
 - **Facilities Infrastructure** covers the physical site: land, connectivity, power, and shell.
 - **Hardware** is compute, network, and storage.

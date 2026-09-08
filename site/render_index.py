@@ -171,7 +171,17 @@ def render_functional_groups(sections):
     return "\n".join(parts)
 
 
-DSX_STACK_SVG = """<svg viewBox="0 0 640 300" width="100%" role="img"
+# A standalone SVG file, referenced from the article as an <img> (see
+# render_index_post). NOT embedded inline in the article's Markdown: GitHub's
+# markdown renderer (both github.com and the api.github.com/markdown endpoint
+# site/build.py itself calls) sanitizes raw <svg>/<style>/<title>/<desc> tags
+# out of rendered Markdown but leaves their TEXT CONTENT behind — verified by
+# rendering this exact content through the API on 2026-09-08 and finding the
+# tags stripped, the CSS and title/desc text left as garbled visible text, and
+# no image. An <img src="..."> tag from Markdown image syntax is on GitHub's
+# sanitizer allowlist and is not affected.
+DSX_STACK_SVG = """<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 300" width="640" height="300" role="img"
      aria-labelledby="dsx-stack-title dsx-stack-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="dsx-stack-title">The DSX Stack</title>
   <desc id="dsx-stack-desc">
@@ -203,7 +213,10 @@ DSX_STACK_SVG = """<svg viewBox="0 0 640 300" width="100%" role="img"
   <rect class="band" x="20" y="226" width="600" height="50" rx="6" fill="#4a4a4a"/>
   <text class="label" x="36" y="248">Facilities Infrastructure</text>
   <text class="sub"   x="36" y="265">Land, connectivity, power, shell</text>
-</svg>"""
+</svg>
+"""
+
+DSX_STACK_SVG_PATH = ROOT / "content" / "posts" / "assets" / "dsx-stack.svg"
 
 
 def render_index_post(sections):
@@ -236,7 +249,7 @@ components that provision, orchestrate, monitor, and serve inference across a
 GPU-accelerated cluster. It sits inside the wider DSX Stack, which runs from the
 physical facility up through simulation:
 
-{DSX_STACK_SVG}
+![The DSX Stack: five layers, Facilities Infrastructure and Hardware at the foundation, Software - Infrastructure and Software - Platform above them, Simulation on top modeling the other four.](assets/dsx-stack.svg)
 
 - **Facilities Infrastructure** covers the physical site: land, connectivity, power, and shell.
 - **Hardware** is compute, network, and storage.
@@ -315,6 +328,10 @@ def main():
     INDEX_POST.parent.mkdir(parents=True, exist_ok=True)
     INDEX_POST.write_text(render_index_post(sections), encoding="utf-8")
     print(f"wrote {INDEX_POST.relative_to(ROOT)}")
+
+    DSX_STACK_SVG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DSX_STACK_SVG_PATH.write_text(DSX_STACK_SVG, encoding="utf-8")
+    print(f"wrote {DSX_STACK_SVG_PATH.relative_to(ROOT)}")
 
     if not README.exists():
         print(f"error: {README} does not exist", file=sys.stderr)

@@ -65,6 +65,11 @@ def main():
 
     for path in sorted(CONTENT.rglob("*.md")):
         text = path.read_text(encoding="utf-8")
+        # Skip fenced/inline code so a doc's illustrative link syntax (e.g. this
+        # very script's own README explaining Markdown image syntax) is not
+        # itself resolved as a real link.
+        text = re.sub(r"```.*?```", "", text, flags=re.S)
+        text = re.sub(r"`[^`]*`", "", text)
         for match in LINK_RE.finditer(text):
             target = match.group(1)
             if target.startswith(("http://", "https://")):

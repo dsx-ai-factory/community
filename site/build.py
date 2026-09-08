@@ -33,6 +33,7 @@ import json
 import os
 import pathlib
 import re
+import shutil
 import sys
 import urllib.error
 import urllib.request
@@ -265,6 +266,15 @@ def main():
             f'<span class="meta">{meta["date"]} &middot; {html.escape(meta["type"])}</span></li>'
         )
         print(f"built {slug.as_posix()}")
+
+        # Copy an article's own assets/ directory (images referenced by relative
+        # path, e.g. ![...](assets/foo.svg)) alongside its rendered HTML. Draft
+        # articles are skipped entirely above, so a draft's assets are not
+        # published early either.
+        assets_dir = path.parent / "assets"
+        if assets_dir.is_dir():
+            shutil.copytree(assets_dir, dest.parent / "assets", dirs_exist_ok=True)
+            print(f"copied {assets_dir.relative_to(ROOT)} -> {(dest.parent / 'assets').relative_to(OUT)}")
 
     if index_rows:
         listing = '<ul class="index">\n' + "\n".join(index_rows) + "\n</ul>"
