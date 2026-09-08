@@ -41,9 +41,9 @@ shown against the DSX layer it occupies, is below.
 - **[AICR (AI Cluster Runtime)](https://github.com/NVIDIA/aicr)**: Tooling for optimized, validated, and reproducible GPU-accelerated AI runtime in Kubernetes. (Apache-2.0, open source, NVIDIA org)
 - **[DPF (DOCA Platform Framework)](https://github.com/NVIDIA/doca-platform)**: Manages provisioning and service orchestration for BlueField DPUs. (Apache-2.0, open source, NVIDIA org)
 - **[NiCo REST (Infra Controller REST)](https://github.com/NVIDIA/infra-controller-rest)**: NVIDIA Infra Controller REST API. Public but archived; whether it moves, stays archived, or is superseded is still an open decision. (Apache-2.0, archived, NVIDIA org)
-- **[Project Topograph](https://github.com/NVIDIA/topograph)**: Toolkit for discovering cluster network topology. Topology input to KAI Scheduler. (unknown, open source, NVIDIA org)
+- **[Topograph](https://github.com/NVIDIA/topograph)**: Toolkit for discovering cluster network topology. Topology input to KAI Scheduler. (unknown, open source, NVIDIA org)
 - **[FARM](https://github.com/NVIDIA/farm)**: Job scheduler for cloud-based workloads. Archived. (Apache-2.0, archived, NVIDIA org)
-- **[Nodewright (Project Skyhook)](https://github.com/NVIDIA/nodewright)**: Kubernetes Operator to manage node OS customizations. (Apache-2.0, open source, NVIDIA org)
+- **[Nodewright](https://github.com/NVIDIA/nodewright)**: Kubernetes Operator to manage node OS customizations. (Apache-2.0, open source, NVIDIA org)
 - **[GPU Operator](https://github.com/NVIDIA/gpu-operator)**: Creates, configures, and manages GPUs in Kubernetes. (Apache-2.0, open source, NVIDIA org)
 - **[DRA Driver for NVIDIA GPUs](https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu)**: Dynamic Resource Allocation driver for NVIDIA GPUs on Kubernetes, donated to kubernetes-sigs. (Apache-2.0, foundation-governed (Kubernetes SIGs / CNCF))
 
@@ -101,7 +101,7 @@ shown against the DSX layer it occupies, is below.
 - **[testwave](https://github.com/dsx-ai-factory/testwave)**: Cloud-native platform for automated testing across Kubernetes clusters. (Apache-2.0, internal, not yet public, dsx-ai-factory)
 - **[Exemplar Performance](https://github.com/NVIDIA/exemplar-performance)**: Ready-to-use recipes for evaluating AI use case performance across hardware and software combinations. Renamed from dgxc-benchmarking. (unknown, open source, NVIDIA org)
 - **[AI Cloud-Ready Validation](https://github.com/NVIDIA/ai-cloud-validation)**: Validation and management tools for NVIDIA AI Cloud environments. Renamed from ISV-NCP-Validation-Suite. (Apache-2.0, open source, NVIDIA org)
-- **[NVIDIA Cluster Readiness Engine (NCRE)](https://github.com/NVIDIA/cluster-readiness-engine)**: Kubernetes controller for GPU cluster burn-in certification, orchestrated benchmarking, and hardware failure detection. (Apache-2.0, open source, NVIDIA org)
+- **[NVIDIA Cluster Readiness Engine (NVCRE)](https://github.com/NVIDIA/cluster-readiness-engine)**: Kubernetes controller for GPU cluster burn-in certification, orchestrated benchmarking, and hardware failure detection. (Apache-2.0, open source, NVIDIA org)
 
 ### ![Simulation icon](assets/icons/simulation.svg) Simulation
 

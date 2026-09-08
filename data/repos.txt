@@ -180,7 +180,7 @@ category: Security and Confidential Computing
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/kata-containers
 ---
-name: Project Topograph
+name: Topograph
 description: Toolkit for discovering cluster network topology. Topology input to KAI Scheduler.
 license: unknown
 category: Cluster Orchestration and Provisioning
@@ -243,7 +243,7 @@ category: Cluster Orchestration and Provisioning
 status: archived, NVIDIA org
 url: https://github.com/NVIDIA/farm
 ---
-name: Nodewright (Project Skyhook)
+name: Nodewright
 description: Kubernetes Operator to manage node OS customizations.
 license: Apache-2.0
 category: Cluster Orchestration and Provisioning
@@ -271,7 +271,7 @@ category: Infrastructure Management
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/multi-storage-client
 ---
-name: NVIDIA Cluster Readiness Engine (NCRE)
+name: NVIDIA Cluster Readiness Engine (NVCRE)
 description: Kubernetes controller for GPU cluster burn-in certification, orchestrated benchmarking, and hardware failure detection.
 license: Apache-2.0
 category: Validation and Testing
