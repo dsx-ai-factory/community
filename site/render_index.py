@@ -421,17 +421,41 @@ def indent_image_paths(markdown, asset_base):
     return markdown.replace("(assets/icons/", f"({asset_base}assets/icons/")
 
 
-def render_index_post(sections):
+def existing_front_matter_dates():
+    """Reuse the committed article's date/last_reviewed if it already exists.
+
+    Stamping "today" on every regeneration meant CI's sync-check (re-render,
+    diff against the committed file) failed on any day after the file was
+    first committed, misreporting a real diff as "data/repos.txt out of sync"
+    and blocking unrelated PRs (CodeRabbit finding, 2026-09-08). Only a
+    genuinely new article should get today's date; an existing one keeps
+    whatever date is already committed, so re-rendering with no data changes
+    produces byte-identical output.
+    """
+    if not INDEX_POST.exists():
+        today = datetime.date.today().isoformat()
+        return today, today
+    text = INDEX_POST.read_text(encoding="utf-8")
+    date_match = re.search(r"^date:\s*(\S+)", text, re.M)
+    reviewed_match = re.search(r"^last_reviewed:\s*(\S+)", text, re.M)
     today = datetime.date.today().isoformat()
+    return (
+        date_match.group(1) if date_match else today,
+        reviewed_match.group(1) if reviewed_match else today,
+    )
+
+
+def render_index_post(sections):
+    date, last_reviewed = existing_front_matter_dates()
     body = render_materials_index_body(sections)
     return f"""---
 title: DSX Repo and Materials Index
-date: {today}
+date: {date}
 authors: DSX AI Factory Community
 type: index
 tier: 1
 pillar: index
-last_reviewed: {today}
+last_reviewed: {last_reviewed}
 draft: true
 ---
 

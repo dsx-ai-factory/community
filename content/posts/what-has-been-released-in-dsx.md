@@ -9,7 +9,7 @@ last_reviewed: 2026-09-08
 draft: true
 ---
 
-Before this repository existed, DSX had already open sourced a lot. This is the
+Before this repository existed, DSX had already open-sourced a lot. This is the
 backlog post: a look at what has shipped so far, so the component release posts that
 follow have something to follow.
 

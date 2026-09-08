@@ -28,11 +28,23 @@ MD_LINK_TARGET = re.compile(r"^(?P<path>[^#]*)(?:#(?P<anchor>.*))?$")
 
 
 def internal_target_exists(path, target):
-    """Resolve a relative Markdown link from the file that contains it."""
+    """Resolve a relative or root-relative Markdown link from the file that
+    contains it.
+
+    A root-relative link (``/foo.html``) is relative to the published site
+    root (``content/posts/``), not the filesystem root — ``path.parent /
+    "/foo"`` would silently discard ``path.parent`` (pathlib's absolute-path
+    join semantics) and check against the machine's actual filesystem root,
+    wrongly flagging every valid root-relative link as broken (CodeRabbit
+    finding, 2026-09-08).
+    """
     clean = MD_LINK_TARGET.match(target).group("path")
     if not clean:
         return True  # pure in-page anchor, e.g. "#section"
-    resolved = (path.parent / clean).resolve()
+    if clean.startswith("/"):
+        resolved = (CONTENT / clean.lstrip("/")).resolve()
+    else:
+        resolved = (path.parent / clean).resolve()
     return resolved.exists()
 
 

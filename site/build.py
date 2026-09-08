@@ -36,6 +36,7 @@ import re
 import shutil
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -86,7 +87,13 @@ def parse_front_matter(text, path):
         if ":" not in line:
             raise BuildError(f"{path}:{lineno}: front matter line is not 'key: value': {line!r}")
         key, _, value = line.partition(":")
-        meta[key.strip()] = value.strip()
+        key = key.strip()
+        if key in meta:
+            # A silent overwrite here could let e.g. a duplicate `draft:` line
+            # mask the intended value and publish something meant to stay
+            # draft (CodeRabbit finding, 2026-09-08).
+            raise BuildError(f"{path}:{lineno}: front matter has {key!r} more than once")
+        meta[key] = value.strip()
 
     body = text[end + len("\n---\n"):]
     return meta, body
@@ -120,6 +127,14 @@ def validate(meta, path):
     if "draft" in meta and meta["draft"].lower() not in ("true", "false"):
         raise BuildError(f"{path}: draft must be 'true' or 'false', got {meta['draft']!r}")
 
+    if "status" in meta and meta["status"] not in ("outdated", "archived"):
+        # A typo here (e.g. "outdate") previously passed silently and just
+        # never rendered the staleness banner the author intended
+        # (CodeRabbit finding, 2026-09-08).
+        raise BuildError(
+            f"{path}: status must be 'outdated' or 'archived' if set, got {meta['status']!r}"
+        )
+
     return meta
 
 
@@ -133,16 +148,37 @@ def is_draft(meta):
     return meta.get("draft", "false").lower() == "true"
 
 
-MD_LINK_RE = re.compile(r"\]\((?!https?://|mailto:)([^)\s#]+)\.md(#[^)\s]*)?\)")
+# Excludes any URI scheme (not just http(s)/mailto — ftp:, tel:, etc.) and
+# protocol-relative URLs (//host/...), not just http(s)/mailto specifically
+# (CodeRabbit finding, 2026-09-08).
+MD_LINK_RE = re.compile(r"\]\((?![A-Za-z][A-Za-z0-9+.\-]*:|//)([^)\s#]+)\.md(#[^)\s]*)?\)")
 
 
-def rewrite_md_links(body):
+def rewrite_md_links(body, article_path, draft_targets):
     """Relative links between articles are written as ``other-post.md`` in the
     source, so they resolve correctly when viewed on GitHub directly — but the
     published site only has the rendered ``.html``. Rewrite them at build time
     rather than asking authors to write two different link forms.
+
+    Also warns (does not fail the build) when a published article links to
+    another article that is still ``draft: true`` — that link will 404 on the
+    live site, since the draft target is never rendered (CodeRabbit finding,
+    2026-09-08: this repo's own materials-index post is linked from other
+    articles while itself in draft).
     """
-    return MD_LINK_RE.sub(lambda m: f"]({m.group(1)}.html{m.group(2) or ''})", body)
+
+    def replace(match):
+        target, anchor = match.group(1), match.group(2) or ""
+        resolved = (article_path.parent / f"{target}.md").resolve()
+        if resolved in draft_targets:
+            print(
+                f"warning: {article_path.relative_to(ROOT)} links to {target}.md, "
+                "which is still draft: true and will not be published (this link will 404)",
+                file=sys.stderr,
+            )
+        return f"]({target}.html{anchor})"
+
+    return MD_LINK_RE.sub(replace, body)
 
 
 def staleness(meta):
@@ -155,7 +191,15 @@ def staleness(meta):
         return "This article describes a component that has been retired. It is kept for reference."
     if meta.get("status") == "outdated":
         note = meta.get("superseded_by")
-        tail = f' Current material: <a href="{html.escape(note)}">{html.escape(note)}</a>.' if note else ""
+        tail = ""
+        if note:
+            # html.escape() alone does not stop a javascript:/data: URI from
+            # being a live href — only an absolute https:// URL is safe to
+            # render as a link here (CodeRabbit finding, 2026-09-08, XSS).
+            if urllib.parse.urlparse(note).scheme == "https":
+                tail = f' Current material: <a href="{html.escape(note)}">{html.escape(note)}</a>.'
+            else:
+                tail = f" Current material: {html.escape(note)}."
         return "The commands, versions, or prerequisites in this article are no longer accurate." + tail
 
     reviewed = datetime.date.fromisoformat(meta["last_reviewed"])
@@ -257,6 +301,7 @@ def main():
 
     draft_count = sum(1 for _, meta, _ in parsed if is_draft(meta))
     published = [p for p in parsed if not is_draft(p[1])]
+    draft_targets = {p.resolve() for p, meta, _ in parsed if is_draft(meta)}
 
     pinned_rows, index_rows = [], []
     for path, meta, body in sorted(published, key=lambda p: p[1]["date"], reverse=True):
@@ -267,14 +312,18 @@ def main():
             page(
                 template,
                 title=meta["title"],
-                body=render_markdown(rewrite_md_links(body), token),
+                body=render_markdown(rewrite_md_links(body, path, draft_targets), token),
                 banner=staleness(meta),
                 meta=meta,
             ),
             encoding="utf-8",
         )
+        # URL-encode before HTML-escaping: the slug comes from the article's own
+        # filename, and an unescaped quote there could break out of the href
+        # attribute (CodeRabbit finding, 2026-09-08, XSS).
+        href = html.escape(urllib.parse.quote(slug.as_posix()))
         row = (
-            f'<li><a href="{slug.as_posix()}">{html.escape(meta["title"])}</a>'
+            f'<li><a href="{href}">{html.escape(meta["title"])}</a>'
             f'<span class="meta">{meta["date"]} &middot; {html.escape(meta["type"])}</span></li>'
         )
         # The "index" type (90-day plan, s.4: "Post 2, the Pinned Index") is

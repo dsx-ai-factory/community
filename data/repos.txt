@@ -54,7 +54,7 @@ status: open source
 url: https://github.com/dsx-ai-factory/nv-rms-client
 ---
 name: nv-config-manager
-description: Switch infrastructure config manager (KIWI). Note: the DSX OS Programs portal links the KIWI program to a different, internal/archived repo, NVIDIA/kiwi-platform. Unresolved whether that is the same project; see the reconciliation notes at the end of this file (note 8).
+description: Switch infrastructure config manager (KIWI). Note: the DSX OS Programs portal links the KIWI program to a different, internal/archived repo, NVIDIA/kiwi-platform, whose description ("network automation platform... datacenter networks") does not obviously match this repo. Unresolved whether these are the same project under two names or two different things; needs a human call, not a guess.
 license: Apache-2.0
 category: Infrastructure Management
 status: open source

@@ -19,9 +19,12 @@ If you find a problem with the repository or the published site — a workflow
 misconfiguration, exposed credentials in an article or example, or content that
 should not be public — report it privately rather than in an issue:
 
-- Use GitHub's **Report a vulnerability** button under the Security tab, if
-  private vulnerability reporting is enabled.
-- Otherwise contact the maintainers directly.
+- GitHub's private vulnerability reporting is **not currently enabled** on this
+  repository (checked 2026-09-08) — the "Report a vulnerability" button will not
+  work until an admin turns it on under Settings → Security.
+- TODO-BEFORE-PUBLIC: enable private vulnerability reporting, or add a real
+  monitored security contact (email or form) here in the meantime —
+  "contact the maintainers directly" is not itself a reachable channel.
 
 ## Credentials in content
 
