@@ -159,8 +159,8 @@ category: Cluster Orchestration and Provisioning
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/doca-platform
 ---
-name: NiCo REST (Infra Controller REST)
-description: NVIDIA Infra Controller REST API. Public but archived; whether it moves, stays archived, or is superseded is still an open decision.
+name: NiCo REST (Infra Controller REST, superseded)
+description: NVIDIA Infra Controller REST API. Archived; superseded by the rest-api directory now built and deployed from dsx-ai-factory/infra-controller itself.
 license: Apache-2.0
 category: Cluster Orchestration and Provisioning
 status: archived, NVIDIA org
@@ -418,7 +418,14 @@ url: https://docs.nvidia.com/dsx
 # 7. NVIDIA/infra-controller-rest is public but archived. Included above with
 #    status "archived" per the source doc's own judgment call ("counted here
 #    because it is public today"). If archived repos are ruled out of scope,
-#    remove this record.
+#    remove this record. UPDATE 2026-09-08: the "disposition" question this
+#    note originally flagged as open is resolved - checked
+#    dsx-ai-factory/infra-controller directly and it has its own top-level
+#    rest-api/ directory, and its README documents "NICo REST" as one of
+#    three layers (Common services / NICo Core / NICo REST) built and
+#    deployed from that same repo. The REST API has been folded into the
+#    main repo; NVIDIA/infra-controller-rest is superseded, not just archived
+#    pending a decision.
 #
 # 8. Reconciled 2026-09-08 against the canonical DSX OS Programs portal export
 #    (dsx-oss-programs-2026-09-08.csv, 64 DSX-tagged programs), the source the
