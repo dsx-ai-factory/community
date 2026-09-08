@@ -246,7 +246,7 @@ def main():
     draft_count = sum(1 for _, meta, _ in parsed if is_draft(meta))
     published = [p for p in parsed if not is_draft(p[1])]
 
-    index_rows = []
+    pinned_rows, index_rows = [], []
     for path, meta, body in sorted(published, key=lambda p: p[1]["date"], reverse=True):
         slug = path.relative_to(CONTENT).with_suffix(".html")
         dest = OUT / slug
@@ -261,10 +261,14 @@ def main():
             ),
             encoding="utf-8",
         )
-        index_rows.append(
+        row = (
             f'<li><a href="{slug.as_posix()}">{html.escape(meta["title"])}</a>'
             f'<span class="meta">{meta["date"]} &middot; {html.escape(meta["type"])}</span></li>'
         )
+        # The "index" type (90-day plan, s.4: "Post 2, the Pinned Index") is
+        # pinned above the chronological feed rather than sorted into it by
+        # date, so it stays the first thing a homepage visitor sees.
+        (pinned_rows if meta["type"] == "index" else index_rows).append(row)
         print(f"built {slug.as_posix()}")
 
         # Copy an article's own assets/ directory (images referenced by relative
@@ -276,10 +280,16 @@ def main():
             shutil.copytree(assets_dir, dest.parent / "assets", dirs_exist_ok=True)
             print(f"copied {assets_dir.relative_to(ROOT)} -> {(dest.parent / 'assets').relative_to(OUT)}")
 
+    body_parts = [
+        "<p>Articles and discussion about the open-source components of the "
+        "NVIDIA DSX AI Factory.</p>"
+    ]
+    if pinned_rows:
+        body_parts.append('<ul class="index index-pinned">\n' + "\n".join(pinned_rows) + "\n</ul>")
     if index_rows:
-        listing = '<ul class="index">\n' + "\n".join(index_rows) + "\n</ul>"
-    else:
-        listing = (
+        body_parts.append('<ul class="index">\n' + "\n".join(index_rows) + "\n</ul>")
+    elif not pinned_rows:
+        body_parts.append(
             "<p>No articles have been published yet. "
             '<a href="https://github.com/dsx-ai-factory/community/discussions">'
             "Join the discussion</a> in the meantime.</p>"
@@ -289,15 +299,15 @@ def main():
         page(
             template,
             title="DSX AI Factory Community",
-            body=(
-                "<p>Articles and discussion about the open-source components of the "
-                "NVIDIA DSX AI Factory.</p>\n" + listing
-            ),
+            body="\n".join(body_parts),
             is_index=True,
         ),
         encoding="utf-8",
     )
-    print(f"built index.html ({len(published)} article(s), {draft_count} draft(s) excluded)")
+    print(
+        f"built index.html ({len(index_rows)} article(s), {len(pinned_rows)} pinned, "
+        f"{draft_count} draft(s) excluded)"
+    )
     return 0
 
 
