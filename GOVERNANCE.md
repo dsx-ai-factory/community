@@ -48,18 +48,22 @@ engineer is a content approver by accident.
    - approval from the relevant **product delegate** if it describes a component;
    - approval from the relevant **partner delegate** if it names a partner or customer.
    CODEOWNERS routes these automatically based on the paths touched.
-4. **Merge and publish.** A maintainer merges. Publishing follows from the merge —
-   the site builds from `main`. No separate publish step, and no publishing from a
-   branch.
+4. **Merge.** A maintainer merges. There is no separate publish step and no publishing
+   from a branch — the site always builds from `main`. Whether the merged article
+   actually appears on the site depends on its `draft` flag (see below).
 
 Small corrections — typos, broken links, stale version numbers — skip step 1 and need
 only a single approval.
 
 ## Publishing schedule
 
-Articles are published against the content roadmap in the POR rather than on merge-when-ready.
-The editor owns the calendar and holds merged-but-unpublished work in the target window
-where a launch date depends on it.
+Merging is not the same as publishing. Articles are published against the content
+roadmap in the POR rather than on merge-when-ready: a pull request can merge with
+`draft: true` still set in its front matter, and `site/build.py` excludes any draft
+article from the rendered site regardless of what's on `main`. The editor owns the
+calendar — when an article's target window arrives, flipping `draft` to `false` (a
+small follow-up pull request, single approval, same as a typo fix) is what actually
+publishes it. This is how merged-but-unpublished work is held for a launch date.
 
 ## Marking outdated content
 
