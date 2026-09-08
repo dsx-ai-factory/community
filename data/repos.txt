@@ -102,6 +102,13 @@ category: Monitoring and Observability
 status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/fleet-intelligence-oob-collector
 ---
+name: Run:ai
+description: Run:ai AI workload orchestration platform for Kubernetes, the core control plane. No public core Run:ai repo exists yet; the run-ai org's public repos (Run:ai Model Streamer, Karta) are separate sub-tools, not this platform itself.
+license: Apache-2.0
+category: Scheduling and Workload Management
+status: INTERNAL, TO BE RELEASED
+url: https://github.com/dsx-ai-factory/run-ai
+---
 name: TestWave
 description: Cloud-native platform for automated testing across Kubernetes clusters.
 license: Apache-2.0
