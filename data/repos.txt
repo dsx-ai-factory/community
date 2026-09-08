@@ -85,35 +85,35 @@ name: attribution
 description: NVIDIA Attribution (FACT). Private GitHub collaboration with customers.
 license: unknown
 category: Monitoring and Observability
-status: internal, not yet public
+status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/attribution
 ---
 name: health-validation
 description: Hardware health check catalog and evaluation engine for NVIDIA GPU nodes.
 license: unknown
 category: Monitoring and Observability
-status: internal, not yet public
+status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/health-validation
 ---
 name: fleet-intelligence-oob-collector
 description: Fleet Intelligence out-of-band collector for BMC inventory, attestation, and telemetry.
 license: Apache-2.0
 category: Monitoring and Observability
-status: internal, not yet public
+status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/fleet-intelligence-oob-collector
 ---
 name: run-ai
 description: Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org).
 license: Apache-2.0
 category: Scheduling and Workload Management
-status: internal, not yet public
+status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/run-ai
 ---
 name: testwave
 description: Cloud-native platform for automated testing across Kubernetes clusters.
 license: Apache-2.0
 category: Validation and Testing
-status: internal, not yet public
+status: INTERNAL, TO BE RELEASED
 url: https://github.com/dsx-ai-factory/testwave
 ---
 name: community
