@@ -48,7 +48,7 @@ status: open source
 url: https://github.com/dsx-ai-factory/nv-rms-client
 ---
 name: nv-config-manager
-description: Switch infrastructure config manager (KIWI).
+description: Switch infrastructure config manager (KIWI). Note: the DSX OS Programs portal links the KIWI program to a different, internal/archived repo, NVIDIA/kiwi-platform. Unresolved whether that is the same project; see the reconciliation notes at the end of this file (note 8).
 license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/nv-config-manager
@@ -162,6 +162,84 @@ license: unknown
 status: internal, NVIDIA org
 url: https://github.com/NVIDIA/dsx-docs
 ---
+name: Project Topograph
+description: Toolkit for discovering cluster network topology. Topology input to KAI Scheduler.
+license: unknown
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/topograph
+---
+name: Nautobot FSUs Plugin
+description: Field Serviceable Units data models for Nautobot. Part of the Nautobot NVDataModels family.
+license: unknown
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/nautobot-app-fsus
+---
+name: Nautobot NVDataModels Plugin
+description: Nautobot plugin providing data models for NVIDIA products.
+license: unknown
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/nautobot-app-nvdatamodels
+---
+name: Nautobot NATS Broker
+description: Event broker for Nautobot that publishes events to NATS. Part of the Nautobot NVDataModels family.
+license: unknown
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/nautobot-broker-nats
+---
+name: NVTrust Attestation
+description: Ancillary open source software to support confidential computing on NVIDIA GPUs.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/nvtrust
+---
+name: Terraform Provider - MCAHR
+description: Terraform provider for MCAHR. Archived.
+license: Apache-2.0
+status: archived, NVIDIA org
+url: https://github.com/NVIDIA/terraform-provider-mcahr
+---
+name: Terraform Provider - NGC
+description: Terraform provider for managing NGC (NVIDIA GPU Cloud) resources.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/terraform-provider-ngc
+---
+name: Terraform Provider - Shoreline
+description: Terraform provider for Shoreline. Archived.
+license: Apache-2.0
+status: archived, NVIDIA org
+url: https://github.com/NVIDIA/terraform-provider-shoreline
+---
+name: FARM
+description: Job scheduler for cloud-based workloads. Archived.
+license: Apache-2.0
+status: archived, NVIDIA org
+url: https://github.com/NVIDIA/farm
+---
+name: Nodewright (Project Skyhook)
+description: Kubernetes Operator to manage node OS customizations.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/nodewright
+---
+name: GPU Operator
+description: Creates, configures, and manages GPUs in Kubernetes.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/gpu-operator
+---
+name: NIM Operator
+description: Operator for deployment and maintenance of NVIDIA NIMs and NeMo microservices in Kubernetes.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/k8s-nim-operator
+---
+name: Multi Storage Client (MSC)
+description: Unified high-performance Python client for object and file stores.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/multi-storage-client
+---
 name: Omniverse DSX Blueprint
 description: Omniverse Libraries and OpenUSD workflows for coordinated AI factory planning and digital twins.
 license: unknown
@@ -186,6 +264,18 @@ description: Dynamic Resource Allocation driver for NVIDIA GPUs on Kubernetes, d
 license: Apache-2.0
 status: foundation-governed (Kubernetes SIGs / CNCF)
 url: https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu
+---
+name: Kata Containers
+description: Standard implementation of lightweight VMs with container-like performance and VM-grade isolation. The upstream community project; NVIDIA's own fork is listed separately in the nvidia-org section.
+license: Apache-2.0
+status: open source, community-governed
+url: https://github.com/kata-containers/kata-containers
+---
+name: GPUd
+description: Automates monitoring, diagnostics, and issue identification for GPUs. DSX OS program name Lepton / GPU'd.
+license: Apache-2.0
+status: open source, NVIDIA-controlled (leptonai org, not NVIDIA-branded)
+url: https://github.com/leptonai/gpud
 ---
 name: Dynamo
 description: Datacenter-scale distributed inference serving framework.
@@ -253,11 +343,14 @@ url: https://github.com/run-ai/runai-model-streamer
 #    NVIDIA/topograph (167 stars). That is a different question from "does this
 #    community repo's pointer index link to it": dra-driver-nvidia-gpu is
 #    included above because the 90-day plan already names it explicitly
-#    ("KAI Scheduler and DRA Driver, both at the Linux Foundation" — s.4).
-#    nixl, aiperf, and topograph are NOT named in the 90-day plan and are left
-#    out pending a call from Arun/Jason — high-star, plausibly in-scope, but not
-#    on the record as approved for this index. Do not add them without that
-#    call; do not forget they exist either.
+#    ("KAI Scheduler and DRA Driver, both at the Linux Foundation", s.4).
+#    NVIDIA/topograph is included as of the 2026-09-08 portal reconciliation
+#    (note 8): the canonical DSX OS Programs portal itself lists it as a
+#    Graduated DSX OS program, which settles the "does it belong in our
+#    pointer index" question independent of the org-consolidation ruling.
+#    ai-dynamo/nixl and ai-dynamo/aiperf are NOT in the portal export and are
+#    NOT named in the 90-day plan, so they stay out pending a call from
+#    Arun/Jason. Do not add them without that call; do not forget they exist.
 #
 # 6. NVIDIA/dgxc-benchmarking was renamed to NVIDIA/exemplar-performance, and
 #    NVIDIA/ISV-NCP-Validation-Suite to NVIDIA/ai-cloud-validation (also
@@ -269,3 +362,34 @@ url: https://github.com/run-ai/runai-model-streamer
 #    status "archived" per the source doc's own judgment call ("counted here
 #    because it is public today"). If archived repos are ruled out of scope,
 #    remove this record.
+#
+# 8. Reconciled 2026-09-08 against the canonical DSX OS Programs portal export
+#    (dsx-oss-programs-2026-09-08.csv, 64 DSX-tagged programs), the source the
+#    reconciliation doc itself calls authoritative for the program list. Every
+#    program row with a github.com link was cross-checked live before being
+#    added. Findings:
+#    - 14 more repos added to nvidia-org: Project Topograph (settles note 5),
+#      the three-repo Nautobot NVDataModels family, NVTrust Attestation, three
+#      Terraform providers (mcahr and shoreline are archived), FARM (archived),
+#      Nodewright, GPU Operator, NIM Operator, and Multi Storage Client.
+#    - 2 more added to upstream: kata-containers/kata-containers (the actual
+#      upstream project behind "Confidential Containers"; NVIDIA's own fork,
+#      NVIDIA/kata-containers, stays a separate nvidia-org entry) and
+#      leptonai/gpud (the portal's "GPU'd" program, matches "Lepton" in the
+#      source doc's roadmap; non-NVIDIA org, so upstream not nvidia-org).
+#    - NVIDIA/kiwi-platform, which the portal links for the KIWI program, is
+#      internal AND archived, and its description ("network automation
+#      platform... datacenter networks") does not obviously match
+#      dsx-ai-factory/nv-config-manager, which is also called KIWI in this
+#      file (note in the dsx-ai-factory section). Not added: internal,
+#      archived, and possibly a different project reusing the same codename.
+#      Needs a human call, not a guess, on whether these are the same thing.
+#    - The portal's own "Grove" row links to ai-dynamo/dynamo, not
+#      ai-dynamo/grove, which looks like a copy-paste error in the portal
+#      data. Kept the ai-dynamo/grove entry already in this file (matches the
+#      source doc) rather than following the portal's apparent mistake.
+#    - The portal still links NVIDIA/dgxc-benchmarking and NVIDIA/dsx-exchange
+#      (pre-rename, pre-migration names) for Exemplar Performance and DSX
+#      Exchange. Confirms note 6 and note 1: the portal itself is stale on
+#      these two, and the corrected/redirected URLs already in this file are
+#      used instead.

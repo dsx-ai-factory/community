@@ -25,7 +25,7 @@ components themselves live in their own repositories in the
 | [infra-controller](https://github.com/dsx-ai-factory/infra-controller) | Hardware lifecycle management and multitenant networking (NiCo / Carbide). | Apache-2.0 | open source |
 | [nv-rms](https://github.com/dsx-ai-factory/nv-rms) | NVIDIA Rack Management Service. | Apache-2.0 | open source |
 | [nv-rms-client](https://github.com/dsx-ai-factory/nv-rms-client) | Rust language client crate for NVIDIA Rack Management Service. | Apache-2.0 | open source |
-| [nv-config-manager](https://github.com/dsx-ai-factory/nv-config-manager) | Switch infrastructure config manager (KIWI). | Apache-2.0 | open source |
+| [nv-config-manager](https://github.com/dsx-ai-factory/nv-config-manager) | Switch infrastructure config manager (KIWI). Note: the DSX OS Programs portal links the KIWI program to a different, internal/archived repo, NVIDIA/kiwi-platform. Unresolved whether that is the same project; see the reconciliation notes at the end of this file (note 8). | Apache-2.0 | open source |
 | [nv-telemetry](https://github.com/dsx-ai-factory/nv-telemetry) | Libraries for bare-metal telemetry collection. | Apache-2.0 | open source |
 | [dsx-exchange](https://github.com/dsx-ai-factory/dsx-exchange) | DSX Exchange (event bus and schemas). | Apache-2.0 | open source |
 | [dsx-github-actions](https://github.com/dsx-ai-factory/dsx-github-actions) | Shared GitHub Actions CI library for DSX. | Apache-2.0 | open source |
