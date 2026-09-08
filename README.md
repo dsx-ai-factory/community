@@ -40,7 +40,7 @@ each covering part of that scope:
 Some of DSX is open source, alongside domains such as hardware and facilities that are
 not released as source code by their nature. DSX OS and DSX Exchange are where the
 open-source components are concentrated: as of this page's last render, DSX OS
-accounts for 44 open-source components and DSX Exchange
+accounts for 43 open-source components and DSX Exchange
 1, which is why they are highlighted above. DSX Flex and
 DSX MaxLPS do not have open-source components in this index yet. The full list, each
 shown against the DSX layer it occupies, is below.
@@ -49,10 +49,9 @@ shown against the DSX layer it occupies, is below.
 
 ### ![Cluster Orchestration and Provisioning icon](content/posts/assets/icons/cluster-orchestration-and-provisioning.svg) Cluster Orchestration and Provisioning
 
-- **[infra-controller](https://github.com/dsx-ai-factory/infra-controller)**: Hardware lifecycle management and multitenant networking (NiCo / Carbide). (Apache-2.0, open source, dsx-ai-factory)
+- **[NiCo](https://github.com/dsx-ai-factory/infra-controller)**: Hardware lifecycle management and multitenant networking. Includes the REST API; the separate NVIDIA/infra-controller-rest repo is archived and superseded by this repo's own rest-api directory. (Apache-2.0, open source, dsx-ai-factory)
 - **[AICR (AI Cluster Runtime)](https://github.com/NVIDIA/aicr)**: Tooling for optimized, validated, and reproducible GPU-accelerated AI runtime in Kubernetes. (Apache-2.0, open source, NVIDIA org)
 - **[DPF (DOCA Platform Framework)](https://github.com/NVIDIA/doca-platform)**: Manages provisioning and service orchestration for BlueField DPUs. (Apache-2.0, open source, NVIDIA org)
-- **[NiCo REST (Infra Controller REST, superseded)](https://github.com/NVIDIA/infra-controller-rest)**: NVIDIA Infra Controller REST API. Archived; superseded by the rest-api directory now built and deployed from dsx-ai-factory/infra-controller itself. (Apache-2.0, archived, NVIDIA org)
 - **[Topograph](https://github.com/NVIDIA/topograph)**: Toolkit for discovering cluster network topology. Topology input to KAI Scheduler. (unknown, open source, NVIDIA org)
 - **[FARM](https://github.com/NVIDIA/farm)**: Job scheduler for cloud-based workloads. Archived. (Apache-2.0, archived, NVIDIA org)
 - **[Nodewright](https://github.com/NVIDIA/nodewright)**: Kubernetes Operator to manage node OS customizations. (Apache-2.0, open source, NVIDIA org)
@@ -63,9 +62,9 @@ shown against the DSX layer it occupies, is below.
 
 - **[libredfish](https://github.com/dsx-ai-factory/libredfish)**: A Rust crate for interacting with DMTF Redfish endpoints. (MIT, open source, dsx-ai-factory)
 - **[nv-redfish](https://github.com/dsx-ai-factory/nv-redfish)**: NVIDIA's next-generation Redfish crate. (Apache-2.0, open source, dsx-ai-factory)
-- **[nv-rms](https://github.com/dsx-ai-factory/nv-rms)**: NVIDIA Rack Management Service. (Apache-2.0, open source, dsx-ai-factory)
-- **[nv-rms-client](https://github.com/dsx-ai-factory/nv-rms-client)**: Rust language client crate for NVIDIA Rack Management Service. (Apache-2.0, open source, dsx-ai-factory)
-- **[nv-config-manager](https://github.com/dsx-ai-factory/nv-config-manager)**: Switch infrastructure config manager for large-scale datacenter operations. (Apache-2.0, open source, dsx-ai-factory)
+- **[Rack Management Service (RMS)](https://github.com/dsx-ai-factory/nv-rms)**: NVIDIA Rack Management Service. (Apache-2.0, open source, dsx-ai-factory)
+- **[RMS Client](https://github.com/dsx-ai-factory/nv-rms-client)**: Rust language client crate for NVIDIA Rack Management Service. (Apache-2.0, open source, dsx-ai-factory)
+- **[Switch Infrastructure Config Manager](https://github.com/dsx-ai-factory/nv-config-manager)**: Switch infrastructure config manager for large-scale datacenter operations. (Apache-2.0, open source, dsx-ai-factory)
 - **[Nautobot FSUs Plugin](https://github.com/NVIDIA/nautobot-app-fsus)**: Field Serviceable Units data models for Nautobot. Part of the Nautobot NVDataModels family. (unknown, open source, NVIDIA org)
 - **[Nautobot NVDataModels Plugin](https://github.com/NVIDIA/nautobot-app-nvdatamodels)**: Nautobot plugin providing data models for NVIDIA products. (unknown, open source, NVIDIA org)
 - **[Nautobot NATS Broker](https://github.com/NVIDIA/nautobot-broker-nats)**: Event broker for Nautobot that publishes events to NATS. Part of the Nautobot NVDataModels family. (unknown, open source, NVIDIA org)
@@ -73,11 +72,11 @@ shown against the DSX layer it occupies, is below.
 
 ### ![Monitoring and Observability icon](content/posts/assets/icons/monitoring-and-observability.svg) Monitoring and Observability
 
-- **[fleet-intelligence-agent](https://github.com/dsx-ai-factory/fleet-intelligence-agent)**: Host agent for GPU telemetry collection and attestation. (Apache-2.0, open source, dsx-ai-factory)
+- **[Fleet Intelligence](https://github.com/dsx-ai-factory/fleet-intelligence-agent)**: Host agent for GPU telemetry collection and attestation. (Apache-2.0, open source, dsx-ai-factory)
 - **[nv-telemetry](https://github.com/dsx-ai-factory/nv-telemetry)**: Libraries for bare-metal telemetry collection. (Apache-2.0, open source, dsx-ai-factory)
-- **[attribution](https://github.com/dsx-ai-factory/attribution)**: NVIDIA Attribution (FACT). Private GitHub collaboration with customers. (unknown, INTERNAL, TO BE RELEASED, dsx-ai-factory)
-- **[health-validation](https://github.com/dsx-ai-factory/health-validation)**: Hardware health check catalog and evaluation engine for NVIDIA GPU nodes. (unknown, INTERNAL, TO BE RELEASED, dsx-ai-factory)
-- **[fleet-intelligence-oob-collector](https://github.com/dsx-ai-factory/fleet-intelligence-oob-collector)**: Fleet Intelligence out-of-band collector for BMC inventory, attestation, and telemetry. (Apache-2.0, INTERNAL, TO BE RELEASED, dsx-ai-factory)
+- **[Attribution (FACT)](https://github.com/dsx-ai-factory/attribution)**: NVIDIA Attribution (FACT). Private GitHub collaboration with customers. (unknown, INTERNAL, TO BE RELEASED, dsx-ai-factory)
+- **[Health Validation](https://github.com/dsx-ai-factory/health-validation)**: Hardware health check catalog and evaluation engine for NVIDIA GPU nodes. (unknown, INTERNAL, TO BE RELEASED, dsx-ai-factory)
+- **[Fleet Intelligence OOB Collector](https://github.com/dsx-ai-factory/fleet-intelligence-oob-collector)**: Fleet Intelligence out-of-band collector for BMC inventory, attestation, and telemetry. (Apache-2.0, INTERNAL, TO BE RELEASED, dsx-ai-factory)
 - **[GPUd](https://github.com/leptonai/gpud)**: Automates monitoring, diagnostics, and issue identification for GPUs. DSX OS program name Lepton / GPU'd. (Apache-2.0, open source, leptonai org)
 
 ### ![Resiliency and Remediation icon](content/posts/assets/icons/resiliency-and-remediation.svg) Resiliency and Remediation
@@ -92,11 +91,11 @@ shown against the DSX layer it occupies, is below.
 
 ### ![Core Operations icon](content/posts/assets/icons/core-operations.svg) Core Operations
 
-- **[dsx-exchange](https://github.com/dsx-ai-factory/dsx-exchange)**: DSX Exchange (event bus and schemas). (Apache-2.0, open source, dsx-ai-factory)
+- **[DSX Exchange](https://github.com/dsx-ai-factory/dsx-exchange)**: DSX Exchange (event bus and schemas). (Apache-2.0, open source, dsx-ai-factory)
 
 ### ![Scheduling and Workload Management icon](content/posts/assets/icons/scheduling-and-workload-management.svg) Scheduling and Workload Management
 
-- **[run-ai](https://github.com/dsx-ai-factory/run-ai)**: Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org). (Apache-2.0, INTERNAL, TO BE RELEASED, dsx-ai-factory)
+- **[Run:ai](https://github.com/dsx-ai-factory/run-ai)**: Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org). (Apache-2.0, INTERNAL, TO BE RELEASED, dsx-ai-factory)
 - **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)**: Kubernetes-native scheduler for AI workloads at scale. CNCF Sandbox project, a Series of LF Projects, LLC; NVIDIA does not hold the merge gate. (Apache-2.0, foundation-governed (CNCF / Linux Foundation))
 - **[Grove](https://github.com/ai-dynamo/grove)**: Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling. (Apache-2.0, open source, ai-dynamo org)
 - **[Karta](https://github.com/run-ai/karta)**: Translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure. (Apache-2.0, open source, run-ai org)
@@ -110,7 +109,7 @@ shown against the DSX layer it occupies, is below.
 
 ### ![Validation and Testing icon](content/posts/assets/icons/validation-and-testing.svg) Validation and Testing
 
-- **[testwave](https://github.com/dsx-ai-factory/testwave)**: Cloud-native platform for automated testing across Kubernetes clusters. (Apache-2.0, INTERNAL, TO BE RELEASED, dsx-ai-factory)
+- **[TestWave](https://github.com/dsx-ai-factory/testwave)**: Cloud-native platform for automated testing across Kubernetes clusters. (Apache-2.0, INTERNAL, TO BE RELEASED, dsx-ai-factory)
 - **[Exemplar Performance](https://github.com/NVIDIA/exemplar-performance)**: Ready-to-use recipes for evaluating AI use case performance across hardware and software combinations. Renamed from dgxc-benchmarking. (unknown, open source, NVIDIA org)
 - **[AI Cloud-Ready Validation](https://github.com/NVIDIA/ai-cloud-validation)**: Validation and management tools for NVIDIA AI Cloud environments. Renamed from ISV-NCP-Validation-Suite. (Apache-2.0, open source, NVIDIA org)
 - **[NVIDIA Cluster Readiness Engine (NVCRE)](https://github.com/NVIDIA/cluster-readiness-engine)**: Kubernetes controller for GPU cluster burn-in certification, orchestrated benchmarking, and hardware failure detection. (Apache-2.0, open source, NVIDIA org)
@@ -122,7 +121,7 @@ shown against the DSX layer it occupies, is below.
 
 ### ![Developer Tooling icon](content/posts/assets/icons/developer-tooling.svg) Developer Tooling
 
-- **[dsx-github-actions](https://github.com/dsx-ai-factory/dsx-github-actions)**: Shared GitHub Actions CI library for DSX. (Apache-2.0, open source, dsx-ai-factory)
+- **[DSX GitHub Actions](https://github.com/dsx-ai-factory/dsx-github-actions)**: Shared GitHub Actions CI library for DSX. (Apache-2.0, open source, dsx-ai-factory)
 - **[Terraform Provider - MCAHR](https://github.com/NVIDIA/terraform-provider-mcahr)**: Terraform provider for MCAHR. Archived. (Apache-2.0, archived, NVIDIA org)
 - **[Terraform Provider - NGC](https://github.com/NVIDIA/terraform-provider-ngc)**: Terraform provider for managing NGC (NVIDIA GPU Cloud) resources. (Apache-2.0, open source, NVIDIA org)
 - **[Terraform Provider - Shoreline](https://github.com/NVIDIA/terraform-provider-shoreline)**: Terraform provider for Shoreline. Archived. (Apache-2.0, archived, NVIDIA org)
