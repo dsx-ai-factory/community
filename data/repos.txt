@@ -343,6 +343,7 @@ url: https://github.com/run-ai/runai-model-streamer
 name: DSX Documentation
 description: Public documentation for all DSX components, reference architectures, and partner resources.
 license: N/A
+category: Documentation
 status: public documentation site
 url: https://docs.nvidia.com/dsx
 
