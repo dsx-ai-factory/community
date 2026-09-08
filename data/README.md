@@ -48,12 +48,12 @@ Framework deck, reviewed Jul 29 2026), which breaks the Software - Infrastructur
 Software - Platform layers into named functional categories. `category` must be one of
 the values in `CATEGORY_ORDER` in `site/render_index.py`:
 
-Cluster Orchestration & Provisioning, Infrastructure Management, Monitoring &
-Observability, Resiliency & Remediation, Security & Confidential Computing, Core
-Operations, Scheduling & Workload Management, Optimized Inference, Validation &
+Cluster Orchestration and Provisioning, Infrastructure Management, Monitoring and
+Observability, Resiliency and Remediation, Security and Confidential Computing, Core
+Operations, Scheduling and Workload Management, Optimized Inference, Validation and
 Testing, Simulation, Developer Tooling, Documentation.
 
-The last three (Validation & Testing, Developer Tooling, Documentation) are not in the
+The last three (Validation and Testing, Developer Tooling, Documentation) are not in the
 deck's own taxonomy — they exist here for repos that don't map onto a DSX Stack layer
 (test harnesses, CI/IaC tooling, docs repos). Assigning a repo's category is a judgment
 call recorded on the record itself; if a repo plausibly fits two categories, pick the

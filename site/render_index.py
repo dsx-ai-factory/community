@@ -48,15 +48,15 @@ CATEGORIZED_SECTIONS = ("dsx-ai-factory", "nvidia-org", "upstream", "documentati
 # platform -> simulation), with two pragmatic buckets tacked on at the end for
 # repos that don't map onto a stack layer.
 CATEGORY_ORDER = [
-    "Cluster Orchestration & Provisioning",
+    "Cluster Orchestration and Provisioning",
     "Infrastructure Management",
-    "Monitoring & Observability",
-    "Resiliency & Remediation",
-    "Security & Confidential Computing",
+    "Monitoring and Observability",
+    "Resiliency and Remediation",
+    "Security and Confidential Computing",
     "Core Operations",
-    "Scheduling & Workload Management",
+    "Scheduling and Workload Management",
     "Optimized Inference",
-    "Validation & Testing",
+    "Validation and Testing",
     "Simulation",
     "Developer Tooling",
     "Documentation",
@@ -68,15 +68,15 @@ CATEGORY_ORDER = [
 # sit on the page background, not a colored band, so unlike BAND_ICON below
 # they don't need recoloring or background stripping.
 CATEGORY_ICON = {
-    "Cluster Orchestration & Provisioning": "Kubernetes.svg",
+    "Cluster Orchestration and Provisioning": "Kubernetes.svg",
     "Infrastructure Management": "Node Settings.svg",
-    "Monitoring & Observability": "Heartrate.svg",
-    "Resiliency & Remediation": "Reload.svg",
-    "Security & Confidential Computing": "Keys.svg",
+    "Monitoring and Observability": "Heartrate.svg",
+    "Resiliency and Remediation": "Reload.svg",
+    "Security and Confidential Computing": "Keys.svg",
     "Core Operations": "Message Broker.svg",
-    "Scheduling & Workload Management": "Gears 1.svg",
+    "Scheduling and Workload Management": "Gears 1.svg",
     "Optimized Inference": "AI Inference.svg",
-    "Validation & Testing": "Checklist.svg",
+    "Validation and Testing": "Checklist.svg",
     "Simulation": "Omniverse.svg",
     "Developer Tooling": "Tooling.svg",
     "Documentation": "File.svg",
@@ -172,7 +172,7 @@ def render_functional_groups(sections):
     Software - Platform into named functional categories (s.18-19) rather than
     by which GitHub org happens to hold the repo. CATEGORY_ORDER in this module
     is that taxonomy, condensed to fit the repos actually in data/repos.txt, plus
-    Validation & Testing, Developer Tooling, and Documentation for repos the
+    Validation and Testing, Developer Tooling, and Documentation for repos the
     deck does not cover. The category assignment for each repo is a judgment
     call recorded as the record's own `category` field in data/repos.txt, not
     re-derived here — change it there, not in this function.
@@ -208,14 +208,14 @@ def render_functional_groups(sections):
 # docs.nvidia.com/dsx) so it is deliberately left out of every bucket below.
 BRAND_CATEGORIES = {
     "DSX OS": [
-        "Cluster Orchestration & Provisioning",
+        "Cluster Orchestration and Provisioning",
         "Infrastructure Management",
-        "Monitoring & Observability",
-        "Resiliency & Remediation",
-        "Security & Confidential Computing",
-        "Scheduling & Workload Management",
+        "Monitoring and Observability",
+        "Resiliency and Remediation",
+        "Security and Confidential Computing",
+        "Scheduling and Workload Management",
         "Optimized Inference",
-        "Validation & Testing",
+        "Validation and Testing",
         "Developer Tooling",
     ],
     "DSX Exchange": ["Core Operations"],
@@ -378,7 +378,7 @@ def render_materials_index_body(sections, asset_base=""):
         if video_records
         else "To be added."
     )
-    return f"""## What is DSX
+    return f"""## What Is DSX
 
 DSX is NVIDIA's overarching brand for AI Factories: it spans hardware, data center
 power and cooling infrastructure, and software, everything needed to plan, build, and
@@ -400,7 +400,7 @@ accounts for {brand_counts['DSX OS']} open-source components and DSX Exchange
 DSX MaxLPS do not have open-source components in this index yet. The full list, each
 shown against the DSX layer it occupies, is below.
 
-## DSX components released as open source, by layer
+## DSX Components Released as Open Source, by Layer
 
 {indent_image_paths(functional_body, asset_base)}
 
@@ -517,6 +517,11 @@ def main():
     print(f"wrote {DSX_STACK_SVG_PATH.relative_to(ROOT)}")
 
     ICON_OUT_DIR.mkdir(parents=True, exist_ok=True)
+    expected_icons = {f"{icon_slug(category)}.svg" for category in CATEGORY_ICON}
+    for stale in ICON_OUT_DIR.glob("*.svg"):
+        if stale.name not in expected_icons:
+            stale.unlink()
+            print(f"removed stale {stale.relative_to(ROOT)}")
     for category, filename in CATEGORY_ICON.items():
         shutil.copyfile(ICON_SRC_DIR / filename, ICON_OUT_DIR / f"{icon_slug(category)}.svg")
     print(f"wrote {len(CATEGORY_ICON)} icon(s) to {ICON_OUT_DIR.relative_to(ROOT)}")
