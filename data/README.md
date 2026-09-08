@@ -31,7 +31,9 @@ Sections, matching the POR's index scope (90-day plan, s.4):
 | `video` | NVIDIA YouTube channel and the DSX playlist |
 | `documentation` | DSX-DOCS and other reference documentation |
 
-Record fields: `name`, `description`, `status`, `url`. A section with no confirmed
+Record fields: `name`, `description`, `license`, `status`, `url`. `license` is the
+SPDX identifier reported by the GitHub API (e.g. `Apache-2.0`, `MIT`) — use `unknown`
+rather than guessing if a repo has no detected license. A section with no confirmed
 entries yet carries a `# TODO(...)` comment line instead of records — the renderer
 prints that section as "to be added" rather than inventing a placeholder link. See
 `repos.txt` for what is still open.

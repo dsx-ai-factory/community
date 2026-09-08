@@ -7,56 +7,67 @@
 ## dsx-ai-factory
 name: libredfish
 description: A Rust crate for interacting with DMTF Redfish endpoints.
+license: MIT
 status: open source
 url: https://github.com/dsx-ai-factory/libredfish
 ---
 name: nv-redfish
 description: NVIDIA's next-generation Redfish crate.
+license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/nv-redfish
 ---
 name: fleet-intelligence-agent
 description: Host agent for GPU telemetry collection and attestation.
+license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/fleet-intelligence-agent
 ---
 name: infra-controller
 description: Hardware lifecycle management and multitenant networking.
+license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/infra-controller
 ---
 name: nv-rms
 description: NVIDIA Rack Management Service.
+license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/nv-rms
 ---
 name: nv-rms-client
 description: Rust language client crate for NVIDIA Rack Management Service.
+license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/nv-rms-client
 ---
 name: nv-config-manager
 description: Switch infrastructure config manager.
+license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/nv-config-manager
 ---
 name: nv-telemetry
 description: Libraries for bare-metal telemetry collection.
+license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/nv-telemetry
 ---
 name: dsx-exchange
 description: DSX Exchange.
+license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/dsx-exchange
 ---
 name: dsx-github-actions
 description: GitHub Actions infrastructure for DSX.
+license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/dsx-github-actions
 ---
 name: community
 description: This repository. Community articles and discussions about the open-source components of the NVIDIA DSX AI Factory.
+license: CC-BY-4.0
 status: internal, not yet public
 url: https://github.com/dsx-ai-factory/community
 

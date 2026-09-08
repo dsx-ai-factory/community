@@ -17,17 +17,17 @@ Edit that file, not this one.
 
 ### dsx-ai-factory repos
 
-- **[libredfish](https://github.com/dsx-ai-factory/libredfish)**: A Rust crate for interacting with DMTF Redfish endpoints. (open source)
-- **[nv-redfish](https://github.com/dsx-ai-factory/nv-redfish)**: NVIDIA's next-generation Redfish crate. (open source)
-- **[fleet-intelligence-agent](https://github.com/dsx-ai-factory/fleet-intelligence-agent)**: Host agent for GPU telemetry collection and attestation. (open source)
-- **[infra-controller](https://github.com/dsx-ai-factory/infra-controller)**: Hardware lifecycle management and multitenant networking. (open source)
-- **[nv-rms](https://github.com/dsx-ai-factory/nv-rms)**: NVIDIA Rack Management Service. (open source)
-- **[nv-rms-client](https://github.com/dsx-ai-factory/nv-rms-client)**: Rust language client crate for NVIDIA Rack Management Service. (open source)
-- **[nv-config-manager](https://github.com/dsx-ai-factory/nv-config-manager)**: Switch infrastructure config manager. (open source)
-- **[nv-telemetry](https://github.com/dsx-ai-factory/nv-telemetry)**: Libraries for bare-metal telemetry collection. (open source)
-- **[dsx-exchange](https://github.com/dsx-ai-factory/dsx-exchange)**: DSX Exchange. (open source)
-- **[dsx-github-actions](https://github.com/dsx-ai-factory/dsx-github-actions)**: GitHub Actions infrastructure for DSX. (open source)
-- **[community](https://github.com/dsx-ai-factory/community)**: This repository. Community articles and discussions about the open-source components of the NVIDIA DSX AI Factory. (internal, not yet public)
+- **[libredfish](https://github.com/dsx-ai-factory/libredfish)**: A Rust crate for interacting with DMTF Redfish endpoints. (MIT, open source)
+- **[nv-redfish](https://github.com/dsx-ai-factory/nv-redfish)**: NVIDIA's next-generation Redfish crate. (Apache-2.0, open source)
+- **[fleet-intelligence-agent](https://github.com/dsx-ai-factory/fleet-intelligence-agent)**: Host agent for GPU telemetry collection and attestation. (Apache-2.0, open source)
+- **[infra-controller](https://github.com/dsx-ai-factory/infra-controller)**: Hardware lifecycle management and multitenant networking. (Apache-2.0, open source)
+- **[nv-rms](https://github.com/dsx-ai-factory/nv-rms)**: NVIDIA Rack Management Service. (Apache-2.0, open source)
+- **[nv-rms-client](https://github.com/dsx-ai-factory/nv-rms-client)**: Rust language client crate for NVIDIA Rack Management Service. (Apache-2.0, open source)
+- **[nv-config-manager](https://github.com/dsx-ai-factory/nv-config-manager)**: Switch infrastructure config manager. (Apache-2.0, open source)
+- **[nv-telemetry](https://github.com/dsx-ai-factory/nv-telemetry)**: Libraries for bare-metal telemetry collection. (Apache-2.0, open source)
+- **[dsx-exchange](https://github.com/dsx-ai-factory/dsx-exchange)**: DSX Exchange. (Apache-2.0, open source)
+- **[dsx-github-actions](https://github.com/dsx-ai-factory/dsx-github-actions)**: GitHub Actions infrastructure for DSX. (Apache-2.0, open source)
+- **[community](https://github.com/dsx-ai-factory/community)**: This repository. Community articles and discussions about the open-source components of the NVIDIA DSX AI Factory. (CC-BY-4.0, internal, not yet public)
 
 ### NVIDIA org repos
 
