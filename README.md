@@ -52,7 +52,7 @@ shown against the DSX layer it occupies, is below.
 - **[infra-controller](https://github.com/dsx-ai-factory/infra-controller)**: Hardware lifecycle management and multitenant networking (NiCo / Carbide). (Apache-2.0, open source, dsx-ai-factory)
 - **[AICR (AI Cluster Runtime)](https://github.com/NVIDIA/aicr)**: Tooling for optimized, validated, and reproducible GPU-accelerated AI runtime in Kubernetes. (Apache-2.0, open source, NVIDIA org)
 - **[DPF (DOCA Platform Framework)](https://github.com/NVIDIA/doca-platform)**: Manages provisioning and service orchestration for BlueField DPUs. (Apache-2.0, open source, NVIDIA org)
-- **[NiCo REST (Infra Controller REST)](https://github.com/NVIDIA/infra-controller-rest)**: NVIDIA Infra Controller REST API. Public but archived; whether it moves, stays archived, or is superseded is still an open decision. (Apache-2.0, archived, NVIDIA org)
+- **[NiCo REST (Infra Controller REST, superseded)](https://github.com/NVIDIA/infra-controller-rest)**: NVIDIA Infra Controller REST API. Archived; superseded by the rest-api directory now built and deployed from dsx-ai-factory/infra-controller itself. (Apache-2.0, archived, NVIDIA org)
 - **[Topograph](https://github.com/NVIDIA/topograph)**: Toolkit for discovering cluster network topology. Topology input to KAI Scheduler. (unknown, open source, NVIDIA org)
 - **[FARM](https://github.com/NVIDIA/farm)**: Job scheduler for cloud-based workloads. Archived. (Apache-2.0, archived, NVIDIA org)
 - **[Nodewright](https://github.com/NVIDIA/nodewright)**: Kubernetes Operator to manage node OS customizations. (Apache-2.0, open source, NVIDIA org)
