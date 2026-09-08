@@ -3,6 +3,12 @@
 # Rendered by site/render_index.py into content/posts/dsx-repo-and-materials-index.md
 # and the repo table in README.md. Edit here, not in either generated output.
 # See data/README.md for the format.
+#
+# nvidia-org and upstream sections reconciled 2026-09-08 against
+# "DSX Open Source — Reconciled Repo Inventory (DRAFT) (2).docx" (Jason Perlow,
+# GitHub-verified Jul 27 2026) and re-verified live against the GitHub API the
+# same day this section was written. See the notes at the end of this file for
+# what that reconciliation found and what is still open.
 
 ## dsx-ai-factory
 name: libredfish
@@ -24,7 +30,7 @@ status: open source
 url: https://github.com/dsx-ai-factory/fleet-intelligence-agent
 ---
 name: infra-controller
-description: Hardware lifecycle management and multitenant networking.
+description: Hardware lifecycle management and multitenant networking (NiCo / Carbide).
 license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/infra-controller
@@ -42,7 +48,7 @@ status: open source
 url: https://github.com/dsx-ai-factory/nv-rms-client
 ---
 name: nv-config-manager
-description: Switch infrastructure config manager.
+description: Switch infrastructure config manager (KIWI).
 license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/nv-config-manager
@@ -54,16 +60,46 @@ status: open source
 url: https://github.com/dsx-ai-factory/nv-telemetry
 ---
 name: dsx-exchange
-description: DSX Exchange.
+description: DSX Exchange (event bus and schemas).
 license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/dsx-exchange
 ---
 name: dsx-github-actions
-description: GitHub Actions infrastructure for DSX.
+description: Shared GitHub Actions CI library for DSX.
 license: Apache-2.0
 status: open source
 url: https://github.com/dsx-ai-factory/dsx-github-actions
+---
+name: attribution
+description: NVIDIA Attribution (FACT). Private GitHub collaboration with customers.
+license: unknown
+status: internal, not yet public
+url: https://github.com/dsx-ai-factory/attribution
+---
+name: health-validation
+description: Hardware health check catalog and evaluation engine for NVIDIA GPU nodes.
+license: unknown
+status: internal, not yet public
+url: https://github.com/dsx-ai-factory/health-validation
+---
+name: fleet-intelligence-oob-collector
+description: Fleet Intelligence out-of-band collector for BMC inventory, attestation, and telemetry.
+license: Apache-2.0
+status: internal, not yet public
+url: https://github.com/dsx-ai-factory/fleet-intelligence-oob-collector
+---
+name: run-ai
+description: Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org).
+license: Apache-2.0
+status: internal, not yet public
+url: https://github.com/dsx-ai-factory/run-ai
+---
+name: testwave
+description: Cloud-native platform for automated testing across Kubernetes clusters.
+license: Apache-2.0
+status: internal, not yet public
+url: https://github.com/dsx-ai-factory/testwave
 ---
 name: community
 description: This repository. Community articles and discussions about the open-source components of the NVIDIA DSX AI Factory.
@@ -72,19 +108,164 @@ status: internal, not yet public
 url: https://github.com/dsx-ai-factory/community
 
 ## nvidia-org
-# TODO(jason): DSX-relevant repos staying outside dsx-ai-factory (90-day plan, s.4).
-# No entries confirmed yet — need the list from Andrew/Arun before this section
-# can render. Do not guess repo names or URLs here.
+name: AICR (AI Cluster Runtime)
+description: Tooling for optimized, validated, and reproducible GPU-accelerated AI runtime in Kubernetes.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/aicr
+---
+name: NVSentinel
+description: Detects and remediates GPU faults on Kubernetes nodes.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/NVSentinel
+---
+name: NVCF (Cloud Functions)
+description: Platform for deploying and routing GPU-accelerated inference, streaming, and batch workloads at scale.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/nvcf
+---
+name: Exemplar Performance
+description: Ready-to-use recipes for evaluating AI use case performance across hardware and software combinations. Renamed from dgxc-benchmarking.
+license: unknown
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/exemplar-performance
+---
+name: DPF (DOCA Platform Framework)
+description: Manages provisioning and service orchestration for BlueField DPUs.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/doca-platform
+---
+name: NiCo REST (Infra Controller REST)
+description: NVIDIA Infra Controller REST API. Public but archived; disposition (move, stay archived, or superseded) is an open question in the Org POR.
+license: Apache-2.0
+status: archived, NVIDIA org
+url: https://github.com/NVIDIA/infra-controller-rest
+---
+name: AI Cloud-Ready Validation
+description: Validation and management tools for NVIDIA AI Cloud environments. Renamed from ISV-NCP-Validation-Suite.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/ai-cloud-validation
+---
+name: Kata Containers (NVIDIA fork)
+description: NVIDIA's fork of the lightweight-VM container runtime Kata Containers.
+license: Apache-2.0
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/kata-containers
+---
+name: DSX-DOCS
+description: DSX common and cross-component documentation. Deliberately kept private/internal, the repo the DSX AI Factory org proposal keeps non-public.
+license: unknown
+status: internal, NVIDIA org
+url: https://github.com/NVIDIA/dsx-docs
+---
+name: Omniverse DSX Blueprint
+description: Omniverse Libraries and OpenUSD workflows for coordinated AI factory planning and digital twins.
+license: unknown
+status: open source, NVIDIA-Omniverse-blueprints org
+url: https://github.com/NVIDIA-Omniverse-blueprints/omniverse-dsx-blueprint-for-ai-factories
+---
+name: AIF Digital Twin Pipeline Samples
+description: Sample scripts and presets for SimReady USD assets in Omniverse, focused on CAD ingestion for AI Factory digital twins.
+license: MIT
+status: open source, NVIDIA-Omniverse org
+url: https://github.com/NVIDIA-Omniverse/aif-pipeline-samples
 
 ## upstream
-# TODO(jason): upstream and third-party (90-day plan, s.4 names "KAI Scheduler and
-# DRA Driver, both at the Linux Foundation"). Need the canonical repo URL for each
-# confirmed before adding — do not guess the LF/GitHub org path.
+name: KAI Scheduler
+description: Kubernetes-native scheduler for AI workloads at scale. CNCF Sandbox project, a Series of LF Projects, LLC; NVIDIA does not hold the merge gate.
+license: Apache-2.0
+status: foundation-governed (CNCF / Linux Foundation)
+url: https://github.com/kai-scheduler/KAI-Scheduler
+---
+name: DRA Driver for NVIDIA GPUs
+description: Dynamic Resource Allocation driver for NVIDIA GPUs on Kubernetes, donated to kubernetes-sigs.
+license: Apache-2.0
+status: foundation-governed (Kubernetes SIGs / CNCF)
+url: https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu
+---
+name: Dynamo
+description: Datacenter-scale distributed inference serving framework.
+license: unknown
+status: open source, NVIDIA-controlled (ai-dynamo org, not NVIDIA-branded)
+url: https://github.com/ai-dynamo/dynamo
+---
+name: Grove
+description: Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
+license: Apache-2.0
+status: open source, NVIDIA-controlled (ai-dynamo org, not NVIDIA-branded)
+url: https://github.com/ai-dynamo/grove
+---
+name: Run:ai Model Streamer
+description: Fast model-weight loading library for GPU inference serving.
+license: Apache-2.0
+status: open source, NVIDIA-controlled (run-ai org, not NVIDIA-branded)
+url: https://github.com/run-ai/runai-model-streamer
 
 ## video
 # TODO(jason): "The NVIDIA YouTube channel and the DSX playlist. Arun's ask."
 # (90-day plan, s.4). Need the actual channel URL and playlist URL from Arun.
 
 ## documentation
-# TODO(jason): DSX-DOCS (90-day plan, s.4). Need the public-facing URL — the
-# authoring repo is NVIDIA/dsx-docs (Fern), not necessarily the published domain.
+# TODO(jason): DSX-DOCS public-facing URL, if/when NVIDIA/dsx-docs (listed above,
+# nvidia-org section) or its successor goes public. Currently internal — no public
+# URL exists yet, so nothing to link here.
+
+# --- Reconciliation notes, 2026-09-08 -----------------------------------------
+#
+# Source: "DSX Open Source — Reconciled Repo Inventory (DRAFT) (2).docx"
+# (Jason Perlow, GitHub-verified Jul 27 2026), re-verified live against the
+# GitHub API on 2026-09-08 before anything above was written.
+#
+# 1. Six repos the source doc lists under the NVIDIA org have SINCE MIGRATED
+#    into dsx-ai-factory (GitHub confirms this via redirect: NVIDIA/<name> now
+#    301s to dsx-ai-factory/<name>): infra-controller, fleet-intelligence-agent,
+#    nv-config-manager, dsx-exchange, nv-rms-client, dsx-github-actions. They are
+#    NOT duplicated here — they are already in the dsx-ai-factory section above.
+#    The doc's snapshot (Jul 27) predates this migration.
+#
+# 2. Two more components the doc marked "404 today, Private Preview" are now
+#    live INSIDE dsx-ai-factory as internal (not-yet-public) repos:
+#    NVIDIA/health-validation -> dsx-ai-factory/health-validation, and
+#    NVIDIA/attribution -> dsx-ai-factory/attribution. Also newly found in
+#    dsx-ai-factory, not named in the source doc at all:
+#    fleet-intelligence-oob-collector, run-ai (DSX's own internal working copy,
+#    distinct from the public run-ai/runai-model-streamer upstream project),
+#    and testwave. All four added to the dsx-ai-factory section above as
+#    internal.
+#
+# 3. NVIDIA/dsx-sbom, which the doc flagged as "a stale private placeholder,"
+#    404s even on an authenticated call — confirmed not to exist. Not listed
+#    anywhere in this file.
+#
+# 4. Two dsx-ai-factory repos exist but are excluded from the index above as
+#    noise, not real components: zz-forkpilot-dsx-github-actions (public) and
+#    zz-forkpilot-nv-config-manager (private). Names indicate scratch/pilot
+#    repos, not shipped DSX components.
+#
+# 5. The source doc's own "Open items" flags four repos needing an explicit
+#    in-or-out ruling for the separate ORG-CONSOLIDATION question (whether they
+#    move into a new NVIDIA GitHub org): ai-dynamo/nixl (1,238 stars),
+#    kubernetes-sigs/dra-driver-nvidia-gpu, ai-dynamo/aiperf (650 stars), and
+#    NVIDIA/topograph (167 stars). That is a different question from "does this
+#    community repo's pointer index link to it": dra-driver-nvidia-gpu is
+#    included above because the 90-day plan already names it explicitly
+#    ("KAI Scheduler and DRA Driver, both at the Linux Foundation" — s.4).
+#    nixl, aiperf, and topograph are NOT named in the 90-day plan and are left
+#    out pending a call from Arun/Jason — high-star, plausibly in-scope, but not
+#    on the record as approved for this index. Do not add them without that
+#    call; do not forget they exist either.
+#
+# 6. NVIDIA/dgxc-benchmarking was renamed to NVIDIA/exemplar-performance, and
+#    NVIDIA/ISV-NCP-Validation-Suite to NVIDIA/ai-cloud-validation (also
+#    NVIDIA/infra-controller-core, but that one now redirects into
+#    dsx-ai-factory per note 1, not to a same-org rename). Current names used
+#    above; old names kept here only as a paper trail.
+#
+# 7. NVIDIA/infra-controller-rest is public but archived. Included above with
+#    status "archived" per the source doc's own judgment call ("counted here
+#    because it is public today"). If archived repos are ruled out of scope,
+#    remove this record.
