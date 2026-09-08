@@ -1,0 +1,21 @@
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas for a component, for this repository, or for an article someone should
+        write. An idea for an article is also welcome as an Article Proposal issue —
+        either works, use whichever fits how far along the idea is.
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it would help
+      description: Who benefits, and what problem it solves.
+    validations:
+      required: false

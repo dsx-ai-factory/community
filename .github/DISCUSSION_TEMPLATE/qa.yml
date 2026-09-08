@@ -1,0 +1,29 @@
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions about `dsx-ai-factory` open-source components or the articles
+        published here. This is **not** the place for bug reports (open an issue in
+        the component's own repository) or support/entitlement questions (use
+        NVIDIA support channels) — see GOVERNANCE.md for the full redirect list.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: input
+    id: component
+    attributes:
+      label: Which component, if any
+      description: e.g. nv-rms, libredfish. Leave blank if this is not component-specific.
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: What you have already tried
+      description: Versions, commands, and what happened. Helps someone answer faster.
+    validations:
+      required: false
