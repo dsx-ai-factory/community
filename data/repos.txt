@@ -318,35 +318,35 @@ name: GPUd
 description: Automates monitoring, diagnostics, and issue identification for GPUs. DSX OS program name Lepton / GPU'd.
 license: Apache-2.0
 category: Monitoring and Observability
-status: open source, NVIDIA-controlled (leptonai org, not NVIDIA-branded)
+status: open source, leptonai org
 url: https://github.com/leptonai/gpud
 ---
 name: Dynamo
 description: Datacenter-scale distributed inference serving framework.
 license: unknown
 category: Optimized Inference
-status: open source, NVIDIA-controlled (ai-dynamo org, not NVIDIA-branded)
+status: open source, ai-dynamo org
 url: https://github.com/ai-dynamo/dynamo
 ---
 name: Grove
 description: Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
 license: Apache-2.0
 category: Scheduling and Workload Management
-status: open source, NVIDIA-controlled (ai-dynamo org, not NVIDIA-branded)
+status: open source, ai-dynamo org
 url: https://github.com/ai-dynamo/grove
 ---
 name: Run:ai Model Streamer
 description: Fast model-weight loading library for GPU inference serving.
 license: Apache-2.0
 category: Optimized Inference
-status: open source, NVIDIA-controlled (run-ai org, not NVIDIA-branded)
+status: open source, run-ai org
 url: https://github.com/run-ai/runai-model-streamer
 ---
 name: Karta
 description: Translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure.
 license: Apache-2.0
 category: Scheduling and Workload Management
-status: open source, NVIDIA-controlled (run-ai org, not NVIDIA-branded)
+status: open source, run-ai org
 url: https://github.com/run-ai/karta
 
 ## video

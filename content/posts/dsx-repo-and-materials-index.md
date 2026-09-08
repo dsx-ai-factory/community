@@ -66,7 +66,7 @@ shown against the DSX layer it occupies, is below.
 - **[attribution](https://github.com/dsx-ai-factory/attribution)**: NVIDIA Attribution (FACT). Private GitHub collaboration with customers. (unknown, internal, not yet public, dsx-ai-factory)
 - **[health-validation](https://github.com/dsx-ai-factory/health-validation)**: Hardware health check catalog and evaluation engine for NVIDIA GPU nodes. (unknown, internal, not yet public, dsx-ai-factory)
 - **[fleet-intelligence-oob-collector](https://github.com/dsx-ai-factory/fleet-intelligence-oob-collector)**: Fleet Intelligence out-of-band collector for BMC inventory, attestation, and telemetry. (Apache-2.0, internal, not yet public, dsx-ai-factory)
-- **[GPUd](https://github.com/leptonai/gpud)**: Automates monitoring, diagnostics, and issue identification for GPUs. DSX OS program name Lepton / GPU'd. (Apache-2.0, open source, NVIDIA-controlled (leptonai org, not NVIDIA-branded))
+- **[GPUd](https://github.com/leptonai/gpud)**: Automates monitoring, diagnostics, and issue identification for GPUs. DSX OS program name Lepton / GPU'd. (Apache-2.0, open source, leptonai org)
 
 ### ![Resiliency and Remediation icon](assets/icons/resiliency-and-remediation.svg) Resiliency and Remediation
 
@@ -86,15 +86,15 @@ shown against the DSX layer it occupies, is below.
 
 - **[run-ai](https://github.com/dsx-ai-factory/run-ai)**: Run:ai AI workload orchestration platform for Kubernetes (DSX-internal working copy; see the upstream section for the public run-ai org). (Apache-2.0, internal, not yet public, dsx-ai-factory)
 - **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)**: Kubernetes-native scheduler for AI workloads at scale. CNCF Sandbox project, a Series of LF Projects, LLC; NVIDIA does not hold the merge gate. (Apache-2.0, foundation-governed (CNCF / Linux Foundation))
-- **[Grove](https://github.com/ai-dynamo/grove)**: Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling. (Apache-2.0, open source, NVIDIA-controlled (ai-dynamo org, not NVIDIA-branded))
-- **[Karta](https://github.com/run-ai/karta)**: Translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure. (Apache-2.0, open source, NVIDIA-controlled (run-ai org, not NVIDIA-branded))
+- **[Grove](https://github.com/ai-dynamo/grove)**: Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling. (Apache-2.0, open source, ai-dynamo org)
+- **[Karta](https://github.com/run-ai/karta)**: Translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure. (Apache-2.0, open source, run-ai org)
 
 ### ![Optimized Inference icon](assets/icons/optimized-inference.svg) Optimized Inference
 
 - **[NVCF (Cloud Functions)](https://github.com/NVIDIA/nvcf)**: Platform for deploying and routing GPU-accelerated inference, streaming, and batch workloads at scale. (Apache-2.0, open source, NVIDIA org)
 - **[NIM Operator](https://github.com/NVIDIA/k8s-nim-operator)**: Operator for deployment and maintenance of NVIDIA NIMs and NeMo microservices in Kubernetes. (Apache-2.0, open source, NVIDIA org)
-- **[Dynamo](https://github.com/ai-dynamo/dynamo)**: Datacenter-scale distributed inference serving framework. (unknown, open source, NVIDIA-controlled (ai-dynamo org, not NVIDIA-branded))
-- **[Run:ai Model Streamer](https://github.com/run-ai/runai-model-streamer)**: Fast model-weight loading library for GPU inference serving. (Apache-2.0, open source, NVIDIA-controlled (run-ai org, not NVIDIA-branded))
+- **[Dynamo](https://github.com/ai-dynamo/dynamo)**: Datacenter-scale distributed inference serving framework. (unknown, open source, ai-dynamo org)
+- **[Run:ai Model Streamer](https://github.com/run-ai/runai-model-streamer)**: Fast model-weight loading library for GPU inference serving. (Apache-2.0, open source, run-ai org)
 
 ### ![Validation and Testing icon](assets/icons/validation-and-testing.svg) Validation and Testing
 
