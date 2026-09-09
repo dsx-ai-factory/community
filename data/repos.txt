@@ -229,6 +229,13 @@ category: Developer Tooling
 status: archived, NVIDIA org
 url: https://github.com/NVIDIA/terraform-provider-shoreline
 ---
+name: K8s Launch Kit (l8k)
+description: CLI tool for deploying and managing NVIDIA cloud-native solutions on Kubernetes, with deployment workflows for SR-IOV, RDMA, and other networking technologies.
+license: Apache-2.0
+category: Developer Tooling
+status: open source, NVIDIA org
+url: https://github.com/NVIDIA/k8s-launch-kit
+---
 name: FARM
 description: Job scheduler for cloud-based workloads. Archived.
 license: Apache-2.0
@@ -249,6 +256,34 @@ license: Apache-2.0
 category: Cluster Orchestration and Provisioning
 status: open source, NVIDIA org
 url: https://github.com/NVIDIA/gpu-operator
+---
+name: NVIDIA Network Operator
+description: Creates, configures, and manages NIC drivers, RDMA, and network resources in Kubernetes. Networking counterpart to GPU Operator.
+license: Apache-2.0
+category: Cluster Orchestration and Provisioning
+status: open source, Mellanox org
+url: https://github.com/Mellanox/network-operator
+---
+name: NKE (NVIDIA Kubernetes Engine)
+description: Management plane for GPU Kubernetes on bare metal.
+license: Apache-2.0
+category: Cluster Orchestration and Provisioning
+status: INTERNAL, TO BE RELEASED
+url: https://github.com/NVIDIA/nke
+---
+name: DSX OS Maestro
+description: Scripted workflow engine used for datacenter automation, including cluster bring-up, maintenance, and break/fix.
+license: Apache-2.0
+category: Cluster Orchestration and Provisioning
+status: INTERNAL, TO BE RELEASED
+url: https://github.com/NVIDIA/Maestro
+---
+name: Device API
+description: A standard interface for the administration of devices.
+license: Apache-2.0
+category: Infrastructure Management
+status: INTERNAL, TO BE RELEASED
+url: https://github.com/NVIDIA/device-api
 ---
 name: NIM Operator
 description: Operator for deployment and maintenance of NVIDIA NIMs and NeMo microservices in Kubernetes.
@@ -462,3 +497,17 @@ url: https://docs.nvidia.com/dsx
 #     (re-verified, not flipped to open source without live confirmation) -
 #     what is public today under the run-ai org is runai-model-streamer and
 #     karta, both already listed.
+#
+# 11. Reconciled 2026-09-09 against the DSX repo-watch agent's slug-guess pass
+#     over the portal export (36 programs the portal itself has no GitHub link
+#     for; direct GET /repos/{org}/{repo} existence checks against the
+#     portal's own slug field, not fuzzy search). 5 hits, each verified live
+#     before adding: NVIDIA Network Operator (Mellanox/network-operator,
+#     public, Apache-2.0) and K8s Launch Kit / l8k (NVIDIA/k8s-launch-kit,
+#     public, Apache-2.0) added as open source. NKE, DSX OS Maestro, and
+#     Device API all resolved to real, actively-pushed NVIDIA-org repos that
+#     are currently private (confirmed via the GitHub API, not guessed) --
+#     added as INTERNAL, TO BE RELEASED, same convention already used for
+#     dsx-ai-factory's own not-yet-public placeholders. 31 of the 36 programs
+#     remain unresolved; the agent's slow rate-limited search fallback runs
+#     nightly (2am-6am EDT) to keep working through them.

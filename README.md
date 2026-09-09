@@ -40,7 +40,7 @@ each covering part of that scope:
 Some of DSX is open source, alongside domains such as hardware and facilities that are
 not released as source code by their nature. DSX OS and DSX Exchange are where the
 open-source components are concentrated: as of this page's last render, DSX OS
-accounts for 42 open-source components and DSX Exchange
+accounts for 47 open-source components and DSX Exchange
 1, which is why they are highlighted above. DSX Flex and
 DSX MaxLPS do not have open-source components in this index yet. The full list, each
 shown against the DSX layer it occupies, is below.
@@ -56,6 +56,9 @@ shown against the DSX layer it occupies, is below.
 - **[FARM](https://github.com/NVIDIA/farm)**: Job scheduler for cloud-based workloads. Archived. (Apache-2.0, archived, NVIDIA org)
 - **[Nodewright](https://github.com/NVIDIA/nodewright)**: Kubernetes Operator to manage node OS customizations. (Apache-2.0, open source, NVIDIA org)
 - **[GPU Operator](https://github.com/NVIDIA/gpu-operator)**: Creates, configures, and manages GPUs in Kubernetes. (Apache-2.0, open source, NVIDIA org)
+- **[NVIDIA Network Operator](https://github.com/Mellanox/network-operator)**: Creates, configures, and manages NIC drivers, RDMA, and network resources in Kubernetes. Networking counterpart to GPU Operator. (Apache-2.0, open source, Mellanox org)
+- **[NKE (NVIDIA Kubernetes Engine)](https://github.com/NVIDIA/nke)**: Management plane for GPU Kubernetes on bare metal. (Apache-2.0, INTERNAL, TO BE RELEASED)
+- **[DSX OS Maestro](https://github.com/NVIDIA/Maestro)**: Scripted workflow engine used for datacenter automation, including cluster bring-up, maintenance, and break/fix. (Apache-2.0, INTERNAL, TO BE RELEASED)
 - **[DRA Driver for NVIDIA GPUs](https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu)**: Dynamic Resource Allocation driver for NVIDIA GPUs on Kubernetes, donated to kubernetes-sigs. (Apache-2.0, foundation-governed (Kubernetes SIGs / CNCF))
 
 ### ![Infrastructure Management icon](content/posts/assets/icons/infrastructure-management.svg) Infrastructure Management
@@ -68,6 +71,7 @@ shown against the DSX layer it occupies, is below.
 - **[Nautobot FSUs Plugin](https://github.com/NVIDIA/nautobot-app-fsus)**: Field Serviceable Units data models for Nautobot. Part of the Nautobot NVDataModels family. (unknown, open source, NVIDIA org)
 - **[Nautobot NVDataModels Plugin](https://github.com/NVIDIA/nautobot-app-nvdatamodels)**: Nautobot plugin providing data models for NVIDIA products. (unknown, open source, NVIDIA org)
 - **[Nautobot NATS Broker](https://github.com/NVIDIA/nautobot-broker-nats)**: Event broker for Nautobot that publishes events to NATS. Part of the Nautobot NVDataModels family. (unknown, open source, NVIDIA org)
+- **[Device API](https://github.com/NVIDIA/device-api)**: A standard interface for the administration of devices. (Apache-2.0, INTERNAL, TO BE RELEASED)
 - **[Multi Storage Client (MSC)](https://github.com/NVIDIA/multi-storage-client)**: Unified high-performance Python client for object and file stores. (Apache-2.0, open source, NVIDIA org)
 
 ### ![Monitoring and Observability icon](content/posts/assets/icons/monitoring-and-observability.svg) Monitoring and Observability
@@ -124,6 +128,7 @@ shown against the DSX layer it occupies, is below.
 - **[Terraform Provider - MCAHR](https://github.com/NVIDIA/terraform-provider-mcahr)**: Terraform provider for MCAHR. Archived. (Apache-2.0, archived, NVIDIA org)
 - **[Terraform Provider - NGC](https://github.com/NVIDIA/terraform-provider-ngc)**: Terraform provider for managing NGC (NVIDIA GPU Cloud) resources. (Apache-2.0, open source, NVIDIA org)
 - **[Terraform Provider - Shoreline](https://github.com/NVIDIA/terraform-provider-shoreline)**: Terraform provider for Shoreline. Archived. (Apache-2.0, archived, NVIDIA org)
+- **[K8s Launch Kit (l8k)](https://github.com/NVIDIA/k8s-launch-kit)**: CLI tool for deploying and managing NVIDIA cloud-native solutions on Kubernetes, with deployment workflows for SR-IOV, RDMA, and other networking technologies. (Apache-2.0, open source, NVIDIA org)
 
 ### ![Documentation icon](content/posts/assets/icons/documentation.svg) Documentation
 
