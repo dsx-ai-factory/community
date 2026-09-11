@@ -368,7 +368,7 @@ description: Translation layer that maps any Kubernetes framework's Custom Resou
 license: Apache-2.0
 category: Scheduling and Workload Management
 status: open source, run-ai org
-url: https://github.com/run-ai/karta
+url: https://github.com/dsx-ai-factory/karta
 
 ## video
 # TODO(jason): "The NVIDIA YouTube channel and the DSX playlist. Arun's ask."

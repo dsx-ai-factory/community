@@ -101,7 +101,7 @@ shown against the DSX layer it occupies, is below.
 - **[Run:ai](https://github.com/dsx-ai-factory/run-ai)**: Run:ai AI workload orchestration platform for Kubernetes, the core control plane. No public core Run:ai repo exists yet; the run-ai org's public repos (Run:ai Model Streamer, Karta) are separate sub-tools, not this platform itself. (Apache-2.0, INTERNAL, TO BE RELEASED, dsx-ai-factory)
 - **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)**: Kubernetes-native scheduler for AI workloads at scale. CNCF Sandbox project, a Series of LF Projects, LLC; NVIDIA does not hold the merge gate. (Apache-2.0, foundation-governed (CNCF / Linux Foundation))
 - **[Grove](https://github.com/ai-dynamo/grove)**: Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling. (Apache-2.0, open source, ai-dynamo org)
-- **[Karta](https://github.com/run-ai/karta)**: Translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure. (Apache-2.0, open source, run-ai org)
+- **[Karta](https://github.com/dsx-ai-factory/karta)**: Translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure. (Apache-2.0, open source, run-ai org)
 
 ### ![Optimized Inference icon](content/posts/assets/icons/optimized-inference.svg) Optimized Inference
 
