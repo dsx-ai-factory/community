@@ -12,17 +12,21 @@ covers the repository's compliance and governance scaffolding.
 
 ## Open-Source Components
 
+- **[DSX Exchange](https://github.com/dsx-ai-factory/dsx-exchange)** — DSX Exchange event bus and schemas.
+- **[DSX GitHub Actions](https://github.com/dsx-ai-factory/dsx-github-actions)** — shared GitHub Actions CI library for DSX.
+- **[Fleet Intelligence](https://github.com/dsx-ai-factory/fleet-intelligence-agent)** — host agent for GPU telemetry collection and attestation.
+- **[NiCo](https://github.com/dsx-ai-factory/infra-controller)** — hardware lifecycle management and multitenant networking.
+- **[Karta](https://github.com/dsx-ai-factory/karta)** — translation layer that maps any Kubernetes framework's Custom Resource Definitions into a standardized, generic structure.
 - **[libredfish](https://github.com/dsx-ai-factory/libredfish)** — a Rust crate for interacting with DMTF Redfish endpoints.
 - **[nv-redfish](https://github.com/dsx-ai-factory/nv-redfish)** — NVIDIA's next-generation Redfish crate.
 - **[Rack Management Service (RMS)](https://github.com/dsx-ai-factory/nv-rms)** — NVIDIA Rack Management Service.
 - **[RMS Client](https://github.com/dsx-ai-factory/nv-rms-client)** — Rust client crate for NVIDIA Rack Management Service.
+- **[Run:ai Model Streamer](https://github.com/dsx-ai-factory/runai-model-streamer)** — fast model-weight loading library for GPU inference serving.
 - **[Switch Infrastructure Config Manager](https://github.com/dsx-ai-factory/nv-config-manager)** — switch infrastructure config manager for large-scale datacenter operations.
-- **[Fleet Intelligence](https://github.com/dsx-ai-factory/fleet-intelligence-agent)** — host agent for GPU telemetry collection and attestation.
 - **[nv-telemetry](https://github.com/dsx-ai-factory/nv-telemetry)** — libraries for bare-metal telemetry collection.
-- **[DSX Exchange](https://github.com/dsx-ai-factory/dsx-exchange)** — DSX Exchange event bus and schemas.
-- **[DSX GitHub Actions](https://github.com/dsx-ai-factory/dsx-github-actions)** — shared GitHub Actions CI library for DSX.
 
-A fuller index of components across the `dsx-ai-factory` and `NVIDIA` GitHub orgs will
+This lists every currently-public repository in the `dsx-ai-factory` GitHub org. A
+fuller index of components across the `dsx-ai-factory` and `NVIDIA` GitHub orgs will
 be added in a follow-up pull request.
 
 ## Contributing
