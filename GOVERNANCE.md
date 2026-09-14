@@ -59,7 +59,7 @@ only a single approval.
 
 Merging is not the same as publishing. Articles are published against the content
 roadmap in the POR rather than on merge-when-ready: a pull request can merge with
-`draft: true` still set in its front matter, and `site/build.py` excludes any draft
+`draft: true` still set in its front matter, and the site build excludes any draft
 article from the rendered site regardless of what's on `main`. The editor owns the
 calendar — when an article's target window arrives, flipping `draft` to `false` (a
 small follow-up pull request, single approval, same as a typo fix) is what actually
