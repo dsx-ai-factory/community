@@ -12,7 +12,7 @@ covers the repository's compliance and governance scaffolding.
 
 ## Open-Source Components
 
-- **[DSX Exchange](https://github.com/dsx-ai-factory/dsx-exchange)** — DSX Exchange event bus and schemas. _(stood up 2026-05-06)_ _(v2.9.4, 2026-09-11)_
+- **[DSX Exchange](https://github.com/dsx-ai-factory/dsx-exchange)** — DSX Exchange event bus and schemas. _(stood up 2026-05-06)_ _(v2.9.5, 2026-09-15)_
 - **[DSX GitHub Actions](https://github.com/dsx-ai-factory/dsx-github-actions)** — shared GitHub Actions CI library for DSX. _(stood up 2025-11-25)_ _(v1.20.0, 2026-09-08)_
 - **[Fleet Intelligence](https://github.com/dsx-ai-factory/fleet-intelligence-agent)** — host agent for GPU telemetry collection and attestation. _(stood up 2025-08-27)_ _(v1.5.0, 2026-09-08)_
 - **[NiCo](https://github.com/dsx-ai-factory/infra-controller)** — hardware lifecycle management and multitenant networking. _(stood up 2025-11-05)_ _(v2.1.1, 2026-09-15)_
