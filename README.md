@@ -13,7 +13,7 @@ covers the repository's compliance and governance scaffolding.
 ## Open-Source Components
 
 - **[DSX Exchange](https://github.com/dsx-ai-factory/dsx-exchange)** — DSX Exchange event bus and schemas. _(stood up 2026-05-06)_ _(v2.9.7, 2026-09-17)_
-- **[DSX GitHub Actions](https://github.com/dsx-ai-factory/dsx-github-actions)** — shared GitHub Actions CI library for DSX. _(stood up 2025-11-25)_ _(v1.20.5, 2026-09-18)_
+- **[DSX GitHub Actions](https://github.com/dsx-ai-factory/dsx-github-actions)** — shared GitHub Actions CI library for DSX. _(stood up 2025-11-25)_ _(v1.22.0, 2026-09-21)_
 - **[Fleet Intelligence](https://github.com/dsx-ai-factory/fleet-intelligence-agent)** — host agent for GPU telemetry collection and attestation. _(stood up 2025-08-27)_ _(v1.5.0, 2026-09-08)_
 - **[NiCo](https://github.com/dsx-ai-factory/infra-controller)** — hardware lifecycle management and multitenant networking. _(stood up 2025-11-05)_ _(v2.1.2, 2026-09-17)_
 - **[Workload Map](https://github.com/dsx-ai-factory/workload-map)** — Translation layer that maps any Kubernetes framework's Custom Resource Definitions (CRDs) into a standardized, generic structure. _(stood up 2025-07-23)_ _(v0.2.7, 2026-09-20)_
