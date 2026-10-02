@@ -13,9 +13,9 @@ covers the repository's compliance and governance scaffolding.
 ## Open-Source Components
 
 - **[DSX Exchange](https://github.com/dsx-ai-factory/dsx-exchange)** — DSX Exchange event bus and schemas. _(stood up 2026-05-06)_ _(v2.9.7, 2026-09-17)_
-- **[DSX GitHub Actions](https://github.com/dsx-ai-factory/dsx-github-actions)** — shared GitHub Actions CI library for DSX. _(stood up 2025-11-25)_ _(v1.25.0, 2026-09-30)_
+- **[DSX GitHub Actions](https://github.com/dsx-ai-factory/dsx-github-actions)** — shared GitHub Actions CI library for DSX. _(stood up 2025-11-25)_ _(v1.25.1, 2026-10-01)_
 - **[Fleet Intelligence](https://github.com/dsx-ai-factory/fleet-intelligence-agent)** — host agent for GPU telemetry collection and attestation. _(stood up 2025-08-27)_ _(v1.5.1-rc.1, 2026-09-21)_
-- **[NiCo](https://github.com/dsx-ai-factory/infra-controller)** — hardware lifecycle management and multitenant networking. _(stood up 2025-11-05)_ _(v2.0.5, 2026-09-30)_
+- **[NiCo](https://github.com/dsx-ai-factory/infra-controller)** — hardware lifecycle management and multitenant networking. _(stood up 2025-11-05)_ _(v2.0.6, 2026-10-01)_
 - **[Workload Map](https://github.com/dsx-ai-factory/workload-map)** — Translation layer that maps any Kubernetes framework's Custom Resource Definitions (CRDs) into a standardized, generic structure. _(stood up 2025-07-23)_ _(v0.2.8, 2026-09-22)_
 - **[libredfish](https://github.com/dsx-ai-factory/libredfish)** — a Rust crate for interacting with DMTF Redfish endpoints.
 - **[nv-redfish](https://github.com/dsx-ai-factory/nv-redfish)** — NVIDIA's next-generation Redfish crate. _(stood up 2025-12-02)_ _(v0.18.1, 2026-09-30)_
