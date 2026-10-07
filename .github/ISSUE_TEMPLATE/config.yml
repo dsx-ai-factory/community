@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question or start a discussion
+    url: https://github.com/dsx-ai-factory/community/discussions
+    about: >-
+      Questions, ideas, and open-ended conversation belong in Discussions, not in
+      Issues. Issues here track article proposals and content problems only.
+  - name: Report a bug in a DSX component
+    url: https://github.com/dsx-ai-factory
+    about: >-
+      This repository holds articles and discussion, not product source. File
+      component bugs against that component's own repository.
+  - name: Report a security vulnerability
+    url: https://www.nvidia.com/en-us/security/psirt-policies/
+    about: >-
+      Do not open a public issue for a security vulnerability. Follow the NVIDIA
+      PSIRT process.

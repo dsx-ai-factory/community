@@ -1,0 +1,48 @@
+# CODEOWNERS — DSX AI Factory community repository
+#
+# Every pull request requires review from the owners of the paths it touches.
+# This is the enforcement mechanism for the content approval process described
+# in the POR governance model.
+#
+# STATUS: the teams below DO NOT EXIST YET. They must be created by a
+# dsx-ai-factory organization owner before this file has any effect — GitHub
+# silently ignores CODEOWNERS entries that name a non-existent team. Until the
+# teams exist, this file documents the intended ownership model rather than
+# enforcing it. See GOVERNANCE.md for the team-request list.
+#
+# Role mapping to the POR staffing table:
+#   dsx-community-editors     -> Editor (overall PIC, roadmap and content)
+#   dsx-community-maintainers -> Maintainer (CI/CD, review/approve/merge/publish)
+#   dsx-community-product     -> Product delegates (one per component team)
+#   dsx-community-partners    -> Partner delegates (one per partner program area)
+#   dsx-community-moderators  -> Community Representative (discussion moderation)
+
+# Default owner for everything not matched below.
+*                           @dsx-ai-factory/dsx-community-editors
+
+# Published articles. Editors own the content; maintainers own the publish path.
+/content/                   @dsx-ai-factory/dsx-community-editors
+/content/posts/             @dsx-ai-factory/dsx-community-editors
+
+# Articles that showcase a partner or customer additionally require a partner
+# delegate, who confirms the mention is cleared with that partner.
+/content/posts/partners/    @dsx-ai-factory/dsx-community-editors @dsx-ai-factory/dsx-community-partners
+
+# Articles centred on a specific component additionally require that component's
+# product delegate. Add per-component paths here as components are onboarded.
+/content/posts/components/  @dsx-ai-factory/dsx-community-editors @dsx-ai-factory/dsx-community-product
+
+# Site build, publishing pipeline, and automation.
+/.github/                   @dsx-ai-factory/dsx-community-maintainers
+/site/                      @dsx-ai-factory/dsx-community-maintainers
+
+# Compliance and governance files. Changing any of these can invalidate the
+# repository's Open Source Review Board approval, so they carry the tightest
+# ownership.
+/LICENSE                    @dsx-ai-factory/dsx-community-maintainers
+/CONTRIBUTING.md            @dsx-ai-factory/dsx-community-maintainers
+/THIRD_PARTY_NOTICES.md     @dsx-ai-factory/dsx-community-maintainers
+/CODE_OF_CONDUCT.md         @dsx-ai-factory/dsx-community-moderators @dsx-ai-factory/dsx-community-maintainers
+/SECURITY.md                @dsx-ai-factory/dsx-community-maintainers
+/.github/CODEOWNERS         @dsx-ai-factory/dsx-community-maintainers
+/GOVERNANCE.md              @dsx-ai-factory/dsx-community-editors @dsx-ai-factory/dsx-community-maintainers

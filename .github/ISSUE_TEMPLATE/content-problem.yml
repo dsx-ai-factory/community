@@ -1,0 +1,45 @@
+name: Content problem
+description: Report something wrong, broken, or outdated in a published article
+title: "[Content] "
+labels: ["content-problem", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for problems with an article already published here — a broken
+        link, a command that no longer works, a version that has moved on, or a
+        factual error.
+
+        For a bug in a DSX component itself, file against that component's own
+        repository instead.
+
+  - type: input
+    id: article
+    attributes:
+      label: Which article?
+      description: Link to the published page or the file in this repository.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem?
+      options:
+        - Broken link
+        - Command or example no longer works
+        - Outdated version or prerequisite
+        - Factual error
+        - Unclear or missing step
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: What is wrong, and what did you expect?
+      description: >-
+        If a command failed, paste what you ran and what came back.
+    validations:
+      required: true

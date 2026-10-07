@@ -1,0 +1,22 @@
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Announcements are posted by maintainers and editors — updates on components,
+        the repo, or the community. If you have something you think belongs here,
+        open it as an **Ideas** discussion or an Article Proposal issue first.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What is being announced
+      description: What changed, and why it matters to someone following DSX AI Factory.
+    validations:
+      required: true
+  - type: input
+    id: links
+    attributes:
+      label: Related links
+      description: Release, PR, article, or issue this announcement is about.
+    validations:
+      required: false

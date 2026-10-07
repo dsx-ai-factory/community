@@ -1,0 +1,97 @@
+name: Article proposal
+description: Propose an article for the DSX AI Factory community repository
+title: "[Article] "
+labels: ["article-proposal", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose an article before you write it. An editor will confirm the topic,
+        the audience, and a publishing slot — this avoids duplicated effort and
+        gets you a reviewer lined up in advance.
+
+        Small corrections (typos, broken links, stale version numbers) do not need
+        a proposal. Open a pull request directly.
+
+  - type: input
+    id: title
+    attributes:
+      label: Working title
+      placeholder: "Scaling inference across a multi-tenant DSX cluster"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content_type
+    attributes:
+      label: Content type
+      options:
+        - Component release post
+        - Component or technology deep dive
+        - How-to
+        - Success story
+        - Event announcement or recap
+        - Exploratory post
+        - Contributor spotlight
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What is the article about?
+      description: >-
+        A short paragraph. What is the problem it addresses, and what will a
+        reader be able to do or understand afterwards?
+    validations:
+      required: true
+
+  - type: input
+    id: audience
+    attributes:
+      label: Who is it for?
+      placeholder: "Platform engineers running Kubernetes on DSX hardware"
+    validations:
+      required: true
+
+  - type: input
+    id: components
+    attributes:
+      label: Which DSX components does it cover?
+      description: >-
+        Name them so the right product delegate can be assigned as a reviewer.
+        Write "none" if it is not component-specific.
+    validations:
+      required: true
+
+  - type: input
+    id: partners
+    attributes:
+      label: Does it name a partner, customer, or third-party organization?
+      description: >-
+        Name them so a partner delegate can be assigned. Write "no" if not.
+        Any named organization must agree to the mention before merge.
+    validations:
+      required: true
+
+  - type: input
+    id: timing
+    attributes:
+      label: Is this tied to a date?
+      placeholder: "KubeCon NA, or: no deadline"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: Disclosure
+      options:
+        - label: >-
+            Everything I plan to write about is already public or cleared for
+            announcement. This article will not reveal confidential, embargoed,
+            or pre-release information.
+          required: true
+        - label: >-
+            I have read the Code of Conduct and the contributing guide.
+          required: true
