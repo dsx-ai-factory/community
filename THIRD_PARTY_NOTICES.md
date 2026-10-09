@@ -36,3 +36,7 @@ third-party dependencies.
 Articles that quote or adapt third-party material must attribute it inline, at the
 point of use, and link to the source. Contributors are responsible for confirming
 the source's license permits the use.
+
+---
+
+© 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, and other NVIDIA product and service names are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries and regions. Other company, product, and service names may be trademarks of their respective owners.

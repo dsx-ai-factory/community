@@ -46,6 +46,8 @@ prior issue. Open a pull request directly.
 - Confirm any third-party material you quote or adapt is attributed, and that its
   license permits the use.
 - Confirm any screenshots, logos, or images you include are cleared for public use.
+- If your content mentions third-party trademarks or logos, add the required
+  [trademark notice](#trademarks-and-logos) at the bottom.
 
 ## Licensing and ownership of contributions
 
@@ -60,6 +62,23 @@ Certificate of Origin below establishes.
 
 If your employer holds the copyright in work you do, make sure you have permission to
 contribute it under these terms before you sign off.
+
+## Trademarks and logos
+
+Articles and other documentation that mention or display third-party trademarks or
+logos must end with the following notice, as the last element of the page:
+
+> © 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, and other NVIDIA product and service names are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries and regions. Other company, product, and service names may be trademarks of their respective owners.
+
+Before you open a pull request:
+
+- Check whether your content names a third-party product or company, or shows a
+  third-party logo. If it does, add the notice above at the bottom, verbatim.
+- Do not alter the wording of the notice.
+- Use a logo only if you have confirmed it is cleared for public use (see the
+  checklist above).
+
+Maintainers check for the notice during review.
 
 ## Signing Off Your Work
 
@@ -124,3 +143,7 @@ Participation in this repository, including its Discussions, is governed by the
 
 Open a discussion in the
 [Discussions](https://github.com/dsx-ai-factory/community/discussions) area.
+
+---
+
+© 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, and other NVIDIA product and service names are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries and regions. Other company, product, and service names may be trademarks of their respective owners.
