@@ -41,3 +41,7 @@ Third-party components are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICE
 
 Do not report security vulnerabilities in a public issue or discussion. Follow
 [SECURITY.md](SECURITY.md).
+
+---
+
+© 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, and other NVIDIA product and service names are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries and regions. Other company, product, and service names may be trademarks of their respective owners.
