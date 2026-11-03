@@ -25,7 +25,7 @@ Most sessions are 20 minutes. Expect an informal scrum with NVIDIA developers an
 | --- | --- | --- |
 | 10:40–11:00 AM | Scheduling AI Workloads on Kubernetes | Daniel Keinan, Omri Cohen, Roman Baron, Ekin Karabulut, Alay Patel |
 | 11:15–11:35 AM | Cloud Native Feedback loop | Marlow Warnicke |
-| 11:40–12:00 PM | Slinky – slurm-bridge | Marlow Warnicke, Alan Mutschelknaus, Tim Wickberg |
+| 11:40 AM –12:00 PM | Slinky – slurm-bridge | Marlow Warnicke, Alan Mutschelknaus, Tim Wickberg |
 | 12:15–12:35 PM | NVIDIA Dynamo: Scaling LLM Inference on Kubernetes | Vishakha Sadhwani, Stefan Schimanski |
 | 2:00–2:20 PM | NVIDIA Cloud Functions (NVCF) | JP Santana |
 | 3:15–3:35 PM | Running agents efficiently at scale with Agent Substrate | Omer Yahud, Ron Lev, Eliran Wolff |
