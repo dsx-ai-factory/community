@@ -1,6 +1,6 @@
 # Meet the NVIDIA Experts at KubeCon North America 2026
 
-NVIDIA is planning technical Q&A sessions at its booth during KubeCon North America 2026, November 10–12. Topics include GPU cluster setup, workload scheduling, inference, cluster management, agents, and observability.
+NVIDIA is planning technical Q&A sessions during KubeCon North America 2026, November 10–12. All sessions take place at NVIDIA booth #170. Topics include GPU cluster setup, workload scheduling, inference, cluster management, agents, and observability.
 
 Most sessions are 20 minutes. Expect an informal scrum with NVIDIA developers and maintainers: a chance to get introduced, share ideas, and get your questions answered. Drop in during the session for the topic you're interested in.
 
@@ -41,9 +41,7 @@ Most sessions are 20 minutes. Expect an informal scrum with NVIDIA developers an
 | 11:15–11:35 AM | Slurm | Danny Auble, Tim Wickberg |
 | 12:00–12:20 PM | AI-driven observability | Pronnoy Goswami |
 
-## Where to go
 
-All sessions are at the NVIDIA booth. Ask booth staff for the day's schedule.
 
 ---
 
