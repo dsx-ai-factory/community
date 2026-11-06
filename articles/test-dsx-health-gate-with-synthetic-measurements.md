@@ -1,16 +1,18 @@
-# Test a DSX health gate with synthetic measurements
+# Test a DSX health gate with example measurements
 
-Health Validation's Go catalog returned overall PASS even though a required CPU assessment was missing. The application needs two assessed PASS results before it can continue: one from the CPU-count check, which compares possible and online CPUs, and one from a synthetic assessment check that reports UNKNOWN when an assessment is unavailable.
+Health Validation's Go catalog returned overall PASS even though a required CPU assessment was missing. The application needs two assessed PASS results before it can continue: one from the CPU-count check, which compares possible and online CPUs, and one from an example assessment check that reports UNKNOWN when an assessment is unavailable.
 
-In the missing-input scenario, the synthetic check passes, but the CPU check is skipped as `SENSOR_MISSING`. A regression test sends that verdict to two callers. The unsafe reference trusts overall severity and continues once; the application's caller continues zero times. The test checks both counts.
+In the missing-input scenario, the assessment check passes, but the CPU check is skipped as `SENSOR_MISSING`. A regression test sends that verdict to two callers. The unsafe reference trusts overall severity and continues once; the application's caller continues zero times. The test checks both counts.
 
-The difference comes from the caller's policy. [The catalog aggregates checks that ran and excludes skips](https://github.com/dsx-ai-factory/health-validation/blob/f2d5e95af380ee17bcb8db84b4b2c03481d03a1d/catalog/health/verdict.go#L99-L140). It is behaving as designed; overall PASS does not show that every required check ran. Synthetic measurements let you test this distinction through the real catalog without hardware.
+The difference comes from the caller's policy. [The catalog aggregates checks that ran and excludes skips](https://github.com/dsx-ai-factory/health-validation/blob/f2d5e95af380ee17bcb8db84b4b2c03481d03a1d/catalog/health/verdict.go#L99-L140). It is behaving as designed; overall PASS does not show that every required check ran. Example measurements let you test this distinction through the real catalog without hardware.
 
 ## Run the example
 
 The [example and tests](https://github.com/tridev-tej/health-validation/tree/4a709fcbbd6b893a46a19f675c7958c5a8faaff0) are in `catalog/examples/synthetic-health-gate/`. The contribution is proposed in [Health Validation PR #265](https://github.com/dsx-ai-factory/health-validation/pull/265).
 
-You need Git, Go 1.27.3 on your PATH, a shell and a writable `/tmp`. Keep the repository's `go.mod` and `go.sum`; the first build needs access to the module dependencies. No GPU, NVIDIA driver, NVML or Linux sysfs is needed for this catalog-only example.
+You need Git, a shell and a writable `/tmp`. Use Go 1.27.3 on your `PATH` for the `go build` and `go test` commands. For the Bazel commands, use Bazelisk or Bazel 9.2.0. Bazel downloads the Go SDK version declared in `go.mod`, so those commands work without a separate Go installation.
+
+Keep the repository's `go.mod` and `go.sum`. The first build needs access to the module dependencies. No GPU, NVIDIA driver, NVML or Linux sysfs is needed for this catalog-only example.
 
 Clone and pin the tested revision:
 
@@ -79,13 +81,13 @@ That skipped record's `severity: PASS` does not mean the CPU was assessed. Missi
 
 ## Feed measurements through the catalog
 
-The program imports `catalog`, `catalog/cpu`, and `catalog/health` from `github.com/dsx-ai-factory/health-validation`. In [`newCatalog`](https://github.com/tridev-tej/health-validation/blob/4a709fcbbd6b893a46a19f675c7958c5a8faaff0/catalog/examples/synthetic-health-gate/main.go#L78-L90), `catalog.NewEmpty` starts a catalog with architecture `synthetic`, execution context `health.OperatorInfra` and the scenario's disabled checks. The program registers only `cpu.CPUCount()` and the synthetic check.
+The program imports `catalog`, `catalog/cpu`, and `catalog/health` from `github.com/dsx-ai-factory/health-validation`. In [`newCatalog`](https://github.com/tridev-tej/health-validation/blob/4a709fcbbd6b893a46a19f675c7958c5a8faaff0/catalog/examples/synthetic-health-gate/main.go#L78-L90), `catalog.NewEmpty` starts a catalog with architecture `synthetic`, execution context `health.OperatorInfra` and the scenario's disabled checks. The program registers only `cpu.CPUCount()` and the assessment check.
 
 The example uses `synthetic` as the catalog's architecture label; it does not detect hardware. The passing fixture supplies eight possible CPUs, eight online CPUs and `AssessmentAvailable: true`. `EvaluateAll` turns those Go measurements into a verdict. The example then sets only the verdict's optional `node_id` to `synthetic-node`.
 
 The existing [`cpu.CPUCount()` check](https://github.com/dsx-ai-factory/health-validation/blob/f2d5e95af380ee17bcb8db84b4b2c03481d03a1d/catalog/cpu/cpu_count.go#L10-L38) reports CRITICAL when possible and online counts differ. That's why the `critical` scenario supplies seven online CPUs. Matching counts still do not prove collection worked; zero and zero match too.
 
-The synthetic check is named `synthetic_assessment` and marked `health.Private` and `health.Experimental`. Its Common Expression Language rule, `assessment_available == false`, produces `health.Unknown`. In the `unknown` scenario, the flag is present and false. This UNKNOWN comes from evaluation, rather than a missing input. The output carries `nvidia_endorsed: false`; the built-in CPU check keeps its original endorsement.
+The assessment check is named `synthetic_assessment` and marked `health.Private` and `health.Experimental`. Its Common Expression Language rule, `assessment_available == false`, produces `health.Unknown`. In the `unknown` scenario, the flag is present and false. This UNKNOWN comes from evaluation, rather than a missing input. The output carries `nvidia_endorsed: false`; the built-in CPU check keeps its original endorsement.
 
 Missing input produces a skip. In `collection-error`, `cpu.ErroredCPU` instead produces CRITICAL and a `check_collection` recommendation. The program reports recommendations without executing remediation. If evaluation fails, for example on an invalid expression or duplicate host-wide measurements, it returns an error without a verdict.
 
@@ -197,9 +199,9 @@ Local Linux CI passed all 62 test targets, with 5 executed and 57 served from ca
 
 The caller works with a Go verdict in the same process. It does not ingest external JSON or perform full [JSON Schema instance validation](https://github.com/dsx-ai-factory/health-validation/blob/f2d5e95af380ee17bcb8db84b4b2c03481d03a1d/catalog/health/node-verdict.schema.json).
 
-The JSON keeps the library's fields and recommendations. `catalog_version` tells you which library build produced it; it does not fingerprint the synthetic check or imply a public release. Build versions, timestamps and trace/span IDs can vary.
+The JSON keeps the library's fields and recommendations. `catalog_version` tells you which library build produced it; it does not fingerprint the assessment check or imply a public release. Build versions, timestamps and trace/span IDs can vary.
 
-These synthetic scenarios test the caller's decision at a point in time. They do not establish real hardware health, node readiness, production safety, fleet behavior, performance or success of a whole workload.
+These scenarios exercise the caller's decision at a point in time. They do not establish real hardware health, node readiness, production safety, fleet behavior, performance or success of a whole workload.
 
 ### Output, exit status and delivery
 
