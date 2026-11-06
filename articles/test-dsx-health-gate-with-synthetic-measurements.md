@@ -199,7 +199,7 @@ Local Linux CI passed all 62 test targets, with 5 executed and 57 served from ca
 
 The caller works with a Go verdict in the same process. It does not ingest external JSON or perform full [JSON Schema instance validation](https://github.com/dsx-ai-factory/health-validation/blob/f2d5e95af380ee17bcb8db84b4b2c03481d03a1d/catalog/health/node-verdict.schema.json).
 
-The JSON keeps the library's fields and recommendations. `catalog_version` tells you which library build produced it; it does not fingerprint the assessment check or imply a public release. Build versions, timestamps and trace/span IDs can vary.
+The JSON keeps the library's fields and recommendations. An unstamped Bazel build can report `catalog_version: "dev"`. Record the commit SHA for a clean checkout when you need to trace the result to its source. The check definition and release status are separate from the library version. Build versions, timestamps and trace/span IDs can vary.
 
 These scenarios exercise the caller's decision at a point in time. They do not establish real hardware health, node readiness, production safety, fleet behavior, performance or success of a whole workload.
 
