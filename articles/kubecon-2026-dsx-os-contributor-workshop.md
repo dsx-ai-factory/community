@@ -17,7 +17,7 @@ Each participating project gathers its product and engineering leads alongside a
 - **Contribution sprint:** claim an issue, open a draft pull request, run CI, and get a live review from a maintainer. Attendees are encouraged to bring their AI coding assistants.
 - **Roadmap roundtables:** bring your organization's use cases and integration ideas to the product managers and maintainers who shape the roadmap.
 
-The afternoon closes with a Show and Tell, where each project table shares what they worked on, followed by time for networking with Bob Wise and Warren Barkley and the first in-person community meetings, where project communities kick off their regular meetings.
+The afternoon closes with a Show and Tell, where each project table shares what they worked on, followed by time for networking with [Bob Wise](https://www.linkedin.com/in/bobwise/) and [Warren Barkley](https://www.linkedin.com/in/warrenbarkley/) and the first in-person community meetings, where project communities kick off their regular meetings.
 
 | Time MT | Session |
 | --- | --- |
