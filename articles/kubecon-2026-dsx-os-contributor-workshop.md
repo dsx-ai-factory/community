@@ -46,7 +46,7 @@ Product managers and maintainers from projects across the DSX AI Factory stack w
 
 ## The first community meetings
 
-The workshop ends with something new for DSX AI Factory: the first in-person community meetings. Several project communities launch at KubeCon, each with a Slack channel, a mailing list, and open meeting notes and recordings. More details: [Launching Open Communities for DSX AI Factory Projects](https://github.com/dsx-ai-factory/community/blob/main/articles/dsx-ai-factory-community-meetings.md).
+The workshop ends with something new for DSX AI Factory: the first in-person community meetings. Several project communities launch at KubeCon, each with a Slack channel, a mailing list, and open meeting notes and recordings.
 
 ## Beyond the workshop
 
