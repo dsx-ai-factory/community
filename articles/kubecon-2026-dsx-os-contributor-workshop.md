@@ -39,7 +39,7 @@ Product managers and maintainers from projects across the DSX AI Factory stack w
 - [NVCRE (Cluster Readiness Engine)](https://github.com/NVIDIA/cluster-readiness-engine)
 - [NVSentinel](https://github.com/NVIDIA/NVSentinel)
 - [NVIDIA AI Cluster Runtime (AICR)](http://github.com/NVIDIA/aicr)
-- [NVKE](https://github.com/dsx-ai-factory/nvke/) and [NVKR](https://github.com/dsx-ai-factory/nvkr/)
+- [NVIDIA Kubernetes Engine](https://github.com/dsx-ai-factory/nvke/) and [NVIDIA Kubernetes Recipes](https://github.com/dsx-ai-factory/nvkr/)
 - [NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator)
 - [NVIDIA Nodewright](http://github.com/NVIDIA/nodewright)
 - [NVIDIA Infra Controller (NICo)](https://github.com/dsx-ai-factory/infra-controller)
