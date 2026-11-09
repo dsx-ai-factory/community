@@ -41,15 +41,16 @@ Meetings are open to everyone under the project's Code of Conduct. You do not ne
 
 ## The first communities
 
-The first communities are NVIDIA GPU Operator, NVIDIA Kubernetes Engine (NVKE), and NVIDIA Run:ai.
+The first communities are NVIDIA GPU Operator, NVIDIA DSX K8s Cluster Management, NVIDIA DSX K8s Cluster Health & Configuration, and NVIDIA Run:ai.
 
 | Project | Slack | Mailing list | Drive folder |
 | --- | --- | --- | --- |
 | [NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator) | `#gpu-operator` | [gpu-operator@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/gpu-operator) | [GPU Operator folder](https://drive.google.com/drive/folders/1o7_A5w-Hq1jNgnwOj8Q415LLxlmLwNla) |
-| [NVIDIA Kubernetes Engine (NVKE)](https://github.com/dsx-ai-factory/nvke) and [NVKR](https://github.com/dsx-ai-factory/nvkr) | `#nvke` | To be announced | [NVIDIA Kubernetes Engine folder](https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP) |
+| NVIDIA DSX K8s Cluster Management (NVKE, NVKR, NICo CAPI Provider) | `#nvidia-dsx-k8s-cluster-management` | To be announced | [NVIDIA DSX K8s Cluster Management folder](https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP) |
+| NVIDIA DSX K8s Cluster Health & Configuration (NVCRE, AICR, NVSentinel, NKTP, Nodewright, Topograph) | `#nvidia-dsx-k8s-cluster-health-configuration` | To be announced | [NVIDIA DSX K8s Cluster Health & Configuration folder](https://drive.google.com/drive/folders/1lF6WQo1kmeond1C3nKf2pSfBiZkpcPqV) |
 | [NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai) | `#run-ai` | [run-ai@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/run-ai) | [NVIDIA Run:ai folder](https://drive.google.com/drive/folders/18fJnJw4c9mTwq3IOvEL8zDqkxq_pullC) |
 
-NVIDIA GPU Operator holds its first community meeting in person at the [DSX OS Contributor Workshop](https://events.nvidia.com/dsx-os-inference-workshop) at KubeCon + CloudNativeCon North America 2026 in Salt Lake City on Monday, November 9, 2026, from 4:45 to 5:45 PM MT. It then meets online every 4 weeks on Mondays. NVIDIA Run:ai also holds its first community meeting at the workshop at the same time. Future NVIDIA Kubernetes Engine and NVIDIA Run:ai meetings will be announced on their mailing lists.
+NVIDIA GPU Operator holds its first community meeting in person at the [DSX OS Contributor Workshop](https://events.nvidia.com/dsx-os-inference-workshop) at KubeCon + CloudNativeCon North America 2026 in Salt Lake City on Monday, November 9, 2026, from 4:45 to 5:45 PM MT. It then meets online every 4 weeks on Mondays. NVIDIA Run:ai also holds its first community meeting at the workshop at the same time. Future meetings for NVIDIA Run:ai, NVIDIA DSX K8s Cluster Management, and NVIDIA DSX K8s Cluster Health & Configuration will be announced in their Slack channels and on the community calendar.
 
 The [communities list](../communities/README.md) has the current coordinates for every community.
 
@@ -62,7 +63,7 @@ The [communities list](../communities/README.md) has the current coordinates for
 
 ## What comes next
 
-NVIDIA GPU Operator, NVIDIA Kubernetes Engine, and NVIDIA Run:ai are the first communities. More communities are on the way, and each will be added to the [communities list](../communities/README.md).
+NVIDIA GPU Operator, NVIDIA DSX K8s Cluster Management, NVIDIA DSX K8s Cluster Health & Configuration, and NVIDIA Run:ai are the first communities. More communities are on the way, and each will be added to the [communities list](../communities/README.md).
 
 ---
 

@@ -37,18 +37,36 @@ communities:
     notes: https://docs.google.com/document/d/1rHtnDgfv1IRiFmGpOrc7v1MGVfeCo2ASzWZOmKscyyg/edit
     drive_folder: https://drive.google.com/drive/folders/1o7_A5w-Hq1jNgnwOj8Q415LLxlmLwNla
 
-  - id: nvke
-    name: NVIDIA Kubernetes Engine (NVKE)
-    description: A management plane for GPU Kubernetes on bare metal, and NVKR, the recipes that build NVKE node images and components.
+  - id: k8s-cluster-management
+    name: NVIDIA DSX K8s Cluster Management
+    description: "Building and running Kubernetes clusters on NVIDIA GPU infrastructure: NVKE, NVKR, and the NICo CAPI Provider."
     repositories:
       - https://github.com/dsx-ai-factory/nvke
       - https://github.com/dsx-ai-factory/nvkr
-    slack: "#nvke"
+      - https://github.com/dsx-ai-factory/cluster-api-provider-nico
+    slack: "#nvidia-dsx-k8s-cluster-management"
     mailing_list: to be announced
     meetings:
-      cadence: to be announced on the mailing list
+      cadence: to be announced
     notes: https://docs.google.com/document/d/1l5jWUBUG5ZkuZTFFT55T1qpoIN7VCXoU0dAZu0LE4UQ/edit
     drive_folder: https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP
+
+  - id: k8s-cluster-health-configuration
+    name: NVIDIA DSX K8s Cluster Health & Configuration
+    description: "Configuring Kubernetes clusters and keeping them healthy: NVCRE, AICR, NVSentinel, NKTP, Nodewright, and Topograph."
+    repositories:
+      - https://github.com/NVIDIA/cluster-readiness-engine
+      - https://github.com/NVIDIA/aicr
+      - https://github.com/NVIDIA/NVSentinel
+      - https://github.com/dsx-ai-factory/nvke-telemetry-pipeline
+      - https://github.com/NVIDIA/nodewright
+      - https://github.com/dsx-ai-factory/topograph
+    slack: "#nvidia-dsx-k8s-cluster-health-configuration"
+    mailing_list: to be announced
+    meetings:
+      cadence: to be announced
+    notes: https://docs.google.com/document/d/1NE8SSWKVj17VJ_Cae186yf5xse2NpfW8t0633JKtZpk/edit
+    drive_folder: https://drive.google.com/drive/folders/1lF6WQo1kmeond1C3nKf2pSfBiZkpcPqV
 
   - id: run-ai
     name: NVIDIA Run:ai

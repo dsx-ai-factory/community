@@ -17,7 +17,8 @@ To learn how meetings run, see [community-meetings.md](community-meetings.md).
 | Community | Slack | Mailing list | Meetings | Notes | Drive folder |
 | --- | --- | --- | --- | --- | --- |
 | [NVIDIA GPU Operator](#nvidia-gpu-operator) | `#gpu-operator` | [gpu-operator@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/gpu-operator) | Every 4 weeks on Mondays | [Notes](https://docs.google.com/document/d/1rHtnDgfv1IRiFmGpOrc7v1MGVfeCo2ASzWZOmKscyyg/edit) | [Folder](https://drive.google.com/drive/folders/1o7_A5w-Hq1jNgnwOj8Q415LLxlmLwNla) |
-| [NVIDIA Kubernetes Engine (NVKE)](#nvidia-kubernetes-engine-nvke) | `#nvke` | To be announced | To be announced | [Notes](https://docs.google.com/document/d/1l5jWUBUG5ZkuZTFFT55T1qpoIN7VCXoU0dAZu0LE4UQ/edit) | [Folder](https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP) |
+| [NVIDIA DSX K8s Cluster Management](#nvidia-dsx-k8s-cluster-management) | `#nvidia-dsx-k8s-cluster-management` | To be announced | To be announced | [Notes](https://docs.google.com/document/d/1l5jWUBUG5ZkuZTFFT55T1qpoIN7VCXoU0dAZu0LE4UQ/edit) | [Folder](https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP) |
+| [NVIDIA DSX K8s Cluster Health & Configuration](#nvidia-dsx-k8s-cluster-health--configuration) | `#nvidia-dsx-k8s-cluster-health-configuration` | To be announced | To be announced | [Notes](https://docs.google.com/document/d/1NE8SSWKVj17VJ_Cae186yf5xse2NpfW8t0633JKtZpk/edit) | [Folder](https://drive.google.com/drive/folders/1lF6WQo1kmeond1C3nKf2pSfBiZkpcPqV) |
 | [NVIDIA Run:ai](#nvidia-runai) | `#run-ai` | [run-ai@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/run-ai) | To be announced | [Notes](https://docs.google.com/document/d/1JbbBnGL-E0OS0pH0bjf7OSCYNRJyyMpzSkg2s12qHcc/edit) | [Folder](https://drive.google.com/drive/folders/18fJnJw4c9mTwq3IOvEL8zDqkxq_pullC) |
 
 ### NVIDIA GPU Operator
@@ -32,16 +33,27 @@ Creates, configures, and manages GPUs in Kubernetes.
 - **Meeting notes:** [Google Doc](https://docs.google.com/document/d/1rHtnDgfv1IRiFmGpOrc7v1MGVfeCo2ASzWZOmKscyyg/edit)
 - **Drive folder:** [notes, recordings, and slides](https://drive.google.com/drive/folders/1o7_A5w-Hq1jNgnwOj8Q415LLxlmLwNla)
 
-### NVIDIA Kubernetes Engine (NVKE)
+### NVIDIA DSX K8s Cluster Management
 
-A management plane for GPU Kubernetes on bare metal, and NVKR, the recipes that build NVKE node images and components.
+Building and running Kubernetes clusters on NVIDIA GPU infrastructure: NVKE, NVKR, and the NICo CAPI Provider.
 
-- **Repositories:** [dsx-ai-factory/nvke](https://github.com/dsx-ai-factory/nvke), [dsx-ai-factory/nvkr](https://github.com/dsx-ai-factory/nvkr)
-- **Slack:** `#nvke`
+- **Repositories:** [dsx-ai-factory/nvke](https://github.com/dsx-ai-factory/nvke) (NVKE), [dsx-ai-factory/nvkr](https://github.com/dsx-ai-factory/nvkr) (NVKR), [dsx-ai-factory/cluster-api-provider-nico](https://github.com/dsx-ai-factory/cluster-api-provider-nico) (NICo CAPI Provider)
+- **Slack:** `#nvidia-dsx-k8s-cluster-management`
 - **Mailing list:** to be announced
-- **Meetings:** to be announced on the mailing list
+- **Meetings:** to be announced
 - **Meeting notes:** [Google Doc](https://docs.google.com/document/d/1l5jWUBUG5ZkuZTFFT55T1qpoIN7VCXoU0dAZu0LE4UQ/edit)
 - **Drive folder:** [notes, recordings, and slides](https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP)
+
+### NVIDIA DSX K8s Cluster Health & Configuration
+
+Configuring Kubernetes clusters and keeping them healthy: NVCRE, AICR, NVSentinel, NKTP, Nodewright, and Topograph.
+
+- **Repositories:** [NVIDIA/cluster-readiness-engine](https://github.com/NVIDIA/cluster-readiness-engine) (NVCRE), [NVIDIA/aicr](https://github.com/NVIDIA/aicr) (AICR), [NVIDIA/NVSentinel](https://github.com/NVIDIA/NVSentinel) (NVSentinel), [dsx-ai-factory/nvke-telemetry-pipeline](https://github.com/dsx-ai-factory/nvke-telemetry-pipeline) (NKTP), [NVIDIA/nodewright](https://github.com/NVIDIA/nodewright) (Nodewright), [dsx-ai-factory/topograph](https://github.com/dsx-ai-factory/topograph) (Topograph)
+- **Slack:** `#nvidia-dsx-k8s-cluster-health-configuration`
+- **Mailing list:** to be announced
+- **Meetings:** to be announced
+- **Meeting notes:** [Google Doc](https://docs.google.com/document/d/1NE8SSWKVj17VJ_Cae186yf5xse2NpfW8t0633JKtZpk/edit)
+- **Drive folder:** [notes, recordings, and slides](https://drive.google.com/drive/folders/1lF6WQo1kmeond1C3nKf2pSfBiZkpcPqV)
 
 ### NVIDIA Run:ai
 
