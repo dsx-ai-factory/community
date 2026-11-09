@@ -49,3 +49,18 @@ communities:
       cadence: to be announced on the mailing list
     notes: https://docs.google.com/document/d/1l5jWUBUG5ZkuZTFFT55T1qpoIN7VCXoU0dAZu0LE4UQ/edit
     drive_folder: https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP
+
+  - id: run-ai
+    name: NVIDIA Run:ai
+    description: The AI workload orchestration platform for Kubernetes.
+    repositories:
+      - https://github.com/dsx-ai-factory/run-ai
+    slack: "#run-ai"
+    mailing_list:
+      address: run-ai@dsxaifactory.com
+      join: https://groups.google.com/a/dsxaifactory.com/g/run-ai
+    meetings:
+      cadence: to be announced on the mailing list
+      first_meeting: In person at the DSX OS Contributor Workshop, Monday, November 9, 2026, 4:45 to 5:45 PM MT, Salt Lake City
+    notes: https://docs.google.com/document/d/1JbbBnGL-E0OS0pH0bjf7OSCYNRJyyMpzSkg2s12qHcc/edit
+    drive_folder: https://drive.google.com/drive/folders/18fJnJw4c9mTwq3IOvEL8zDqkxq_pullC

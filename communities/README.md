@@ -18,6 +18,7 @@ To learn how meetings run, see [community-meetings.md](community-meetings.md).
 | --- | --- | --- | --- | --- | --- |
 | [NVIDIA GPU Operator](#nvidia-gpu-operator) | `#gpu-operator` | [gpu-operator@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/gpu-operator) | Every 4 weeks on Mondays | [Notes](https://docs.google.com/document/d/1rHtnDgfv1IRiFmGpOrc7v1MGVfeCo2ASzWZOmKscyyg/edit) | [Folder](https://drive.google.com/drive/folders/1o7_A5w-Hq1jNgnwOj8Q415LLxlmLwNla) |
 | [NVIDIA Kubernetes Engine (NVKE)](#nvidia-kubernetes-engine-nvke) | `#nvke` | To be announced | To be announced | [Notes](https://docs.google.com/document/d/1l5jWUBUG5ZkuZTFFT55T1qpoIN7VCXoU0dAZu0LE4UQ/edit) | [Folder](https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP) |
+| [NVIDIA Run:ai](#nvidia-runai) | `#run-ai` | [run-ai@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/run-ai) | To be announced | [Notes](https://docs.google.com/document/d/1JbbBnGL-E0OS0pH0bjf7OSCYNRJyyMpzSkg2s12qHcc/edit) | [Folder](https://drive.google.com/drive/folders/18fJnJw4c9mTwq3IOvEL8zDqkxq_pullC) |
 
 ### NVIDIA GPU Operator
 
@@ -41,6 +42,18 @@ A management plane for GPU Kubernetes on bare metal, and NVKR, the recipes that 
 - **Meetings:** to be announced on the mailing list
 - **Meeting notes:** [Google Doc](https://docs.google.com/document/d/1l5jWUBUG5ZkuZTFFT55T1qpoIN7VCXoU0dAZu0LE4UQ/edit)
 - **Drive folder:** [notes, recordings, and slides](https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP)
+
+### NVIDIA Run:ai
+
+The AI workload orchestration platform for Kubernetes.
+
+- **Repositories:** [dsx-ai-factory/run-ai](https://github.com/dsx-ai-factory/run-ai)
+- **Slack:** `#run-ai`
+- **Mailing list:** [run-ai@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/run-ai)
+- **Meetings:** to be announced on the mailing list
+- **First meeting:** in person at the [DSX OS Contributor Workshop](https://events.nvidia.com/dsx-os-inference-workshop), Monday, November 9, 2026, 4:45 to 5:45 PM MT, Salt Lake City
+- **Meeting notes:** [Google Doc](https://docs.google.com/document/d/1JbbBnGL-E0OS0pH0bjf7OSCYNRJyyMpzSkg2s12qHcc/edit)
+- **Drive folder:** [notes, recordings, and slides](https://drive.google.com/drive/folders/18fJnJw4c9mTwq3IOvEL8zDqkxq_pullC)
 
 ## How this page is maintained
 
