@@ -6,6 +6,8 @@ Everyone is welcome. You do not need to work at NVIDIA, be a customer, or have c
 
 ## How to join
 
+> **New to Slack here?** Follow the step-by-step guide: **[Join the DSX AI Factory Slack](join-slack.md)**.
+
 1. Request an invite to the DSX AI Factory Slack workspace at [inviter.co/dsx-ai-factory](https://inviter.co/dsx-ai-factory), then join the community's channel.
 2. Join the community's mailing list to receive meeting invites and announcements.
 3. Follow the [DSX AI Factory Community calendar](https://calendar.google.com/calendar/embed?src=c_d83d62cba35a7b67c739c701dd77122feefff93389c4cc83b5c2b1d224c07c75%40group.calendar.google.com) for meetings across communities.
