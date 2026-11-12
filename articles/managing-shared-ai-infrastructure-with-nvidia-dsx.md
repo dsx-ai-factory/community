@@ -50,11 +50,11 @@ Managing shared GPU resources is only part of the challenge. Teams also need a w
 
 NVIDIA Run:ai can manage a wide range of AI workloads on the same shared infrastructure. Create development workspaces with fractional GPU allocations so developers can experiment without reserving an entire GPU, or run distributed training workloads across multiple workers.
 
-For more complex workloads, integrate other NVIDIA open-source projects with Run:ai. Use [NVIDIA Dynamo](https://github.com/ai-dynamo/dynamo) for distributed inference, coordinating frontend, prefill, and decode components to serve models. Run:ai manages the GPU resources and scheduling for these components alongside other AI workloads, allowing inference and training to share the same infrastructure.
+For more complex workloads, integrate other NVIDIA open-source projects with NVIDIA Run:ai. Use [NVIDIA Dynamo](https://github.com/ai-dynamo/dynamo) for distributed inference, coordinating frontend, prefill, and decode components to serve models. NVIDIA Run:ai manages the GPU resources and scheduling for these components alongside other AI workloads, allowing inference and training to share the same infrastructure.
 
-The same shared infrastructure can also support AI agents through [NVIDIA OpenShell](https://github.com/NVIDIA/OpenShell). Run agents in isolated OpenShell sandboxes, with their models hosted by separate inference services. OpenShell controls what agents can access and do, including permissions, tools, and network connections, while Run:ai manages the scheduling and resources for the agent workloads and their inference services.
+The same shared infrastructure can also support AI agents through [NVIDIA OpenShell](https://github.com/NVIDIA/OpenShell). Run agents in isolated OpenShell sandboxes, with their models hosted by separate inference services. OpenShell controls what agents can access and do, including permissions, tools, and network connections, while NVIDIA Run:ai manages the scheduling and resources for the agent workloads and their inference services.
 
-To support additional Kubernetes workload types, use [Workload Map](https://github.com/dsx-ai-factory/workload-map) to define their structure and relationships. Run:ai can use these definitions to recognize and manage workloads from different frameworks through the same platform, extending the range of applications teams can bring onto their shared GPU infrastructure.
+To support additional Kubernetes workload types, use [Workload Map](https://github.com/dsx-ai-factory/workload-map) to define their structure and relationships. NVIDIA Run:ai can use these definitions to recognize and manage workloads from different frameworks through the same platform, extending the range of applications teams can bring onto their shared GPU infrastructure.
 
 ## Get started
 
