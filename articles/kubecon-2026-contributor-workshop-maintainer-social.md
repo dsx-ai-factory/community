@@ -33,8 +33,6 @@ Some teams spent contribution time on roadmap discussions and requirements, four
 
 At the Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one filtering the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the Infra Controller table, an engineer from a GPU cloud provider filed a detailed issue about public IPs, NAT, and load balancers for tenant networks, a question that comes from running bare metal for customers. At Dynamo, one contributor added a router queue wait metric that is now in review. At AI Cluster Runtime, the afternoon with a cloud native platform company produced a new issue and two closed through pull requests.
 
-Asked for one word to describe the day, the teams said enlightening, exciting, cool, adaptable, mind-expanding, fruitful, exploratory, human, and foundational.
-
 > **[PHOTO: maintainer and contributor. Caption: "Live review."]**
 
 The people in the contributor sessions came from 40 organizations, and the mix mattered as much as the number. GPU cloud and infrastructure companies like Crusoe, Lambda, Rafay, and Mirantis worked alongside large technology companies such as Google, Microsoft, and Apple, enterprises including JPMorgan Chase, Charles Schwab, and Intercontinental Exchange, and cloud native companies like Upbound, Kubermatic, and Clastix. Community groups and universities joined them too, among them Cloud Native Texas, the University of Utah, and the University of Colorado Boulder.
