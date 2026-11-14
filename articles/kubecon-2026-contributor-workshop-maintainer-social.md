@@ -51,7 +51,7 @@ One NVIDIA engineer wrote afterward that the invite list was spot on, with long-
 
 ## Thank you
 
-Thank you to the 40 organizations that spent the day with us [optional: names], the maintainers who joined the social, and the NVIDIA product managers and engineers who gave up their day. My co-leads Shally Garg and Pavitar Thiara shared the planning with me.
+Thank you to the 40 organizations that spent the day with us [optional: names], the maintainers who joined the social, and the NVIDIA product managers and engineers who gave up their day. My co-leads Shally Garg and Pavitar Thiara shared the planning with me, and Tiffany Nadler and Crysta Kaufmann helped organize as well.
 
 ## Get involved
 
