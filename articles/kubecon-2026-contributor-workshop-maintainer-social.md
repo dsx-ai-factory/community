@@ -43,7 +43,7 @@ The contributor sessions drew people from 40 organizations, and in the survey af
 
 A workshop brings newcomers to our projects, but much of what we build depends on people already deep in the cloud native ecosystem, the maintainers of Kubernetes and the CNCF projects around it. So we invited a small group to a casual evening, with no keynotes and no pitches. The invitation was simple: we wanted to thank them for their work in the cloud native community and celebrate it, introduce them to the NVIDIA maintainers who do the work on our projects, and hear where their own projects overlap with ours and how we show up in the community.
 
-Forty-seven external maintainers and community leaders came, from 18 organizations, and spent the evening with NVIDIA product, engineering, and leadership, including Warren Barkley and Bob Wise. The room included members of the Kubernetes Steering Committee, a member of the CNCF Technical Oversight Committee, the SIG-Node co-chair, and maintainers of KubeVirt and OpenShell.
+Around 50 maintainers of cloud native projects and community leaders came, from 18 organizations, and spent the evening with NVIDIA product, engineering, and leadership, including Warren Barkley and Bob Wise. The room included members of the Kubernetes Steering Committee, a member of the CNCF Technical Oversight Committee, the SIG-Node co-chair, and maintainers of KubeVirt and OpenShell.
 
 > **[PHOTO: the social. Caption: "The first DSX AI Factory Maintainer Social."]**
 
