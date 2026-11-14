@@ -43,7 +43,7 @@ The contributor sessions drew 40 organizations, and in the survey afterward, 96%
 
 A workshop brings newcomers to our projects, but much of what we build depends on people already deep in the cloud native ecosystem, the maintainers of Kubernetes and the CNCF projects around it. So we invited a small group to a casual evening, with no keynotes and no pitches. The invitation was simple: we wanted to thank them for their work in the cloud native community and celebrate it, introduce them to the NVIDIA maintainers who do the work on our projects, and hear where their own projects overlap with ours and how we show up in the community.
 
-Around 50 maintainers of cloud native projects and community leaders came, from 18 organizations, and spent the evening with NVIDIA product, engineering, and leadership, including Warren Barkley and Bob Wise. The room included members of the Kubernetes Steering Committee, a member of the CNCF Technical Oversight Committee, the SIG-Node co-chair, and OpenShell maintainers.
+Around 50 maintainers of cloud native projects and community leaders came from 18 organizations and spent the evening with NVIDIA product, engineering, and leadership, including Warren Barkley and Bob Wise. The room included members of the Kubernetes Steering Committee, a CNCF Technical Oversight Committee member, the SIG-Node co-chair, and maintainers of [OpenShell](https://blogs.nvidia.com/blog/open-source-openshell-infrastructure/), the project NVIDIA donated to the CNCF that week.
 
 > **[PHOTO: the social. Caption: "The first DSX AI Factory Maintainer Social."]**
 
@@ -55,7 +55,7 @@ Thank you to the 40 organizations that spent the day with us [optional: names th
 
 ## What comes next
 
-The next workshop is a holiday edition in December focused on NVIDIA Run:ai, with partner workshops planned for GTC in San Jose in March. [Confirm the December date and what can be said publicly about GTC.] To take part, explore [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory), request a Slack invite at [inviter.co/dsx-ai-factory](https://inviter.co/dsx-ai-factory), or find a project community in the [communities](../communities/README.md) directory. If you have ever worked around a bug instead of reporting it, pick a project and tell us what is missing.
+The next workshop is a holiday edition in December focused on NVIDIA Run:ai, with partner workshops planned for GTC in San Jose in March. [Confirm the December date and GTC wording.] To take part, explore [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory), request a Slack invite at [inviter.co/dsx-ai-factory](https://inviter.co/dsx-ai-factory), or find a project community in the [communities](../communities/README.md) directory. If you have ever worked around a bug instead of reporting it, pick a project and tell us what is missing.
 
 ---
 
