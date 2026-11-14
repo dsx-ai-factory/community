@@ -55,7 +55,13 @@ Thank you to the 40 organizations that spent the day with us [optional: names], 
 
 ## Get involved
 
-To take part, explore [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory), request a Slack invite at [inviter.co/dsx-ai-factory](https://inviter.co/dsx-ai-factory), or find a project community in the [communities](../communities/README.md) directory. If you have ever worked around a bug instead of reporting it, pick a project and tell us what is missing.
+There are three ways to take part:
+
+- **GitHub:** explore [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory) and pick a project.
+- **Slack:** request an invite at [inviter.co/dsx-ai-factory](https://inviter.co/dsx-ai-factory) to talk with the maintainers.
+- **Community meetings:** find a project community in the [communities](../communities/README.md) directory and join a meeting.
+
+If you have ever worked around a bug instead of reporting it, pick a project and tell us what is missing.
 
 ---
 
