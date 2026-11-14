@@ -8,10 +8,11 @@ It rests on three ideas:
 - **More participation from outside NVIDIA.** In Salt Lake City, that meant the cloud native community already in town for KubeCon.
 - **Keeping the contributions going.** The part that matters most comes afterward, and we measure it by who is still active 90 days later, not by pull requests opened on the day.
 
-The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-its-customers-partners-did-one-arun-gupta-iehsc/), an invite-only day at NVIDIA headquarters in September, showed what happens when the distance between a user and a maintainer disappears, and the second took the format to Salt Lake City on Monday, November 9, the day before KubeCon + CloudNativeCon North America opened. Warren Barkley opened with an introduction to DSX, every product manager gave a lightning introduction, and then people split into contribution sprints across these streams:
+The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-its-customers-partners-did-one-arun-gupta-iehsc/), an invite-only day at NVIDIA headquarters in September, showed what happens when the distance between a user and a maintainer disappears, and the second took the format to Salt Lake City on Monday, November 9, the day before KubeCon + CloudNativeCon North America opened. Warren Barkley opened with an introduction to DSX, every product manager gave a lightning introduction, and then people split into contribution sprints across four streams:
 
-- **Building and running clusters:** NVIDIA Kubernetes Engine, Kubernetes Recipes, GPU Operator
+- **Building and running clusters:** NVIDIA Kubernetes Engine, Kubernetes Recipes
 - **Keeping them ready, running, and healthy:** AI Cluster Runtime, NVSentinel, Nodewright, Topograph
+- **GPU Operator and Operands**
 - **NVIDIA Run:ai**
 
 In each, you claimed an issue, opened a draft pull request, and got a live review from a maintainer.
@@ -20,7 +21,7 @@ In each, you claimed an issue, opened a draft pull request, and got a live revie
 
 ## What happened at the tables
 
-At the Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one of which lets you filter the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests before the afternoon ended, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the Infra Controller table, a Crusoe engineer filed a detailed issue about public IPs, NAT, and load balancers for tenant networks, a question that comes from running bare metal for customers. At Dynamo, one contributor added a router queue wait metric that is now in review. At AI Cluster Runtime, the afternoon with Upbound produced a new issue and two closed through pull requests. [Confirm OK to name Upbound and Crusoe.] Asked for one word, teams said exciting, fruitful, foundational, and mind-expanding, and one Dynamo contributor offered "lots of dependencies, models are big, Wifi is slow."
+At the Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one of which lets you filter the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the Infra Controller table, a Crusoe engineer filed a detailed issue about public IPs, NAT, and load balancers for tenant networks, a question that comes from running bare metal for customers. At Dynamo, one contributor added a router queue wait metric that is now in review. At AI Cluster Runtime, the afternoon with Upbound produced a new issue and two closed through pull requests. [Confirm OK to name Upbound and Crusoe.] Asked for one word, teams said exciting, fruitful, foundational, and mind-expanding, and one Dynamo contributor offered "lots of dependencies, models are big, Wifi is slow."
 
 > **[PHOTO: a maintainer and a contributor at a table. Caption: "Live review."]**
 
