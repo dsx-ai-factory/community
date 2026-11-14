@@ -65,7 +65,7 @@ Around 50 maintainers of cloud native projects and community leaders came from 1
 
 *The first DSX AI Factory Maintainer Social.*
 
-One NVIDIA engineer wrote afterward that the invite list was spot on, with long-term maintainers who want to adopt NVIDIA software and can help us get more involved upstream. [Confirm quote and attribution.] I enjoyed bringing the external maintainers and NVIDIA maintainers together. It has always been people over code, because meaningful relationships are what make you more effective when you collaborate. We plan to make it a standing event at every KubeCon.
+One NVIDIA engineer wrote afterward that the invite list was spot on, with long-term maintainers who want to adopt NVIDIA software and can help us get more involved upstream. I enjoyed bringing the external maintainers and NVIDIA maintainers together. It has always been people over code, because meaningful relationships are what make you more effective when you collaborate.
 
 ![Conversations at the Maintainer Social](images/kubecon-2026-social-2.jpg)
 
