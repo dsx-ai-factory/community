@@ -53,9 +53,9 @@ One NVIDIA engineer wrote afterward that the invite list was spot on, with long-
 
 Thank you to the 40 organizations that spent the day with us [optional: names], the maintainers who joined the social, and the NVIDIA product managers and engineers who gave up their day. My co-leads Shally Garg and Pavitar Thiara shared the planning with me.
 
-## What comes next
+## Get involved
 
-The next workshop is a holiday edition in December focused on NVIDIA Run:ai, with partner workshops planned for GTC in San Jose in March. [Confirm the December date and GTC wording.] To take part, explore [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory), request a Slack invite at [inviter.co/dsx-ai-factory](https://inviter.co/dsx-ai-factory), or find a project community in the [communities](../communities/README.md) directory. If you have ever worked around a bug instead of reporting it, pick a project and tell us what is missing.
+To take part, explore [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory), request a Slack invite at [inviter.co/dsx-ai-factory](https://inviter.co/dsx-ai-factory), or find a project community in the [communities](../communities/README.md) directory. If you have ever worked around a bug instead of reporting it, pick a project and tell us what is missing.
 
 ---
 
