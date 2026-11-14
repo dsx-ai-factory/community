@@ -16,7 +16,7 @@ It rests on three ideas:
 - **More participation from outside NVIDIA.** In Salt Lake City, that meant the cloud native community already in town for KubeCon.
 - **Keeping the contributions going.** We measure it by who is still active 90 days later, not by pull requests opened on the day.
 
-The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-its-customers-partners-did-one-arun-gupta-iehsc/), an invite-only day at NVIDIA headquarters in September, showed what happens when the distance between a user and a maintainer disappears, and the second took the format to Salt Lake City on Monday, November 9, the day before KubeCon + CloudNativeCon North America opened. Warren Barkley opened with an introduction to DSX, every product manager gave a lightning introduction, and then people split into contribution sprints across four streams:
+The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-its-customers-partners-did-one-arun-gupta-iehsc/), an invite-only day at NVIDIA headquarters in September, showed what happens when the distance between a user and a maintainer disappears, and the second took the format to Salt Lake City on Monday, November 9, the day before KubeCon + CloudNativeCon North America opened. Warren Barkley opened with an introduction to DSX and the kickoff of the in-person community meetings, every product manager gave a lightning introduction, and then people split into contribution sprints across four streams:
 
 - **Building and running clusters:** NVIDIA Kubernetes Engine, Kubernetes Recipes
 - **Keeping them ready, running, and healthy:** AI Cluster Runtime, NVSentinel, Nodewright, Topograph
@@ -34,10 +34,6 @@ At the Kubernetes Recipes table, contributors opened four pull requests that are
 > **[PHOTO: a maintainer and a contributor at a table. Caption: "Live review."]**
 
 81 people attended, and the contributor sessions drew 40 organizations. In the survey afterward, 96% of respondents said the workshop was a good use of their time.
-
-## The first community meetings
-
-The afternoon ended with the first in-person community meetings, where four project communities kicked off their regular meetings: GPU Operator, NVIDIA Run:ai, DSX Kubernetes cluster management, and DSX Kubernetes cluster health and configuration. [Roughly how many people joined, and what they agreed to do next.]
 
 ## The Maintainer Social
 
