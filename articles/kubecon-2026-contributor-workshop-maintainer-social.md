@@ -37,7 +37,7 @@ Asked for one word to describe the day, the teams said enlightening, exciting, c
 
 > **[PHOTO: maintainer and contributor. Caption: "Live review."]**
 
-The contributor sessions drew people from 40 organizations, and in the survey afterward, 96% of respondents said the workshop was a good use of their time.
+The contributor sessions drew people from 40 organizations, and in the survey afterward, 96% of respondents said the workshop was a good use of their time, and 44% said very much.
 
 ## The Maintainer Social
 
