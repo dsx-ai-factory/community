@@ -29,9 +29,11 @@ Contributing meant more than code: you could discuss the roadmap, file an issue,
 
 ## What happened at the tables
 
-Some teams spent contribution time on roadmap discussions and requirements, four project communities used the day to kick off regular community meetings, and others shipped code. At the Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one of which lets you filter the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the Infra Controller table, an engineer from a GPU cloud provider filed a detailed issue about public IPs, NAT, and load balancers for tenant networks, a question that comes from running bare metal for customers. At Dynamo, one contributor added a router queue wait metric that is now in review. At AI Cluster Runtime, the afternoon with a cloud native platform company produced a new issue and two closed through pull requests. Asked for one word, teams said exciting, fruitful, foundational, and mind-expanding, and one Dynamo contributor offered "lots of dependencies, models are big, Wifi is slow."
+Some teams spent contribution time on roadmap discussions and requirements, four project communities used the day to kick off regular community meetings, and others shipped code. See the [upcoming community meetings](https://github.com/dsx-ai-factory/community/blob/main/articles/dsx-ai-factory-community-meetings.md) to join one.
 
-> **[PHOTO: a maintainer and a contributor at a table. Caption: "Live review."]**
+At the Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one of which lets you filter the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the Infra Controller table, an engineer from a GPU cloud provider filed a detailed issue about public IPs, NAT, and load balancers for tenant networks, a question that comes from running bare metal for customers. At Dynamo, one contributor added a router queue wait metric that is now in review. At AI Cluster Runtime, the afternoon with a cloud native platform company produced a new issue and two closed through pull requests. Asked for one word, teams said exciting, fruitful, foundational, and mind-expanding, and one Dynamo contributor offered "lots of dependencies, models are big, Wifi is slow."
+
+> **[PHOTO: maintainer and contributor. Caption: "Live review."]**
 
 81 people attended, and the contributor sessions drew 40 organizations. In the survey afterward, 96% of respondents said the workshop was a good use of their time.
 
@@ -51,7 +53,7 @@ Thank you to the 40 organizations that spent the day with us [optional: names th
 
 ## What comes next
 
-The next workshop is a holiday edition in December focused on NVIDIA Run:ai, with partner workshops planned for GTC in San Jose in March. [Confirm the December date and what can be said publicly about GTC.] To take part in the meantime, explore [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory), request a Slack invite at [inviter.co/dsx-ai-factory](https://inviter.co/dsx-ai-factory), or find a project community in the [communities](../communities/README.md) directory. If you have ever worked around a bug instead of reporting it, pick a project and tell us what is missing.
+The next workshop is a holiday edition in December focused on NVIDIA Run:ai, with partner workshops planned for GTC in San Jose in March. [Confirm the December date and what can be said publicly about GTC.] To take part, explore [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory), request a Slack invite at [inviter.co/dsx-ai-factory](https://inviter.co/dsx-ai-factory), or find a project community in the [communities](../communities/README.md) directory. If you have ever worked around a bug instead of reporting it, pick a project and tell us what is missing.
 
 ---
 
