@@ -37,7 +37,9 @@ Asked for one word to describe the day, the teams said enlightening, exciting, c
 
 > **[PHOTO: maintainer and contributor. Caption: "Live review."]**
 
-The contributor sessions drew 40 organizations, and in the survey afterward, 96% of respondents said the workshop was a good use of their time, and 44% said very much.
+The people in the contributor sessions came from 40 organizations, and the mix mattered as much as the number. GPU cloud and infrastructure companies like Crusoe, Lambda, Rafay, and Mirantis worked alongside large technology companies such as Google, Microsoft, and Apple, enterprises including JPMorgan Chase, Charles Schwab, and Intercontinental Exchange, and cloud native companies like Upbound, Kubermatic, and Clastix. Community groups and universities joined them too, among them Cloud Native Texas, the University of Utah, and the University of Colorado Boulder.
+
+In the survey afterward, 96% of respondents said the workshop was a good use of their time, and 44% said very much.
 
 ## The Maintainer Social
 
@@ -51,7 +53,7 @@ One NVIDIA engineer wrote afterward that the invite list was spot on, with long-
 
 ## Thank you
 
-Thank you to the 40 organizations that spent the day with us [optional: names], the maintainers who joined the social, and the NVIDIA product managers and engineers who gave up their day. My co-leads Shally Garg and Pavitar Thiara shared the planning with me, and Tiffany Nadler and Crysta Kaufmann helped with execution.
+Thank you to the organizations that spent the day with us and the maintainers who joined the social. Thank you as well to all the NVIDIA product managers and engineers who got their repositories ready for contributions and worked diligently with the external contributors. My co-leads Shally Garg and Pavitar Thiara shared the planning with me, and Tiffany Nadler and Crysta Kaufmann helped with execution.
 
 ## Get involved
 
