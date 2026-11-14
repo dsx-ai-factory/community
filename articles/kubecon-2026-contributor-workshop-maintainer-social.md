@@ -16,17 +16,17 @@ The afternoon ended with the first in-person community meetings, where several p
 
 ## The Maintainer Social
 
-The workshop brings contributors to maintainers. The Maintainer Social goes the other direction, and it is the part I was most curious about. On the evening of November 9, we hosted an invite-only social for maintainers of the cloud native projects that sit next to DSX OS, [venue and time]. A lot of what DSX OS does depends on upstream decisions made in projects like [projects represented], and those decisions get made by people who rarely have a reason to talk to the NVIDIA engineers on the other side of the interface. A social hour with no agenda is a low-pressure way to change that.
+The workshop brings contributors to the DSX AI Factory projects. The Maintainer Social went the other direction, and it was a first for us. On the evening of November 9, we brought together a curated group of cloud native maintainers for a private social, [venue and time], as a way of thanking the community that so much of this work builds on. There was no agenda, which was deliberate, and the energy in the room sparked a lot of good conversations between maintainers and the NVIDIA teams who work next to their projects.
 
-[Number of maintainers and NVIDIA engineers who attended.] [One or two conversations or moments from the evening that stayed with you, in your own words.] [Any follow-up that came out of it, such as an issue filed, a meeting scheduled, or a design discussion started.]
+[Roughly how many maintainers and NVIDIA engineers were there.] [One or two conversations or moments from the evening, in your own words.] [Any follow-up that came out of it, such as an issue filed, a meeting scheduled, or a design discussion started.]
 
 ## What it adds up to
 
-A contributor workshop and a maintainer social look like two different events, and I think of them as one loop. The workshop gives people outside NVIDIA a reason to open their first pull request, and the social gives the people who maintain the neighboring projects a reason to look at what those pull requests are building toward. Either one on its own is useful, and together they cover the two ends of the same conversation. As in September, what stood out was less the code than the people, and the code followed quickly once they had met.
+A contributor workshop and a maintainer social look like two different events, and I think of them as two halves of the same week. The workshop gave people outside NVIDIA a reason to open their first pull request in the DSX AI Factory projects, and the social was our way of saying thank you to the maintainers whose projects those contributions depend on. As in September, what stood out was less the code than the people, and the code followed quickly once they had met.
 
 ## Thank you
 
-This only worked because the contributors showed up ready to build. Thank you to [list of participating companies] for spending the afternoon with us, and to the maintainers who joined the social. Thank you as well to the NVIDIA product managers and engineers who gave up their day at the tables, and to Bob Wise and Warren Barkley for joining us. My co-leads Shally Garg and Shweta Sadashiv Barge shared the planning with me across partner engagement, engineering readiness, logistics, and the contribution dashboard, and Pavitar Thiara pulled together the results.
+This only worked because the contributors showed up ready to build. Thank you to [list of participating companies; the draft KubeCon recap says 50+ external contributors from 40+ companies, confirm before using] for spending the afternoon with us, and to the maintainers who joined the social. Thank you as well to the NVIDIA product managers and engineers who gave up their day at the tables, and to Bob Wise and Warren Barkley for joining us. My co-leads Shally Garg and Shweta Sadashiv Barge shared the planning with me across partner engagement, engineering readiness, logistics, and the contribution dashboard, and Pavitar Thiara pulled together the results.
 
 ## What comes next
 
