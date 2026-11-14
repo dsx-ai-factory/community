@@ -1,4 +1,4 @@
-# A Week at KubeCon with DSX AI Factory: A Contributor Workshop and a Maintainer Social
+# People Over Code: A Contributor Workshop and a Maintainer Social at KubeCon North America
 
 In the 24 hours around the DSX OS Contributor Workshop in Salt Lake City, 57 contributors across 12 repositories opened 36 pull requests and 28 issues and left 64 comments. Compared with a typical day over the previous 30 days:
 
