@@ -23,13 +23,13 @@ The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-it
 - **GPU Operator and Operands**
 - **NVIDIA Run:ai**
 
-In each, you claimed an issue, opened a draft pull request, and got a live review from a maintainer.
+Contributing meant more than code: you could discuss the roadmap, file an issue, give a maintainer feedback in person, or open a draft pull request and get a live review, and all of it counted.
 
 > **[PHOTO: workshop room. Caption: "Each project at its own table."]**
 
 ## What happened at the tables
 
-Contribution time looked different at every table. Some teams spent it on roadmap discussions and requirements, four project communities used the day to kick off regular community meetings, and others shipped code. At the Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one of which lets you filter the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the Infra Controller table, an engineer from a GPU cloud provider filed a detailed issue about public IPs, NAT, and load balancers for tenant networks, a question that comes from running bare metal for customers. At Dynamo, one contributor added a router queue wait metric that is now in review. At AI Cluster Runtime, the afternoon with a cloud native platform company produced a new issue and two closed through pull requests. Asked for one word, teams said exciting, fruitful, foundational, and mind-expanding, and one Dynamo contributor offered "lots of dependencies, models are big, Wifi is slow."
+Some teams spent contribution time on roadmap discussions and requirements, four project communities used the day to kick off regular community meetings, and others shipped code. At the Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one of which lets you filter the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the Infra Controller table, an engineer from a GPU cloud provider filed a detailed issue about public IPs, NAT, and load balancers for tenant networks, a question that comes from running bare metal for customers. At Dynamo, one contributor added a router queue wait metric that is now in review. At AI Cluster Runtime, the afternoon with a cloud native platform company produced a new issue and two closed through pull requests. Asked for one word, teams said exciting, fruitful, foundational, and mind-expanding, and one Dynamo contributor offered "lots of dependencies, models are big, Wifi is slow."
 
 > **[PHOTO: a maintainer and a contributor at a table. Caption: "Live review."]**
 
