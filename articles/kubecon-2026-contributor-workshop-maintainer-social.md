@@ -2,7 +2,11 @@
 
 Most open source projects have the same quiet problem. People can see the issues, the code, and the contributing guide, and still don't contribute, because the distance between reading a repository and getting a first pull request merged is longer than it looks. You need a working environment, an understanding of the CI, and someone to ask when it breaks. Each of those takes minutes with a maintainer in the next chair and days alone, which is the idea behind the DSX OS Contributor Workshop: put the people who use a project in the same room as the people who build it, and spend the time on real issues instead of slides.
 
-It starts with an explicit conversation with partners and customers about contributing, because "contributions welcome" in a README is easy to ignore and a maintainer saying "this issue is yours" across a table is not. That conversation is how we grow participation from outside NVIDIA, and in Salt Lake City it meant the cloud native community already in town for KubeCon. The part that matters most comes afterward, keeping the contributions going, which we measure by who is still active 90 days later and not by pull requests opened on the day.
+It rests on three ideas:
+
+- **An explicit conversation with partners and customers about contributing.** "Contributions welcome" in a README is easy to ignore, and a maintainer saying "this issue is yours" across a table is not.
+- **More participation from outside NVIDIA.** In Salt Lake City, that meant the cloud native community already in town for KubeCon.
+- **Keeping the contributions going.** The part that matters most comes afterward, and we measure it by who is still active 90 days later, not by pull requests opened on the day.
 
 The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-its-customers-partners-did-one-arun-gupta-iehsc/), an invite-only day at NVIDIA headquarters in September, showed what happens when the distance between a user and a maintainer disappears, and the second took the format to Salt Lake City on Monday, November 9, the day before KubeCon + CloudNativeCon North America opened. Warren Barkley opened with an introduction to DSX, every product manager gave a lightning introduction, and then people split into contribution sprints across these streams:
 
