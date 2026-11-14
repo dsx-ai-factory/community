@@ -41,7 +41,7 @@ The contributor sessions drew people from 40 organizations, and in the survey af
 
 ## The Maintainer Social
 
-A workshop brings newcomers to our projects, but much of what we build depends on people already deep in the cloud native ecosystem, the maintainers of Kubernetes and the CNCF projects around it. A booth is no place to build those relationships, so we designed the evening as the opposite: a small, invite-only social, casual and relationship-first, with no keynotes and no hard pitches. The aim was for maintainers to meet the NVIDIA people working on neighboring problems and hear where DSX OS projects could use help. It was also our way of thanking the people who maintain the community.
+A workshop brings newcomers to our projects, but much of what we build depends on people already deep in the cloud native ecosystem, the maintainers of Kubernetes and the CNCF projects around it. A booth is no place to build those relationships, so we designed the evening as the opposite: a small, invite-only social, casual and relationship-first, with no keynotes and no pitches. The aim was for maintainers to meet the NVIDIA people working on neighboring problems and hear where DSX OS projects could use help. It was also our way of thanking the people who maintain the community.
 
 Forty-seven external maintainers and community leaders came, from 18 organizations, and spent the evening with NVIDIA product, engineering, and leadership, including Warren Barkley and Bob Wise. The room included members of the Kubernetes Steering Committee, a member of the CNCF Technical Oversight Committee, the SIG-Node co-chair, and maintainers of KubeVirt and OpenShell.
 
