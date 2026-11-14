@@ -1,12 +1,20 @@
 # A Week at KubeCon with DSX AI Factory: A Contributor Workshop and a Maintainer Social
 
+In the 24 hours around the DSX OS Contributor Workshop in Salt Lake City, 57 contributors across 12 repositories opened 36 pull requests and 28 issues and left 64 comments. Compared with a typical day over the previous 30 days:
+
+- **Overall activity was up 59%.**
+- **Pull requests were up 79%**, 36 against a typical 20.
+- **First-time contributors were up nearly 4x**, 19 against a typical 5.
+
+Four pull requests merged the same day, and 32 more were in review with maintainers.
+
 Most open source projects have the same quiet problem. People can see the issues, the code, and the contributing guide, and still don't contribute, because the distance between reading a repository and getting a first pull request merged is longer than it looks. You need a working environment, an understanding of the CI, and someone to ask when it breaks. Each of those takes minutes with a maintainer in the next chair and days alone, which is the idea behind the DSX OS Contributor Workshop: put the people who use a project in the same room as the people who build it, and spend the time on real issues instead of slides.
 
 It rests on three ideas:
 
 - **An explicit conversation with partners and customers about contributing.** "Contributions welcome" in a README is easy to ignore, and a maintainer saying "this issue is yours" across a table is not.
 - **More participation from outside NVIDIA.** In Salt Lake City, that meant the cloud native community already in town for KubeCon.
-- **Keeping the contributions going.** The part that matters most comes afterward, and we measure it by who is still active 90 days later, not by pull requests opened on the day.
+- **Keeping the contributions going.** We measure it by who is still active 90 days later, not by pull requests opened on the day.
 
 The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-its-customers-partners-did-one-arun-gupta-iehsc/), an invite-only day at NVIDIA headquarters in September, showed what happens when the distance between a user and a maintainer disappears, and the second took the format to Salt Lake City on Monday, November 9, the day before KubeCon + CloudNativeCon North America opened. Warren Barkley opened with an introduction to DSX, every product manager gave a lightning introduction, and then people split into contribution sprints across four streams:
 
@@ -17,7 +25,7 @@ The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-it
 
 In each, you claimed an issue, opened a draft pull request, and got a live review from a maintainer.
 
-> **[PHOTO: the workshop room with project tables. Caption: "Each project at its own table."]**
+> **[PHOTO: workshop room. Caption: "Each project at its own table."]**
 
 ## What happened at the tables
 
@@ -25,7 +33,7 @@ At the Kubernetes Recipes table, contributors opened four pull requests that are
 
 > **[PHOTO: a maintainer and a contributor at a table. Caption: "Live review."]**
 
-81 people attended, and the contributor sessions drew 40 organizations. In the 24 hours around the workshop, 57 contributors across 12 repositories opened 36 pull requests and 28 issues and left 64 comments, putting activity 59% above a typical day. Of those contributors, 19 were first-timers, against a usual 5. Four pull requests merged that day and 32 more were in review, and 96% of survey respondents said the workshop was a good use of their time.
+81 people attended, and the contributor sessions drew 40 organizations. In the survey afterward, 96% of respondents said the workshop was a good use of their time.
 
 ## The first community meetings
 
@@ -37,9 +45,9 @@ A workshop brings newcomers to our projects, but much of what we build depends o
 
 Forty-seven external maintainers and community leaders came, from 18 organizations, and spent the evening with NVIDIA product, engineering, and leadership, including Warren Barkley and Bob Wise. The room included members of the Kubernetes Steering Committee, a member of the CNCF Technical Oversight Committee, the SIG-Node co-chair, and maintainers of KubeVirt and OpenShell.
 
-> **[PHOTO: the social, from the "Maintainer Social Nov 9" folder. Caption: "The first DSX AI Factory Maintainer Social."]**
+> **[PHOTO: the social. Caption: "The first DSX AI Factory Maintainer Social."]**
 
-One NVIDIA engineer wrote afterward that the invite list was spot on, with long-term maintainers who are interested in adopting NVIDIA software and also able to help NVIDIA engineers get more involved in key upstream projects. [Confirm the quote and whether to name him.] [One or two moments from the evening, in your own words.] We plan to make it a standing event at every KubeCon. As in September, what stood out was less the code than the people.
+One NVIDIA engineer wrote afterward that the invite list was spot on, with long-term maintainers who are interested in adopting NVIDIA software and also able to help NVIDIA engineers get more involved in key upstream projects. [Confirm the quote and whether to name him.] [One or two moments from the evening, in your own words.] We plan to make it a standing event at every KubeCon.
 
 ## Thank you
 
