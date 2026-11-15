@@ -75,6 +75,11 @@ One NVIDIA engineer wrote afterward that the invite list was spot on, with long-
 
 Thank you to the organizations that spent the day with us and the maintainers who joined the social. Thank you as well to all the NVIDIA product managers and engineers who got their repositories ready for contributions and worked diligently with the external contributors. My co-leads Shally Garg, Pavitar Thiara, and Shweta Sadashiv Barge shared the planning with me, and Tiffany Nadler and Crysta Kaufmann helped with execution.
 
+<p align="center">
+  <img src="images/kubecon-2026-dream-team.jpg" width="50%" alt="Six members of the organizing team smiling in a group selfie at the workshop venue"><br>
+  <em>The team behind the day</em>
+</p>
+
 ## Get involved
 
 There are three ways to take part:
