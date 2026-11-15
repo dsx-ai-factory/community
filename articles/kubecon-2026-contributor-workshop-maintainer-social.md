@@ -8,6 +8,10 @@ In the 24 hours around the DSX OS Contributor Workshop in Salt Lake City, 57 con
 
 Four pull requests merged the same day, and 32 more were in review with maintainers.
 
+![Cumulative pull requests and issues opened over 24 hours, flat overnight and climbing steeply in the final hours](images/kubecon-2026-workshop-stats.png)
+
+*Pull requests and issues opened over the 24 hours around the workshop. The hockey stick at the right edge is the workshop afternoon, when contributors and maintainers worked side by side.*
+
 Most open source projects have the same quiet problem. People can see the issues, the code, and the contributing guide, and still don't contribute, because the distance between reading a repository and getting a first pull request merged is longer than it looks. You need a working environment, an understanding of the CI, and someone to ask when it breaks. Each of those takes minutes with a maintainer in the next chair and days alone, which is the idea behind the DSX OS Contributor Workshop: put the people who use a project in the same room as the people who build it, and spend the time on real issues instead of slides.
 
 It rests on three ideas:
