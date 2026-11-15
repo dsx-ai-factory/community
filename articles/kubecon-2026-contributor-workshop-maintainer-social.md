@@ -73,7 +73,7 @@ One NVIDIA engineer wrote afterward that the invite list was spot on, with long-
 
 ## Thank you
 
-Thank you to the organizations that spent the day with us and the maintainers who joined the social. Thank you as well to all the NVIDIA product managers and engineers who got their repositories ready for contributions and worked diligently with the external contributors. My co-leads Shally Garg and Pavitar Thiara shared the planning with me, and Tiffany Nadler and Crysta Kaufmann helped with execution.
+Thank you to the organizations that spent the day with us and the maintainers who joined the social. Thank you as well to all the NVIDIA product managers and engineers who got their repositories ready for contributions and worked diligently with the external contributors. My co-leads Shally Garg, Pavitar Thiara, and Shweta Sadashiv Barge shared the planning with me, and Tiffany Nadler and Crysta Kaufmann helped with execution.
 
 ## Get involved
 
