@@ -8,9 +8,10 @@ In the 24 hours around the DSX OS Contributor Workshop in Salt Lake City, 57 con
 
 Four pull requests merged the same day, and 32 more were in review with maintainers.
 
-![Cumulative pull requests and issues opened over 24 hours, flat overnight and climbing steeply in the final hours](images/kubecon-2026-workshop-stats.png)
-
-*Pull requests and issues opened over the 24 hours around the workshop. The hockey stick at the right edge is the workshop afternoon, when contributors and maintainers worked side by side.*
+<p align="center">
+  <img src="images/kubecon-2026-workshop-stats.png" width="50%" alt="Cumulative pull requests and issues opened over 24 hours, flat overnight and climbing steeply in the final hours"><br>
+  <em>Pull requests and issues opened over the 24 hours around the workshop. The hockey stick at the right edge is the workshop afternoon, when contributors and maintainers worked side by side.</em>
+</p>
 
 Most open source projects have the same quiet problem. People can see the issues, the code, and the contributing guide, and still don't contribute, because the distance between reading a repository and getting a first pull request merged is longer than it looks. You need a working environment, an understanding of the CI, and someone to ask when it breaks. Each of those takes minutes with a maintainer in the next chair and days alone, which is the idea behind the DSX OS Contributor Workshop: put the people who use a project in the same room as the people who build it, and spend the time on real issues instead of slides.
 
@@ -29,35 +30,31 @@ The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-it
 
 Contributing meant more than code: you could discuss the roadmap, file an issue, give a maintainer feedback in person, or open a draft pull request and get a live review, and all of it counted.
 
-![A product manager presenting during lightning introductions](images/kubecon-2026-lightning-intros.jpg)
-
-*A product manager gives a lightning introduction to the room.*
+<p align="center">
+  <img src="images/kubecon-2026-lightning-intros.jpg" width="50%" alt="A product manager presenting during lightning introductions"><br>
+  <em>A product manager gives a lightning introduction to the room.</em>
+</p>
 
 ## What happened at the tables
 
 Some teams spent contribution time on roadmap discussions and requirements, four project communities used the day to kick off regular community meetings, and others shipped code. See the [upcoming community meetings](https://github.com/dsx-ai-factory/community/blob/main/articles/dsx-ai-factory-community-meetings.md) to join one.
 
-![A contribution table with the table layout on screen](images/kubecon-2026-breakout-table.jpg)
-
-*Each project had its own table.*
-
 At the Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one filtering the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the Infra Controller table, one of the contributors filed a detailed issue about public IPs, NAT, and load balancers for tenant networks. At Dynamo, one contributor added a router queue wait metric that is now in review. At AI Cluster Runtime, one of the contributors filed a feature request and had a recipe change merged the same day.
 
-![Contributors working with laptops open at a table](images/kubecon-2026-breakout-laptops.jpg)
-
-*Contribution time, laptops open.*
+<table>
+  <tr>
+    <td align="center"><img src="images/kubecon-2026-breakout-table.jpg" width="100%" alt="A contribution table with the table layout on screen"><br><em>Each project had its own table.</em></td>
+    <td align="center"><img src="images/kubecon-2026-breakout-laptops.jpg" width="100%" alt="Contributors working with laptops open at a table"><br><em>Contribution time, laptops open.</em></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="images/kubecon-2026-breakout-roundtable.jpg" width="100%" alt="A conversation at one of the contribution tables"><br><em>A conversation at one of the tables.</em></td>
+    <td align="center"><img src="images/kubecon-2026-breakout-architecture.jpg" width="100%" alt="Walking through an architecture diagram on a screen"><br><em>Walking through an architecture diagram.</em></td>
+  </tr>
+</table>
 
 The people in the contributor sessions came from 40 organizations, and the mix mattered as much as the number. GPU cloud and infrastructure companies like Crusoe, Lambda, Rafay, and Mirantis worked alongside large technology companies such as Google, Microsoft, and Apple, enterprises including JPMorgan Chase, Charles Schwab, and Intercontinental Exchange, and cloud native companies like Upbound, Kubermatic, and Clastix. Community groups and universities joined them too, among them Cloud Native Texas, the University of Utah, and the University of Colorado Boulder.
 
-![A conversation at one of the contribution tables](images/kubecon-2026-breakout-roundtable.jpg)
-
-*A conversation at one of the tables.*
-
 In the survey afterward, 96% of respondents said the workshop was a good use of their time, and 44% said very much.
-
-![Walking through an architecture diagram on a screen](images/kubecon-2026-breakout-architecture.jpg)
-
-*Walking through an architecture diagram.*
 
 ## The Maintainer Social
 
@@ -65,15 +62,14 @@ A workshop brings newcomers to our projects, but much of what we build depends o
 
 Around 50 maintainers of cloud native projects and community leaders came from 18 organizations and spent the evening with NVIDIA product, engineering, and leadership, including Warren Barkley and Bob Wise. The room included members of the Kubernetes Steering Committee, a CNCF Technical Oversight Committee member, the SIG-Node co-chair, and maintainers of [OpenShell](https://blogs.nvidia.com/blog/open-source-openshell-infrastructure/), the project NVIDIA donated to the CNCF that week.
 
-![The Maintainer Social](images/kubecon-2026-social-1.jpg)
-
-*The first DSX AI Factory Maintainer Social.*
+<table>
+  <tr>
+    <td align="center"><img src="images/kubecon-2026-social-1.jpg" width="100%" alt="The Maintainer Social"><br><em>The first DSX AI Factory Maintainer Social.</em></td>
+    <td align="center"><img src="images/kubecon-2026-social-2.jpg" width="100%" alt="Conversations at the Maintainer Social"><br><em>Conversations over the evening.</em></td>
+  </tr>
+</table>
 
 One NVIDIA engineer wrote afterward that the invite list was spot on, with long-term maintainers who want to adopt NVIDIA software and can help us get more involved upstream. I enjoyed bringing the external maintainers and NVIDIA maintainers together. It has always been people over code, because meaningful relationships are what make you more effective when you collaborate.
-
-![Conversations at the Maintainer Social](images/kubecon-2026-social-2.jpg)
-
-*Conversations over the evening.*
 
 ## Thank you
 
