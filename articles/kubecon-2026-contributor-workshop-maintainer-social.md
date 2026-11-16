@@ -39,7 +39,7 @@ Contributing meant more than code: you could discuss the roadmap, file an issue,
 
 Some teams spent contribution time on roadmap discussions and requirements, four project communities used the day to kick off regular community meetings, and others shipped code. See the [upcoming community meetings](https://github.com/dsx-ai-factory/community/blob/main/articles/dsx-ai-factory-community-meetings.md) to join one.
 
-At the NVIDIA Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one filtering the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the NVIDIA Infra Controller table, one of the contributors filed a detailed issue about public IPs, NAT, and load balancers for tenant networks. At NVIDIA Dynamo, one contributor added a router queue wait metric that is now in review. At NVIDIA AI Cluster Runtime, one of the contributors filed a feature request and had a recipe change merged the same day.
+At the NVIDIA Kubernetes Recipes table, contributors opened four pull requests that are now all merged, two CLI fixes and two features, one filtering the recipe catalog by platform and output type. Two Workload Map contributors opened pull requests, one adding Argo Rollouts to the catalog and one fixing how Milvus etcd and MinIO pods are identified. On the NVIDIA Infra Controller table, one of the contributors filed a detailed issue about public IPs, NAT, and load balancers for tenant networks. At NVIDIA Dynamo, one contributor added a router queue wait metric that is now in review. At NVIDIA AI Cluster Runtime, one of the contributors filed a feature request and had a recipe change merged the same day. At NVSentinel, one contributor came with feature requests and filed three of them on GitHub after the workshop, and two newer contributors came to learn about the health and resilience products, with one sending a pull request afterward.
 
 <table>
   <tr>
@@ -69,7 +69,7 @@ Around 50 maintainers of cloud native projects and community leaders came from 1
   </tr>
 </table>
 
-One NVIDIA engineer wrote afterward that the invite list was spot on, with long-term maintainers who want to adopt NVIDIA software and can help us get more involved upstream. I enjoyed bringing the external maintainers and NVIDIA maintainers together. It has always been people over code, because meaningful relationships are what make you more effective when you collaborate.
+One NVIDIA engineer wrote afterward that the invite list was spot on, with long-term maintainers who want to adopt NVIDIA software and can help us get more involved upstream. Another called it a well-organized event and said they had good conversations with people from various Kubernetes SIGs and several cloud native companies. I enjoyed bringing the external maintainers and NVIDIA maintainers together. It has always been people over code, because meaningful relationships are what make you more effective when you collaborate.
 
 ## Thank you
 
