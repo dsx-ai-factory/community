@@ -357,16 +357,16 @@ Rafay has been working closely with NVIDIA to integrate much of the DSX work des
 
 Want to see how this applies to your AI infrastructure, or talk through what it takes to get from ground to token faster? Reach out to me. 
 
-[image1]: images/kubecon-2026-dsx-ai-factory-day-report/image1.png
+[image1]: images/kubecon-2026-dsx-ai-factory-day-report/image1.jpg
 [image2]: images/kubecon-2026-dsx-ai-factory-day-report/image2.png
-[image3]: images/kubecon-2026-dsx-ai-factory-day-report/image3.png
-[image4]: images/kubecon-2026-dsx-ai-factory-day-report/image4.png
-[image5]: images/kubecon-2026-dsx-ai-factory-day-report/image5.png
-[image6]: images/kubecon-2026-dsx-ai-factory-day-report/image6.png
-[image7]: images/kubecon-2026-dsx-ai-factory-day-report/image7.png
-[image8]: images/kubecon-2026-dsx-ai-factory-day-report/image8.png
-[image9]: images/kubecon-2026-dsx-ai-factory-day-report/image9.png
+[image3]: images/kubecon-2026-dsx-ai-factory-day-report/image3.jpg
+[image4]: images/kubecon-2026-dsx-ai-factory-day-report/image4.jpg
+[image5]: images/kubecon-2026-dsx-ai-factory-day-report/image5.jpg
+[image6]: images/kubecon-2026-dsx-ai-factory-day-report/image6.jpg
+[image7]: images/kubecon-2026-dsx-ai-factory-day-report/image7.jpg
+[image8]: images/kubecon-2026-dsx-ai-factory-day-report/image8.jpg
+[image9]: images/kubecon-2026-dsx-ai-factory-day-report/image9.jpg
 [image10]: images/kubecon-2026-dsx-ai-factory-day-report/image10.png
-[image11]: images/kubecon-2026-dsx-ai-factory-day-report/image11.png
+[image11]: images/kubecon-2026-dsx-ai-factory-day-report/image11.jpg
 [image12]: images/kubecon-2026-dsx-ai-factory-day-report/image12.png
 [image13]: images/kubecon-2026-dsx-ai-factory-day-report/image13.png
