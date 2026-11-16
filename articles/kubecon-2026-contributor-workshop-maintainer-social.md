@@ -21,12 +21,14 @@ It rests on three ideas:
 - **More participation from outside NVIDIA.** In Salt Lake City, that meant the cloud native community already in town for KubeCon.
 - **Keeping the contributions going.** We measure it by who is still active 90 days later, not by pull requests opened on the day.
 
-The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-its-customers-partners-did-one-arun-gupta-iehsc/), an invite-only day at NVIDIA headquarters in September, showed what happens when the distance between a user and a maintainer disappears, and the second, which we [announced ahead of time](https://github.com/dsx-ai-factory/community/blob/main/articles/kubecon-2026-dsx-os-contributor-workshop.md), took the format to Salt Lake City on Monday, November 9, the day before KubeCon + CloudNativeCon North America opened. [Warren Barkley](https://www.linkedin.com/in/warrenbarkley/) opened with an introduction to DSX, every product manager gave a lightning introduction, and then people split into contribution sprints across four streams:
+The [first workshop](https://www.linkedin.com/pulse/building-dsx-os-open-what-its-customers-partners-did-one-arun-gupta-iehsc/), an invite-only day at NVIDIA headquarters in September, showed what happens when the distance between a user and a maintainer disappears, and the second, which we [announced ahead of time](https://github.com/dsx-ai-factory/community/blob/main/articles/kubecon-2026-dsx-os-contributor-workshop.md), took the format to Salt Lake City on Monday, November 9, the day before KubeCon + CloudNativeCon North America opened. [Warren Barkley](https://www.linkedin.com/in/warrenbarkley/) opened with an introduction to DSX, every product manager gave a lightning introduction, and then people split into contribution sprints across six project groups:
 
-- **Building and running clusters:** [NVIDIA Kubernetes Engine](https://github.com/dsx-ai-factory/nvke), [NVIDIA Kubernetes Recipes](https://github.com/dsx-ai-factory/nvkr)
-- **Keeping them ready, running, and healthy:** [NVIDIA AI Cluster Runtime](https://github.com/NVIDIA/aicr), [NVSentinel](https://github.com/NVIDIA/NVSentinel), [NVIDIA Nodewright](https://github.com/NVIDIA/nodewright), [Topograph](https://github.com/dsx-ai-factory/topograph)
-- **[NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator) and Operands**
-- **[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai)**
+- **GPU Operator and Operands:** [NVIDIA GPU Operator](https://github.com/NVIDIA/gpu-operator)
+- **Workload and GPU Orchestration:** [NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai), [Workload Map](https://github.com/dsx-ai-factory/workload-map), [KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler)
+- **Accelerated Kubernetes:** [NVIDIA AI Cluster Runtime](https://github.com/NVIDIA/aicr), [NVIDIA Kubernetes Engine](https://github.com/dsx-ai-factory/nvke), [NVIDIA Kubernetes Recipes](https://github.com/dsx-ai-factory/nvkr), [NVIDIA Nodewright](https://github.com/NVIDIA/nodewright)
+- **Infrastructure:** [NVIDIA Infra Controller](https://github.com/dsx-ai-factory/infra-controller)
+- **Model Serving:** [NVIDIA Dynamo](https://github.com/ai-dynamo/dynamo), [NVIDIA Snapshot](https://github.com/ai-dynamo/snapshot)
+- **Health and Resilience:** [NVIDIA Cluster Readiness Engine](https://github.com/NVIDIA/cluster-readiness-engine), [NVSentinel](https://github.com/NVIDIA/NVSentinel)
 
 Contributing meant more than code: you could discuss the roadmap, file an issue, give a maintainer feedback in person, or open a draft pull request and get a live review, and all of it counted.
 
