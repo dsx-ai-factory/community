@@ -32,7 +32,7 @@ Short on time? This is what each project does, ordered from the power feed up to
 | **AICR** | Works out, installs and validates the right drivers and operators for your GPU, cloud, OS and workload | Graduated |
 | **NodeWright** | Changes the host OS under Kubernetes nodes safely and declaratively, without re-imaging | Shipping |
 | **GPU Operator, Network Operator, DRA driver** | Install GPU drivers and networking on each node and hand GPUs to the workloads that request them | Long-standing |
-| **NVSentinel** | Spots GPU faults, moves work off the node, and repairs it automatically | Graduated |
+| **NVSentinel** | Spots GPU faults and, when remediation is enabled, moves work off the node and repairs it automatically (the default install only monitors) | Graduated |
 | **Cluster Readiness Engine** | Burns in a cluster with real training and NCCL tests before it takes production work | New |
 | **NVIDIA Run:ai** | Shares GPUs across teams and clusters with quotas, policies, scheduling and visibility | Open source |
 | **KAI Scheduler** | Decides which workload gets the next GPU: gang scheduling, fair share, GPU fractions, topology awareness | CNCF Sandbox |
@@ -270,9 +270,9 @@ On a quiet afternoon that is the whole story. The interesting part is what happe
 
 | Event | What happens | Projects doing it |
 | :---- | :---- | :---- |
-| Traffic spikes and time to first token drifts past its target (500 ms in the session example) | Planner adds prefill or decode workers; KAI Scheduler and Grove place them inside the NVLink domain; each new worker restores from a snapshot and pulls weights from a peer instead of disk, so it is ready in seconds | Dynamo Planner, KAI Scheduler, Grove, Snapshot, Model Express |
-| A GPU throws an XID error mid-response | NVSentinel detects it through DCGM, then cordons and drains the tray. Dynamo migrates the in-flight request, so the agent's stream keeps flowing. KVCR Guard keeps that worker's cached context available to other workers | NVSentinel, Dynamo request migration, KVCR Guard |
-| The faulty tray is repaired | NVSentinel resets the GPU or reboots the tray; Cluster Readiness Engine re-certifies it before it takes work again; a replacement worker restores from a snapshot | NVSentinel, Cluster Readiness Engine, Snapshot |
+| Traffic spikes and time to first token drifts past its target (500 ms in the session example) | Planner adds prefill or decode workers; KAI Scheduler and Grove place them inside the NVLink domain; on the roadmap, each new worker restores from a snapshot and pulls weights from a peer instead of disk, so it is ready in seconds | Dynamo Planner, KAI Scheduler, Grove, Snapshot, Model Express |
+| A GPU throws an XID error mid-response | NVSentinel detects it through DCGM and, with remediation enabled, cordons and drains the tray. Dynamo migrates the in-flight request, so the agent's stream keeps flowing. KVCR Guard does not help here: it covers an engine crash on a healthy node, and a drained tray takes its cache with it | NVSentinel, Dynamo request migration |
+| The faulty tray is repaired | With remediation enabled, NVSentinel resets the GPU or reboots the tray; Cluster Readiness Engine re-certifies it before it takes work again; a replacement worker restores from a snapshot | NVSentinel, Cluster Readiness Engine, Snapshot |
 | A driver or kernel fix has to roll out | NodeWright applies it tray by tray within an interruption budget, cordoning and draining only where the package needs a reboot | NodeWright |
 | The agent goes idle between turns | Agent Substrate snapshots and suspends its sandbox, then resumes it when the next request arrives | Agent Substrate |
 | The next GPU generation lands | AICR already has a validated recipe for it, and NVKR builds the matching node image | AICR, NVKR |
@@ -350,12 +350,6 @@ Repos as shown on the session slides; presenters as named on the slides. Descrip
 | Prefill | The phase of inference that reads the prompt and builds the KV cache; limited by compute |
 | TTFT | Time to first token: how long a user waits before the answer starts |
 | XID error | An error code the NVIDIA driver reports when a GPU has a fault |
-
-## **Learn more**
-
-Rafay has been working closely with NVIDIA to integrate much of the DSX work described in this paper into the Rafay platform. We are also working with customers to run it in production.
-
-Want to see how this applies to your AI infrastructure, or talk through what it takes to get from ground to token faster? Reach out to me. 
 
 [image1]: images/kubecon-2026-dsx-ai-factory-day-report/image1.jpg
 [image2]: images/kubecon-2026-dsx-ai-factory-day-report/image2.png
