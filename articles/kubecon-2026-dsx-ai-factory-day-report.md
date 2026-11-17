@@ -329,7 +329,7 @@ Repos as shown on the session slides; presenters as named on the slides. Descrip
 | NodeWright | Accelerated Kubernetes | Nathan Taber | [github.com/NVIDIA/nodewright](https://github.com/NVIDIA/nodewright) |
 | NVKE | Accelerated Kubernetes | Eric Chapman | [github.com/dsx-ai-factory/nvke](https://github.com/dsx-ai-factory/nvke/) |
 | NVKR | Accelerated Kubernetes | Eric Chapman | [github.com/dsx-ai-factory/nvkr](https://github.com/dsx-ai-factory/nvkr/) |
-| GPU Operator | Accelerated Kubernetes | Francis Guillier | Not shown |
+| GPU Operator | Accelerated Kubernetes | Francis Guillier | [github.com/NVIDIA/gpu-operator](https://github.com/NVIDIA/gpu-operator) |
 | NICo | Infrastructure operations | Ninad Desai | [DSX docs](https://docs.nvidia.com/dsx) |
 
 ## **Glossary**
