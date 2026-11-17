@@ -16,11 +16,11 @@ Five ideas carried the day:
 4. **Inference economics are a memory problem.** Dynamo treats every GPU's memory across the cluster as one shared pool, and attacks the two costliest wastes: recomputing work already done and waiting minutes for workers to start or recover.  
 5. **Community is the strategy, not a side effect.** NVIDIA framed contributions, roadmap feedback and hiring as how the stack gets built, and explicitly asked the room to file issues.
 
-The quick reference below names every project in one line. The rest of the paper walks the stack from the ground up, follows one NVL72 rack through a working day, then covers the open-source play and the open questions raised in the room.
+The quick reference below names every project in one line. The rest of the article walks the stack from the ground up, follows one NVL72 rack through a working day, then covers the open-source play and the open questions raised in the room.
 
 ## **Quick reference: every project in one line**
 
-Short on time? This is what each project does, ordered from the power feed up to the AI agent. Details are in the sections below, and repos and presenters are in the Project reference at the end.
+Short on time? This is what each project does, ordered from the power feed up to the AI agent. Details are in the sections below.
 
 | Project | What it does | Status |
 | :---- | :---- | :---- |
@@ -205,9 +205,9 @@ On Dynamo versus NIM, NVIDIA was clear about the trade-off: NIM is the simple, p
 
 NVIDIA's point: in production, the expensive part of a failure is not the lost request but the minutes of degraded capacity while a worker restarts. A cold vLLM worker took about 8 minutes end to end in the demo, and the Snapshot slide showed cold starts of 394 s (GLM-5.3), 908 s (DeepSeek-V4-Pro) and 1,111 s (DeepSeek-V4.1). The usual fix is to over-provision GPUs and pay for them to sit idle. Dynamo and its companion projects offer a ladder of tools instead, one per failure type.
 
-![Figures stated in the Dynamo workshop transcript and on the Snapshot slide · KubeCon NA 2026][image10]
+![Figures from the Dynamo workshop and the Snapshot slide · KubeCon NA 2026][image10]
 
-Figures stated in the Dynamo workshop transcript and on the Snapshot slide · KubeCon NA 2026
+Figures from the Dynamo workshop and the Snapshot slide · KubeCon NA 2026
 
 | Failure | Tool | What it does |
 | :---- | :---- | :---- |
@@ -289,6 +289,8 @@ Every NVIDIA speaker returned to the same request: contribute, give feedback, an
 
 Arun was precise about how feedback becomes roadmap. NVIDIA counts four kinds of contribution: a new issue, a PR, a comment on an existing issue, or a comment on an existing PR. His rule of thumb: "If it's not captured as an issue, it probably won't be acted upon." Doc fixes, UX feedback and "here is what you're not doing right" all count.
 
+If you want to act on that, start at [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory). The DSX AI Factory projects are listed there, and every public project in the organization accepts issues and pull requests.
+
 The event itself modeled the flywheel NVIDIA wants. A morning of talks was followed by an afternoon contributor workshop with product managers at assigned tables, a show-and-tell of what attendees built, and the first in-person community meetings, split into four groups. Several projects will now run virtual community meetings in CNCF style.
 
 Strategically, making each layer open and usable on its own lets hyperscalers, neoclouds and platform vendors build directly on this software, which helps the industry converge on a common way to run AI factories.
@@ -308,27 +310,6 @@ NVIDIA was open about where each project stands today, and the audience asked go
 | Tuning | Is there an auto-tuner for NIXL and network settings? | Not in Dynamo today; some tuning sits in AICR and NVKE, the rest is manual |
 | Integrations | Does OpenShell integrate with the Dynamo router? | Not covered in this session; the Dynamo team confirmed integrations with OpenCode and Claude Code |
 | Run:ai and Slinky | How do they relate? | Both are Kubernetes scheduling plugins with different strengths, and the teams are collaborating upstream |
-
-## **Project reference**
-
-Repos as shown on the session slides; presenters as named on the slides. Descriptions follow what NVIDIA's product managers presented.
-
-| Project | Layer | Presenter | Repo |
-| :---- | :---- | :---- | :---- |
-| NVIDIA Run:ai | Orchestration | Omer Benedict | [github.com/dsx-ai-factory/run-ai](https://github.com/dsx-ai-factory/run-ai) |
-| KAI Scheduler | Orchestration | Hagay Sharon | [github.com/kai-scheduler/KAI-Scheduler](https://github.com/kai-scheduler/KAI-Scheduler) |
-| Workload Map (Karta) | Orchestration | Yael Frank | [github.com/dsx-ai-factory/workload-map](https://github.com/dsx-ai-factory/workload-map) |
-| Dynamo | Model serving | Stefan Schimanski | [github.com/ai-dynamo/dynamo](https://github.com/ai-dynamo/dynamo/) |
-| Snapshot | Model serving | Ron Kahn | [github.com/ai-dynamo/snapshot](https://github.com/ai-dynamo/snapshot) |
-| Grove | Model serving | Dynamo workshop team | [github.com/ai-dynamo/grove](https://github.com/ai-dynamo/grove) |
-| Model Express | Model serving | Dynamo workshop team | [github.com/ai-dynamo/modelexpress](https://github.com/ai-dynamo/modelexpress) |
-| NVSentinel and NVCRE | Health and resilience | Kai Wombacker | [github.com/NVIDIA/NVSentinel](https://github.com/NVIDIA/NVSentinel) |
-| AI Cluster Runtime (AICR) | Accelerated Kubernetes | Nathan Taber | [github.com/NVIDIA/aicr](https://github.com/NVIDIA/aicr) |
-| NodeWright | Accelerated Kubernetes | Nathan Taber | [github.com/NVIDIA/nodewright](https://github.com/NVIDIA/nodewright) |
-| NVKE | Accelerated Kubernetes | Eric Chapman | [github.com/dsx-ai-factory/nvke](https://github.com/dsx-ai-factory/nvke/) |
-| NVKR | Accelerated Kubernetes | Eric Chapman | [github.com/dsx-ai-factory/nvkr](https://github.com/dsx-ai-factory/nvkr/) |
-| GPU Operator | Accelerated Kubernetes | Francis Guillier | Not shown |
-| NICo | Infrastructure operations | Ninad Desai | [DSX docs](https://docs.nvidia.com/dsx) |
 
 ## **Glossary**
 
