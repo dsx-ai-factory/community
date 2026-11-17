@@ -14,7 +14,7 @@ Five ideas carried the day:
 2. **One stack, fully modular, fully open.** DSX runs from power-grid protocols to inference serving. Every layer is meant to be usable on its own, inside someone else's platform.  
 3. **NVIDIA is moving up the stack into Kubernetes itself.** Projects such as NVKE, NVKR, AICR and NodeWright let AI factory operators go from raw GPU capacity to a managed Kubernetes service, and then to AI services on top.  
 4. **Inference economics are a memory problem.** Dynamo treats every GPU's memory across the cluster as one shared pool, and attacks the two costliest wastes: recomputing work already done and waiting minutes for workers to start or recover.  
-5. **Community is the strategy, not a side effect.** NVIDIA framed contributions, roadmap feedback and hiring (50 open Kubernetes roles) as how the stack gets built, and explicitly asked the room to file issues.
+5. **Community is the strategy, not a side effect.** NVIDIA framed contributions, roadmap feedback and hiring as how the stack gets built, and explicitly asked the room to file issues.
 
 The quick reference below names every project in one line. The rest of the paper walks the stack from the ground up, follows one NVL72 rack through a working day, then covers the open-source play and the open questions raised in the room.
 
@@ -56,14 +56,14 @@ He framed DSX as the third step in a progression:
 
 Two supporting claims mattered:
 
-* **This is not just for neoclouds.** Warren said "pretty well every hyperscaler you can name" already runs pieces of this open source on tens of thousands of GPUs.  
-* **NVIDIA runs it on itself.** NVIDIA's internal research cloud (DGX Cloud) is about 368,000 GPUs today, with a plan to reach one million by the end of 2027\. Lessons from operating that fleet feed the roadmap; customer use cases fill the gaps NVIDIA's own workloads don't cover.
+* **This is not just for neoclouds.** The stack is meant for operators of every size, including the largest cloud providers.  
+* **NVIDIA runs it on itself.** NVIDIA operates this software on its own large internal GPU fleet, and lessons from running that fleet feed the roadmap alongside customer use cases.
 
 Why it matters: NVIDIA is shifting the conversation from "how many GPUs" to "how quickly do those GPUs earn." Every project below is pitched as removing a delay somewhere between the power feed and the first token.
 
 ## **The map: one stack from power grid to model serving**
 
-DSX is NVIDIA's name for the full AI factory software stack, and the opening slide from Bob Wise, Warren's engineering counterpart, shows it as layers. The bottom row is new territory for a chip company: protocols for talking to the power grid (Flex) and to building management systems (Exchange), plus power software and site simulation. Above it sits **DSX OS**, the software that runs inside the data center.
+DSX is NVIDIA's name for the full AI factory software stack, and the opening slide from Bob Wise, Warren's engineering counterpart, shows it as layers. The bottom row reaches beyond the data center itself: protocols for talking to the power grid (Flex) and to building management systems (Exchange), plus power software and site simulation. Above it sits **DSX OS**, the software that runs inside the data center.
 
 ![DSX AI Factory Platform · redrawn from the session slide][image2]
 
@@ -99,7 +99,7 @@ Under all of this sit the long-standing building blocks Francis Guillier reviewe
 
 ### **Why AICR got the most airtime**
 
-Nathan Taber described the problem in customer terms. Teams told NVIDIA they spent two to three weeks or more re-tuning dozens of parameters every time a new GPU SKU arrived or Kubernetes was upgraded. Both now happen often.
+Nathan Taber described the problem AICR solves. Every new GPU SKU or Kubernetes upgrade can mean weeks of re-tuning dozens of parameters. Both now happen often.
 
 AICR's workflow is four steps: **snapshot** the cluster's facts, **pick an intent** and resolve a recipe, **bundle** it into deployment artifacts, then **deploy and validate**. Validation runs at three levels: deployment, conformance and performance, up to the CNCF AI conformance checks. It runs as a CLI, a REST API server, a Go library and an in-cluster snapshot agent; NVIDIA also announced an AICR operator that keeps a cluster up to date. Every recipe ships with signed provenance and SBOMs.
 
@@ -108,7 +108,7 @@ Two points stood out:
 * **Day-zero support is the goal.** Nathan's stated aim: nobody should take delivery of a new NVIDIA GPU and not know how to run it. Vera Rubin recipes landed about a week before the event.  
 * **Recipes are built dynamically, in layers** (GPU, workload, cloud, OS). That design is deliberate so outside companies can contribute their own optimizations.
 
-As of the October 29, 2026 support slide, AICR covers 12 Kubernetes services (EKS, GKE, AKS, OKE, LKE, MK8s, OpenShift, RKE2, k0s, NVKE, bare metal, kind), 11 GPU accelerators from A100 and L40 through GB300 and VR200, 5 operating systems, 6 deployer families, and 5 workload platforms (Kubeflow, Slurm, Kueue, Dynamo, NIM). Items marked preview include VR200, RKE2, k0s and NVKE. This slide is newer than the repo's README, which still lists a different validated set (for example BCM, Metal3, RHEL and Talos, plus Run:ai as a platform).
+As of the October 29, 2026 support slide, AICR covers 12 Kubernetes services (EKS, GKE, AKS, OKE, LKE, MK8s, OpenShift, RKE2, k0s, NVKE, bare metal, kind), 11 GPU accelerators from A100 and L40 through GB300 and VR200, 5 operating systems, 6 deployer families, and 5 workload platforms (Kubeflow, Slurm, Kueue, Dynamo, NIM). Items marked preview include VR200, RKE2, k0s and NVKE.
 
 ![AICR What's supported today slide][image5]
 
@@ -122,7 +122,7 @@ Eric was explicit that none of this forces an all-NVIDIA stack. If you already h
 
 *NodeWright's six-step flow changes the hosts under Kubernetes nodes without re-imaging.*
 
-## **Health and resilience: GPUs are brittle, so automate the repair loop**
+## **Health and resilience: automating the repair loop**
 
 NVIDIA's point here: a node that looks healthy is not the same as a cluster that can survive a large training run, and you need both a passive and an active check. Kai Wombacker presented the pair as one integrated loop.
 
@@ -134,7 +134,7 @@ NVIDIA's point here: a node that looks healthy is not the same as a cluster that
 | Action | Cordons and drains the faulty node, then remediates with a targeted GPU reset or a reboot. Each step is opt-in; the default install only monitors | Reports failed nodes before they reach production |
 | Maturity | Graduated; scales to some of the largest supercomputer clusters | New |
 
-The two feed each other. Nodes that fail certification are routed to NVSentinel for repair. Nodes coming back from repair can be re-certified automatically. On the roadmap, once a "Maestro" integration lands, nodes needing hardware repair will route there for break-fix.
+The two feed each other. Nodes that fail certification are routed to NVSentinel for repair. Nodes coming back from repair can be re-certified automatically. NVIDIA also described plans to route nodes that need hardware repair into a break-fix workflow.
 
 ![Active and Passive GPU Cluster Reliability slide][image7]
 
@@ -142,7 +142,7 @@ The two feed each other. Nodes that fail certification are routed to NVSentinel 
 
 The wider portfolio on the DSX map also lists Health Validation, Attribution and Recovery, which were mentioned but not presented.
 
-This ties back to the opening session. Warren cited advisory-board feedback along the lines of "GPUs are brittle and I want to run them at several nines." NVIDIA's response was to open-source the health tooling it runs internally.
+This ties back to the opening session. The goal is to run GPU fleets at several nines of availability, and NVIDIA has open-sourced the health tooling it runs internally to help get there.
 
 ## **Scheduling and orchestration: deciding who gets the next GPU**
 
@@ -167,7 +167,7 @@ Hagay Sharon's pitch for KAI Scheduler was aimed squarely at contributors: the a
 
 *Developers submit with kubectl, researchers with sbatch; both land in one queue on shared compute.*
 
-Asked directly whether Run:ai and Slinky overlap, NVIDIA said yes. Both act as Kubernetes scheduling plugins with different approaches, each has places where it is stronger today, and the teams are collaborating through upstream Kubernetes groups rather than forcing a merge.
+Asked how Run:ai and Slinky relate, NVIDIA explained that both act as Kubernetes scheduling plugins with different approaches and strengths, and that the teams are collaborating through upstream Kubernetes groups.
 
 ## **Inference with Dynamo: treat the cluster's memory as one pool**
 
@@ -192,14 +192,14 @@ The demo ran NVIDIA's Nemotron 120B model (NVFP4, about 80 GB on disk) on vLLM, 
 | :---- | :---- | :---- | :---- |
 | **Model Express** | Slow scale-up from storage | New workers pull weights peer-to-peer from a worker that already has them, over NVLink or RDMA via the NIXL library, instead of reading disk. A small metadata server tracks who holds what. It has its own repo and a vLLM loader, so it works without the rest of Dynamo. | Startup 463 s to 246 s |
 | **KV-aware routing** | Recomputing prompts already cached | Workers publish KV-cache events; the router knows which blocks sit on which worker and at what memory tier. It scores each worker on cache overlap and on current load, so it avoids both recompute and hotspots. | P90 latency at 128 users: 140 s (1 worker), 113 s (2 workers, round-robin), 54 s (2 workers, KV-aware). Prefill work cut from 54 blocks to 25 in the example |
-| **KVCR** (KV cache sharing) | Cache stuck on the wrong worker | If the router sends a request to a worker without the cache, that worker pulls the cache from the worker that has it. All GPU memory in the cluster acts as one KV pool. Works standalone with vLLM or SGLang. | TTFT on a 60k-token prompt: 2,417 ms cold vs 319 ms with a pulled cache. Benchmarks: 25 to 50% speedups, 2x faster TTFT on one DeepSeek benchmark, a production user seeing a 14% higher cache hit rate |
+| **KVCR** (KV cache sharing) | Cache stuck on the wrong worker | If the router sends a request to a worker without the cache, that worker pulls the cache from the worker that has it. All GPU memory in the cluster acts as one KV pool. Works standalone with vLLM or SGLang. | TTFT on a 60k-token prompt: 2,417 ms cold vs 319 ms with a pulled cache. Benchmarks: 25 to 50% speedups, 2x faster TTFT on one DeepSeek benchmark, and higher cache hit rates in production |
 | **Disaggregation** | Long prompts stalling everyone's decode | Prefill and decode run on separate worker pools, each sized and tuned for its phase; the KV cache moves between them over NIXL. | Roughly halved TTFT in a larger NVIDIA test; gains are biggest with long prompts, long outputs and high concurrency |
 
 **Dynamo Planner** closes the loop by autoscaling prefill and decode pools independently. It runs in one of two modes: a *load* mode that checks queued prefill tokens and decode KV demand every 5 seconds, or an *SLA* mode that targets a latency goal (the example: 500 ms TTFT and 50 ms between tokens) and forecasts demand every 3 minutes to add replicas ahead of need.
 
 Multi-tenancy came up from the floor. Beyond separate namespaces or clusters, Dynamo can apply a per-tenant salt to the KV-cache hash, so one tenant can never reuse another's cache.
 
-On Dynamo versus NIM, NVIDIA was candid: NIM is the simple, packaged, one-or-two-command option; Dynamo is "batteries not included" and far more configurable, which is why it needed a multi-hour workshop.
+On Dynamo versus NIM, NVIDIA was clear about the trade-off: NIM is the simple, packaged, one-or-two-command option; Dynamo is "batteries not included" and far more configurable, which is why it got a multi-hour workshop.
 
 ## **Fault tolerance: a failed worker should cost seconds, not minutes**
 
@@ -225,7 +225,7 @@ Snapshot is also a scaling tool, not only a recovery tool: take one snapshot of 
 
 ## **Agent Substrate: the next workload shape**
 
-NVIDIA's forward-looking message: AI agents break the assumptions Kubernetes was built on, and the community is building a new primitive for them. Running large numbers of agent sandboxes as ordinary pods has hit the limits of the Kubernetes control plane.
+NVIDIA's forward-looking message: AI agents are a new kind of workload for Kubernetes, and the community is building a new primitive for them. Running very large numbers of agent sandboxes as ordinary pods puts heavy load on the Kubernetes control plane.
 
 **Agent Substrate** is described as a security-hardened, zero-trust runtime for sandboxed agent environments. It has two core concepts:
 
@@ -284,34 +284,34 @@ The point NVIDIA was making is that no single project is the product. Each one r
 Every NVIDIA speaker returned to the same request: contribute, give feedback, and shape the roadmap. The scale of the commitment was stated in numbers.
 
 * **Volume.** Over 200 projects released in the last 12 months and another 26 recently, plus projects donated to the community (OpenShell, the DRA driver and NVKE among those named).  
-* **People.** Arun Gupta now runs open-source strategy, and NVIDIA has hired long-time open-source figures. Aaron Boyd, who runs Kubernetes engineering, announced 50 open roles across AICR, NVKE, NVKR and related projects.  
+* **People.** Arun Gupta now runs open-source strategy, and NVIDIA has hired long-time open-source figures. Aaron Boyd, who runs Kubernetes engineering, said the team is growing across AICR, NVKE, NVKR and related projects.  
 * **Ecosystem.** NVIDIA became a CNCF Platinum member and KAI Scheduler is a CNCF Sandbox project. Speakers stressed vendor neutrality: "we don't care who you work for."
 
-Arun was precise about how feedback becomes roadmap. NVIDIA counts four kinds of contribution: a new issue, a PR, a comment on an existing issue, or a comment on an existing PR. His blunt rule: "If it's not captured as an issue, it probably won't be acted upon." Doc fixes, UX feedback and "here is what you're not doing right" all count.
+Arun was precise about how feedback becomes roadmap. NVIDIA counts four kinds of contribution: a new issue, a PR, a comment on an existing issue, or a comment on an existing PR. His rule of thumb: "If it's not captured as an issue, it probably won't be acted upon." Doc fixes, UX feedback and "here is what you're not doing right" all count.
 
 The event itself modeled the flywheel NVIDIA wants. A morning of talks was followed by an afternoon contributor workshop with product managers at assigned tables, a show-and-tell of what attendees built, and the first in-person community meetings, split into four groups. Several projects will now run virtual community meetings in CNCF style.
 
-The subtext is strategic. By making each layer open and usable alone, NVIDIA invites hyperscalers, neoclouds and platform vendors to build on its software rather than around it. That keeps NVIDIA's view of how an AI factory should run at the center of the stack, even where NVIDIA does not own the platform.
+Strategically, making each layer open and usable on its own lets hyperscalers, neoclouds and platform vendors build directly on this software, which helps the industry converge on a common way to run AI factories.
 
-## **Caveats and open questions from the room**
+## **Questions from the room**
 
-NVIDIA was open about limits, and the audience pushed on several points. These are the gaps worth knowing before repeating any claim above.
+NVIDIA was open about where each project stands today, and the audience asked good questions. Here is what came up.
 
 | Topic | What was raised | NVIDIA's answer |
 | :---- | :---- | :---- |
-| Maturity | NVKE and NVKR | Both described as "very new and early" and in preview. Their READMEs say they aren't for production yet, and no NVKR release is qualified. The roadmap is open for input. |
-| Networking | Why RoCE and RDMA are missing from the foundation diagram | Handled by the Network Operator inside the accelerated runtime, a few layers below what NVKE shows |
-| Networking | Why NVKE uses OVN-Kubernetes when NVIDIA's reference architecture suggests HBN | OVN-Kubernetes is the new reference CNI for accelerated Kubernetes; more CNI work with DPU offload is due late November or early December 2026 |
+| Maturity | NVKE and NVKR | Both described as "very new and early" and in preview. Neither is intended for production use yet. The roadmap is open for input. |
+| Networking | Where RoCE and RDMA fit | Handled by the Network Operator inside the accelerated runtime, a few layers below what NVKE shows |
+| Networking | How NVKE's choice of OVN-Kubernetes relates to HBN in NVIDIA's reference architecture | OVN-Kubernetes is the new reference CNI for accelerated Kubernetes, and more CNI work with DPU offload is in progress |
 | Resilience | What happens if the NVKE management cluster fails | Workload clusters stay up ("statically stable"); only new cluster operations stop |
-| Shadow engine | Is it free? | No: about 200 to 250 MB of GPU memory per standby engine |
-| Snapshot | Portability | Restores only onto matching hardware (same GPU and CPU type), and only single-node workloads for now. The KV cache isn't included but the weights are, which makes snapshots large. The repo says it isn't yet recommended for production-critical workloads. |
+| Shadow engine | What does it cost? | About 200 to 250 MB of GPU memory per standby engine |
+| Snapshot | Portability | Restores only onto matching hardware (same GPU and CPU type), and only single-node workloads for now. The KV cache isn't included but the weights are, which makes snapshots large. It is still in preview. |
 | Tuning | Is there an auto-tuner for NIXL and network settings? | Not in Dynamo today; some tuning sits in AICR and NVKE, the rest is manual |
-| Integrations | Does OpenShell integrate with the Dynamo router? | Unknown to the presenter; the Dynamo team confirmed integrations with OpenCode and Claude Code |
-| Overlap | Run:ai versus Slinky | Acknowledged; teams are collaborating upstream rather than merging |
+| Integrations | Does OpenShell integrate with the Dynamo router? | Not covered in this session; the Dynamo team confirmed integrations with OpenCode and Claude Code |
+| Run:ai and Slinky | How do they relate? | Both are Kubernetes scheduling plugins with different strengths, and the teams are collaborating upstream |
 
 ## **Project reference**
 
-Repos as shown on the session slides; presenters as named on the slides. Descriptions follow what NVIDIA's PMs presented; where that is newer than a repo's README (checked November 15, 2026), the text says so.
+Repos as shown on the session slides; presenters as named on the slides. Descriptions follow what NVIDIA's product managers presented.
 
 | Project | Layer | Presenter | Repo |
 | :---- | :---- | :---- | :---- |
