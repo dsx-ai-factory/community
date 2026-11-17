@@ -20,7 +20,7 @@ The quick reference below names every project in one line. The rest of the artic
 
 ## **Quick reference: every project in one line**
 
-Short on time? This is what each project does, ordered from the power feed up to the AI agent. Details are in the sections below.
+Short on time? This is what each project does, ordered from the power feed up to the AI agent. Details are in the sections below, and repos and presenters are in the Project reference at the end.
 
 | Project | What it does | Status |
 | :---- | :---- | :---- |
@@ -310,6 +310,27 @@ NVIDIA was open about where each project stands today, and the audience asked go
 | Tuning | Is there an auto-tuner for NIXL and network settings? | Not in Dynamo today; some tuning sits in AICR and NVKE, the rest is manual |
 | Integrations | Does OpenShell integrate with the Dynamo router? | Not covered in this session; the Dynamo team confirmed integrations with OpenCode and Claude Code |
 | Run:ai and Slinky | How do they relate? | Both are Kubernetes scheduling plugins with different strengths, and the teams are collaborating upstream |
+
+## **Project reference**
+
+Repos as shown on the session slides; presenters as named on the slides. Descriptions follow what NVIDIA's product managers presented.
+
+| Project | Layer | Presenter | Repo |
+| :---- | :---- | :---- | :---- |
+| NVIDIA Run:ai | Orchestration | Omer Benedict | [github.com/dsx-ai-factory/run-ai](https://github.com/dsx-ai-factory/run-ai) |
+| KAI Scheduler | Orchestration | Hagay Sharon | [github.com/kai-scheduler/KAI-Scheduler](https://github.com/kai-scheduler/KAI-Scheduler) |
+| Workload Map (Karta) | Orchestration | Yael Frank | [github.com/dsx-ai-factory/workload-map](https://github.com/dsx-ai-factory/workload-map) |
+| Dynamo | Model serving | Stefan Schimanski | [github.com/ai-dynamo/dynamo](https://github.com/ai-dynamo/dynamo/) |
+| Snapshot | Model serving | Ron Kahn | [github.com/ai-dynamo/snapshot](https://github.com/ai-dynamo/snapshot) |
+| Grove | Model serving | Dynamo workshop team | [github.com/ai-dynamo/grove](https://github.com/ai-dynamo/grove) |
+| Model Express | Model serving | Dynamo workshop team | [github.com/ai-dynamo/modelexpress](https://github.com/ai-dynamo/modelexpress) |
+| NVSentinel and NVCRE | Health and resilience | Kai Wombacker | [github.com/NVIDIA/NVSentinel](https://github.com/NVIDIA/NVSentinel) |
+| AI Cluster Runtime (AICR) | Accelerated Kubernetes | Nathan Taber | [github.com/NVIDIA/aicr](https://github.com/NVIDIA/aicr) |
+| NodeWright | Accelerated Kubernetes | Nathan Taber | [github.com/NVIDIA/nodewright](https://github.com/NVIDIA/nodewright) |
+| NVKE | Accelerated Kubernetes | Eric Chapman | [github.com/dsx-ai-factory/nvke](https://github.com/dsx-ai-factory/nvke/) |
+| NVKR | Accelerated Kubernetes | Eric Chapman | [github.com/dsx-ai-factory/nvkr](https://github.com/dsx-ai-factory/nvkr/) |
+| GPU Operator | Accelerated Kubernetes | Francis Guillier | Not shown |
+| NICo | Infrastructure operations | Ninad Desai | [DSX docs](https://docs.nvidia.com/dsx) |
 
 ## **Glossary**
 
