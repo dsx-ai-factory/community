@@ -34,6 +34,16 @@ Partners also offered to help validate Topograph changes on real InfiniBand hard
 
 By the end of the day, 33 external contributors had opened 21 pull requests. Activity across the participating repositories including pull requests, issues and comments was approximately 2.9 times the prior daily average.
 
+## What makes this worth repeating
+
+The first workshop gave us a practical model to build on: prepare manageable issues, make maintainers available and follow through after participants leave.
+
+We are already repeating it. On November 9, we ran the same format at KubeCon North America in Salt Lake City, with a contribution sprint, live maintainer review and a Show and Tell ([event article](kubecon-2026-dsx-os-contributor-workshop.md)). On December 16, we are bringing it to NVIDIA Run:ai and its related projects, in person at NVIDIA headquarters in Santa Clara and online ([registration and agenda](run-ai-contributor-workshop.md)). Each event has a different focus and set of projects, but the core stays the same: real issues, maintainers in the room and time for partners to share what they learn, bring their integration requests, and do hands-on integrations during and after the workshop.
+
+It also showed us where we need to improve. Some pull requests still await review, and closing those gaps is part of sustaining the relationships we started. Partner feedback is also helping shape clearer release and governance processes.
+
+These first 30 days give us confidence that the format works as a starting point for continued contribution. The next step is to make that experience available to more teams.
+
 ---
 
 © 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, and other NVIDIA product and service names are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries and regions. Other company, product, and service names may be trademarks of their respective owners.
