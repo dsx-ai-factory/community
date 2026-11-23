@@ -1,13 +1,17 @@
 # Build NVIDIA Run:ai With Us: Join the Run:ai Contributor Workshop
 
-GPUs are scarce, expensive, and shared, and the thing that decides who gets the next one is the scheduler. On [date], we are hosting the Run:ai Contributor Workshop [format and location], and we would like you to spend the day working with the maintainers of the open source projects behind NVIDIA Run:ai.
+GPUs are scarce, expensive, and shared, and the thing that decides who gets the next one is the scheduler. On [date], we are hosting the Run:ai Contributor Workshop [format and location], and we would like you to spend the day working with the maintainers of NVIDIA Run:ai and the open source projects around it.
 
-[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai) is an open platform for orchestrating AI workloads and GPUs on Kubernetes. It is built from four core projects, and each one is useful on its own:
+NVIDIA Run:ai is an open platform for orchestrating AI workloads and GPUs on Kubernetes, and the workshop covers eight projects around it. Each one is useful on its own:
 
+- **[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai):** the orchestration platform that brings the pieces together.
 - **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler):** gang scheduling, fair share, and topology-aware placement. It is a CNCF Sandbox project that NVIDIA donated, and the community shapes it.
-- **KAI Resource Management:** projects, departments, quotas, and node pools.
-- **GPU Fractioning Operator:** CUDA-native GPU fractions with hard memory isolation.
+- **[KAI Resource Management](https://github.com/kai-scheduler/kai-resource-management):** projects, departments, quotas, and node pools.
+- **[GPU Fractioning Operator](https://github.com/kai-scheduler/gpu-fractioning):** CUDA-native GPU fractions with hard memory isolation.
 - **[Workload Map](https://github.com/dsx-ai-factory/workload-map):** one contract that describes any workload type.
+- **[Model Streamer](https://github.com/dsx-ai-factory/model-streamer):** [add a one-line description].
+- **[Snapshot](https://github.com/ai-dynamo/snapshot):** gets GPU pods ready in seconds instead of minutes by restoring a fully initialized workload.
+- **[Grove](https://github.com/ai-dynamo/grove):** Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
 
 If you run GPU clusters, build a platform on Kubernetes, or have ever worked around a scheduling limit instead of reporting it, this is a good day to come and say what is missing. The architecture is still taking shape, which means a pull request can influence how these projects handle real GPU fleets, and AI scheduling is one of the most useful skills in cloud native right now.
 
