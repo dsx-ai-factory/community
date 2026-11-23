@@ -13,6 +13,10 @@ NVIDIA Run:ai is an open platform for orchestrating AI workloads and GPUs on Kub
 - **[Snapshot](https://github.com/ai-dynamo/snapshot):** gets GPU pods ready in seconds instead of minutes by restoring a fully initialized workload.
 - **[Grove](https://github.com/ai-dynamo/grove):** Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
 
+## Where these projects fit in DSX OS
+
+These workshops are focused on model serving and the platform side of the DSX stack, the part where inference services get deployed and GPU capacity gets shared across workloads. In the [DSX OS documentation](https://docs.nvidia.com/dsx#dsx-os), that is the Model Serving domain, home to Model Streamer, Snapshot, and Grove, and the Workload and GPU Orchestration domain, home to NVIDIA Run:ai, KAI Scheduler, KAI Resource Management, the GPU Fractioning Operator, and Workload Map. The November workshop at KubeCon covered other parts of DSX OS, such as Accelerated Kubernetes and infrastructure, so this one is a chance to go deep on the platform your own services run on.
+
 ## Why participate
 
 You get to work directly with the teams developing the software your platform can build on:
