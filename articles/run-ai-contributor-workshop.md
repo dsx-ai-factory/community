@@ -1,6 +1,6 @@
 # Build NVIDIA Run:ai With Us: Join the Run:ai Contributor Workshop
 
-GPUs are scarce, expensive, and shared, and the thing that decides who gets the next one is the scheduler. On December 16, we are hosting the NVIDIA DSX Contributor Workshop for NVIDIA Run:ai and its family of related projects, in person at NVIDIA headquarters in Santa Clara, California, and online. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
+Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. On December 16, we are hosting the NVIDIA DSX Contributor Workshop for NVIDIA Run:ai and its family of related projects, in person at NVIDIA headquarters in Santa Clara, California, and online. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
 
 NVIDIA Run:ai is an open platform for orchestrating AI workloads and GPUs on Kubernetes, and the workshop covers eight projects around it. Each one is useful on its own:
 
