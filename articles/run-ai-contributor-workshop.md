@@ -50,7 +50,7 @@ You do not need to write code to take part. Discussing the roadmap, filing an is
 
 ## How to get ready
 
-Bring a laptop and a use case, integration challenge, or contribution idea, and share your interests in advance so we can match your team with the right maintainers. Pick a good first issue in KAI Scheduler or KAI Resource Management, [request an invite to the DSX AI Factory Slack](https://inviter.co/dsx-ai-factory), and join [#nvidia-runai-contributor-workshop-dec16](https://dsx-ai-factory.slack.com/archives/C0CL68G71S9) so you can reach the team before and during the day. You are welcome to bring your favorite AI coding assistant.
+Bring a laptop and a use case, integration challenge, or contribution idea, and share your interests in advance so we can match your team with the right maintainers. Pick a good first issue in KAI Scheduler or KAI Resource Management, [request an invite to the DSX AI Factory Slack](https://inviter.co/dsx-ai-factory), and join [#nvidia-runai-contributor-workshop-dec16](https://dsx-ai-factory.slack.com/archives/C0CL68G71S9) so you can reach the team before and during the day. The channel is also open for discussions, so bring your questions, ideas, and integration challenges there. You are welcome to bring your favorite AI coding assistant.
 
 ## Express interest
 
