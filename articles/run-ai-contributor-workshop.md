@@ -2,6 +2,8 @@
 
 Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. On December 16, we are hosting the NVIDIA DSX Contributor Workshop in person at NVIDIA headquarters in Santa Clara, California, and online. It focuses on model serving and the platform side of [DSX OS](https://docs.nvidia.com/dsx#dsx-os), through NVIDIA Run:ai and its family of related projects. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
 
+The timing is good for engineers who like to get in early. Snapshot can now keep checkpoints in any S3-compatible object store, and vLLM and TensorRT-LLM have both merged the pieces it relies on. Model Streamer is getting faster at moving weights onto GPUs, with direct io_uring reads from block devices and reads straight into the device under tensor parallelism. Grove's APIs just reached beta while its integrations with the KAI Scheduler and Kueue keep deepening, and a new alpha node-assignment plugin in the KAI Scheduler is the first of a stack, with filtering, reclaim, metrics, and docs still to come. Workload Map now ships a CLI and a Headlamp plugin that runs a WebAssembly build of its engine. Most of this is unfinished in the best way, which is where a pull request counts for the most.
+
 The workshop covers eight projects, and each one is useful on its own:
 
 - **[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai):** an open platform for orchestrating AI workloads and GPUs on Kubernetes.
