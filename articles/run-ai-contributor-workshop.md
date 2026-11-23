@@ -1,8 +1,11 @@
 # Build NVIDIA Run:ai With Us: Join the Contributor Workshop on December 16
 
-| What | When | Where | Register |
-| --- | --- | --- | --- |
-| NVIDIA DSX Contributor Workshop for NVIDIA Run:ai and its family of related projects | Wednesday, December 16, 2026<br>8:30 AM to 2:00 PM PT | Hybrid: NVIDIA headquarters in Santa Clara, California, and online | [Sign up by December 7](https://forms.gle/DUbBKtEcSEmpKgU86) |
+| | |
+| --- | --- |
+| **What** | NVIDIA DSX Contributor Workshop for NVIDIA Run:ai and its family of related projects |
+| **When** | Wednesday, December 16, 2026, 8:30 AM to 2:00 PM PT |
+| **Where** | Hybrid: NVIDIA headquarters in Santa Clara, California, and online |
+| **Register** | [Sign up by December 7](https://forms.gle/DUbBKtEcSEmpKgU86) |
 
 Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. The NVIDIA DSX Contributor Workshop focuses on exactly that: model serving and the platform side of [DSX OS](https://docs.nvidia.com/dsx#dsx-os), through NVIDIA Run:ai and its family of related projects. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
 
