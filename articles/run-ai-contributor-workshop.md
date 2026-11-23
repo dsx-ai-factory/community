@@ -1,4 +1,4 @@
-# Build NVIDIA Run:ai With Us: Join the Contributor Workshop on December 16
+# Build NVIDIA Run:ai With Us: Join the Contributor Workshop on December 16, 2026
 
 | | |
 | --- | --- |
@@ -52,7 +52,7 @@ The session runs in person and online, and all times are Pacific.
 | 9:30 – 10:00 AM | Project-specific sprint, starts with project introductions |
 | 10:00 AM – 12:30 PM | Contribution sprints |
 | 12:30 – 1:15 PM | Lunch |
-| 1:15 – 2:00 PM | Partner insights |
+| 1:15 – 2:00 PM | Partner contribution insights |
 | 2:00 PM onwards | Optional discussions |
 
 Most of the morning goes to project-specific sprints, and there is plenty of time in them to talk with the product managers and maintainers of these projects, who are on hand to review in real time. After lunch, partners share their insights, and the afternoon stays open for optional discussions.
