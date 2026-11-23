@@ -2,9 +2,9 @@
 
 Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. On December 16, we are hosting the NVIDIA DSX Contributor Workshop for NVIDIA Run:ai and its family of related projects, in person at NVIDIA headquarters in Santa Clara, California, and online. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
 
-NVIDIA Run:ai is an open platform for orchestrating AI workloads and GPUs on Kubernetes, and the workshop covers eight projects around it. Each one is useful on its own:
+The workshop covers eight projects, and each one is useful on its own:
 
-- **[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai):** the orchestration platform that brings the pieces together.
+- **[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai):** an open platform for orchestrating AI workloads and GPUs on Kubernetes.
 - **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler):** gang scheduling, fair share, and topology-aware placement. It is a CNCF Sandbox project that NVIDIA donated, and the community shapes it.
 - **[KAI Resource Management](https://github.com/kai-scheduler/kai-resource-management):** projects, departments, quotas, and node pools.
 - **[GPU Fractioning Operator](https://github.com/kai-scheduler/gpu-fractioning):** CUDA-native GPU fractions with hard memory isolation.
