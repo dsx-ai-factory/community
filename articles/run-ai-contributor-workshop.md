@@ -1,4 +1,4 @@
-# Build NVIDIA Run:ai With Us: Join the Run:ai Contributor Workshop
+# Build NVIDIA Run:ai With Us: Join the Contributor Workshop on December 16
 
 Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. On December 16, we are hosting the NVIDIA DSX Contributor Workshop for NVIDIA Run:ai and its family of related projects, in person at NVIDIA headquarters in Santa Clara, California, and online. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
 
