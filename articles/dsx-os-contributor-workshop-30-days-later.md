@@ -44,6 +44,14 @@ It also showed us where we need to improve. Some pull requests still await revie
 
 These first 30 days give us confidence that the format works as a starting point for continued contribution. The next step is to make that experience available to more teams.
 
+## Join a future workshop or get involved now
+
+We invite more companies to bring their engineers, deployment experience and ideas to future DSX OS contributor workshops. Whether your team has a specific integration to improve or is looking for its first contribution, working directly with maintainers creates a practical place to start.
+
+Explore the DSX AI Factory projects, look for newcomer issues and let us know in the community repository if your company would like to participate in a future workshop.
+
+Help shape the software your team depends on and build the relationships to keep improving it together.
+
 ---
 
 © 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, and other NVIDIA product and service names are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries and regions. Other company, product, and service names may be trademarks of their respective owners.
