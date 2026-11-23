@@ -10,7 +10,7 @@ Every AI platform eventually has to answer two questions: who gets the next GPU,
 The workshop covers eight projects, and each one is useful on its own:
 
 - **[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai):** an open-source AI workload and GPU orchestration platform for managing shared AI infrastructure on Kubernetes.
-- **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler):** an open source Kubernetes-native scheduler for AI workloads at large scale, and a CNCF Sandbox project.
+- **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler):** an open-source Kubernetes-native scheduler for AI workloads at large scale, and a CNCF Sandbox project.
 - **[KAI Resource Management](https://github.com/kai-scheduler/kai-resource-management):** Kubernetes-native resource management with projects, departments, quotas, and node pools.
 - **[GPU Fractioning Operator](https://github.com/kai-scheduler/gpu-fractioning):** CUDA-native GPU fractions with hard memory isolation.
 - **[Workload Map](https://github.com/dsx-ai-factory/workload-map):** a standard way to describe the structure of any Kubernetes workload type.
@@ -18,7 +18,9 @@ The workshop covers eight projects, and each one is useful on its own:
 - **[Snapshot](https://github.com/ai-dynamo/snapshot):** gets GPU pods ready in seconds instead of minutes by restoring a fully initialized workload.
 - **[Grove](https://github.com/ai-dynamo/grove):** Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
 
-The timing is good for engineers who like to get in early. Snapshot can now keep checkpoints in [any S3-compatible object store](https://github.com/ai-dynamo/snapshot/releases/tag/v0.3.0), and [vLLM](https://github.com/vllm-project/vllm/pull/62570) and [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM/pull/14636) have both merged the pieces it relies on. Two upstream threads are still open for input: [a vLLM RFC on who owns checkpoint and restore when it is orchestrated externally](https://github.com/vllm-project/vllm/issues/60422) and [a TensorRT-LLM pull request for experimental resident checkpoint lifecycle controls](https://github.com/NVIDIA/TensorRT-LLM/pull/21598). Model Streamer is getting faster at moving weights onto GPUs, with [direct io_uring reads from block devices](https://github.com/dsx-ai-factory/model-streamer/pull/349) and [reads straight into the device under tensor parallelism](https://github.com/dsx-ai-factory/model-streamer/pull/360). Grove's APIs [just reached beta](https://github.com/ai-dynamo/grove/releases/tag/v0.2.0-beta1) while its integrations with the [KAI Scheduler](https://github.com/ai-dynamo/grove/pull/962) and [Kueue](https://github.com/ai-dynamo/grove/pull/944) keep deepening, and a [new alpha node-assignment plugin](https://github.com/kai-scheduler/KAI-Scheduler/pull/2659) in the KAI Scheduler is the first of a stack, with filtering, reclaim, metrics, and docs still to come. Workload Map now ships [a CLI and a Headlamp plugin](https://github.com/dsx-ai-factory/workload-map/releases/tag/v0.3.0) that runs a WebAssembly build of its engine. That is a small flavor of what is cooking across these projects, and most of it is unfinished in the best way, which is where a pull request counts for the most. Join us in making it better.
+The timing is good for engineers who like to get in early. Snapshot can now keep checkpoints in [any S3-compatible object store](https://github.com/ai-dynamo/snapshot/releases/tag/v0.3.0), and [vLLM](https://github.com/vllm-project/vllm/pull/62570) and [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM/pull/14636) have both merged the pieces it relies on. Two upstream threads are still open for input: [a vLLM RFC on who owns checkpoint and restore when it is orchestrated externally](https://github.com/vllm-project/vllm/issues/60422) and [a TensorRT-LLM pull request for experimental resident checkpoint lifecycle controls](https://github.com/NVIDIA/TensorRT-LLM/pull/21598).
+
+Model Streamer is getting faster at moving weights onto GPUs, with [direct io_uring reads from block devices](https://github.com/dsx-ai-factory/model-streamer/pull/349) and [reads straight into the device under tensor parallelism](https://github.com/dsx-ai-factory/model-streamer/pull/360). Grove's APIs [just reached beta](https://github.com/ai-dynamo/grove/releases/tag/v0.2.0-beta1) while its integrations with the [KAI Scheduler](https://github.com/ai-dynamo/grove/pull/962) and [Kueue](https://github.com/ai-dynamo/grove/pull/944) keep deepening, and a [new alpha node-assignment plugin](https://github.com/kai-scheduler/KAI-Scheduler/pull/2659) in the KAI Scheduler is the first of a stack, with filtering, reclaim, metrics, and docs still to come. Workload Map now ships [a CLI and a Headlamp plugin](https://github.com/dsx-ai-factory/workload-map/releases/tag/v0.3.0) that runs a WebAssembly build of its engine. That is a small flavor of what is cooking across these projects, and most of it is unfinished in the best way, which is where a pull request counts for the most. Join us in making it better.
 
 ## Why participate
 
@@ -33,7 +35,9 @@ We want more of the people who run these projects in production to help shape th
 
 ## Who should attend
 
-The workshop is for partner engineers, architects, and technical leads building GPU clouds, Kubernetes platforms, AI infrastructure, or complementary software, and both new and experienced contributors are welcome. If you have ever worked around a scheduling limit instead of reporting it, this is a good day to say what is missing. The architecture is still taking shape, so a pull request can influence how these projects handle real GPU fleets.
+The workshop is for partner engineers, architects, and technical leads building GPU clouds, Kubernetes platforms, AI infrastructure, or complementary software, and both new and experienced contributors are welcome. If you have ever worked around a scheduling limit instead of reporting it, this is a good day to say what is missing.
+
+You do not need to write code to take part. Discussing the roadmap, filing an issue, or giving a maintainer feedback in person all count, and so does opening a draft pull request and getting a live review.
 
 ## What the day looks like
 
@@ -51,15 +55,13 @@ The session runs in person and online, and all times are Pacific.
 
 Most of the morning goes to project-specific sprints, and there is plenty of time in them to talk with the product managers and maintainers of these projects, who are on hand to review in real time. After lunch, partners share their insights, and the afternoon stays open for optional discussions.
 
-You do not need to write code to take part. Discussing the roadmap, filing an issue, or giving a maintainer feedback in person all count, and so does opening a draft pull request and getting a live review.
-
 ## How to get ready
 
 Bring a laptop and a use case, integration challenge, or contribution idea. Browse the open issues in the projects you care about, including any labeled good first issue, then [request an invite to the DSX AI Factory Slack](https://inviter.co/dsx-ai-factory) and join [#nvidia-runai-contributor-workshop-dec16](https://dsx-ai-factory.slack.com/archives/C0CL68G71S9). Tell us your interests there in advance so we can match your team with the right maintainers. The channel is also open for discussions, so bring your questions, ideas, and integration challenges. You are welcome to bring your favorite AI coding assistant.
 
 ## Register
 
-[Register for the workshop](https://forms.gle/DUbBKtEcSEmpKgU86) by Monday, December 7. The session is hybrid, and we strongly encourage you to join in person at NVIDIA headquarters for the most hands-on experience. Room details and preparation instructions will follow. If you cannot join us on the day, the issues are open and the maintainers are in the Slack, so you can start any time.
+[Register for the workshop](https://forms.gle/DUbBKtEcSEmpKgU86) by Monday, December 7. The session is hybrid, and we strongly encourage you to join in person at NVIDIA headquarters for the most hands-on experience. Room details will follow. If you cannot join us on the day, the issues are open and the maintainers are in the Slack, so you can start any time.
 
 ---
 
