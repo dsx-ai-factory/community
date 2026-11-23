@@ -17,25 +17,16 @@ The workshop covers eight projects, and each one is useful on its own:
 
 You get to work directly with the teams developing the software your platform can build on:
 
-- **Advance integrations:** explore architecture and resolve technical questions with the maintainers.
-- **Contribute improvements:** work on code, tests, documentation, examples, and actionable issues.
-- **Shape project direction:** share your deployment experience, requirements, and proposed enhancements.
+- **Advance integrations:** explore architecture, resolve technical questions with the maintainers, and tell us which integrations still need to be built.
+- **Contribute improvements:** work on code, tests, documentation, examples, and actionable issues, whether you are starting out or getting a pull request merged.
+- **Shape project direction:** discuss the roadmap and share your deployment experience, requirements, and proposed enhancements.
 - **Build engineering relationships:** make contacts and agree on follow-up work.
+
+We want more of the people who run these projects in production to help shape them, and we want that momentum to outlast the day, so we measure success by who is still contributing 90 days later. You should leave with a contribution underway, an integration plan, a documented requirement, or a scoped joint engineering task.
 
 ## Who should attend
 
 The workshop is for partner engineers, architects, and technical leads building GPU clouds, Kubernetes platforms, AI infrastructure, or complementary software, and both new and experienced contributors are welcome. If you have ever worked around a scheduling limit instead of reporting it, this is a good day to say what is missing. The architecture is still taking shape, so a pull request can influence how these projects handle real GPU fleets.
-
-## What we are aiming for
-
-The workshop is built around four goals:
-
-- **Grow non-NVIDIA participation with the community.** The projects get better when the people who run them in production help shape them.
-- **Build community momentum that outlasts the event.** We measure success by who is still contributing 90 days later, not by how many pull requests were opened on the day.
-- **Accelerate ecosystem-wide collaboration.** Partners, platform builders, and maintainers in the same room make integration questions much easier to settle.
-- **Convert new contributors into merged-pull-request authors.** Maintainers are on hand all day to review in real time, so that a first contribution ends up merged and not abandoned in a fork.
-
-We would like you to leave with a contribution underway, an integration plan, a documented requirement, or a scoped joint engineering task.
 
 ## What the day looks like
 
@@ -51,12 +42,7 @@ The session runs in person and online, and all times are Pacific.
 | 1:15 – 2:00 PM | Partner insights |
 | 2:00 PM onwards | Optional discussions |
 
-Most of the morning goes to project-specific sprints, and there is plenty of time in them to talk with the product managers and maintainers of these projects. After lunch, partners share their insights, and the afternoon stays open for optional discussions. What you do in the sprints depends on where you are:
-
-- **Starting out:** discuss the roadmap with the product managers and identify areas where you can contribute.
-- **Already have an area in mind:** take that discussion further with the maintainers and land a pull request.
-- **Working on a pull request:** get feedback from the maintainers and get it merged.
-- **Already merged a pull request:** tell us more about which integrations need to be built next.
+Most of the morning goes to project-specific sprints, and there is plenty of time in them to talk with the product managers and maintainers of these projects, who are on hand to review in real time. After lunch, partners share their insights, and the afternoon stays open for optional discussions.
 
 You do not need to write code to take part. Discussing the roadmap, filing an issue, or giving a maintainer feedback in person all count, and so does opening a draft pull request and getting a live review.
 
