@@ -17,3 +17,23 @@ Partners working with this software see opportunities for improvement through th
 We designed the September 30 session around that interaction. Each participating project prepared starter issues in advance, giving engineers a clear place to begin. Maintainers worked alongside participants to help them understand the code and move changes forward.
 
 The goal extended beyond the afternoon: help contributors build the familiarity and connections to continue working with these projects.
+
+## What we built together
+
+Engineers from more than a dozen companies joined NVIDIA maintainers at our headquarters and online, working across 13 projects, including GPU Operator, Container Toolkit, NVSentinel, Topograph and AI Cluster Runtime (AICR).
+
+The work reflected the different environments and needs partners bring to the community:
+
+- SUSE added a Rancher Fleet deployer to AICR and wrote guides for running on SUSE Linux Enterprise and RKE2.
+- Red Hat started a Terraform provider generator and an Ansible collection for NVIDIA Infra Controller, while also fixing a database connection setting.
+- HPE improved GPU Operator diagnostics and monitoring.
+- SAP contributed to Topograph.
+- Lambda proposed a CI workflow and test suite for Exemplar Performance.
+
+Partners also offered to help validate Topograph changes on real InfiniBand hardware and shared feedback on roadmaps, releases and governance.
+
+By the end of the day, 33 external contributors had opened 21 pull requests. Activity across the participating repositories including pull requests, issues and comments was approximately 2.9 times the prior daily average.
+
+---
+
+© 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, and other NVIDIA product and service names are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries and regions. Other company, product, and service names may be trademarks of their respective owners.
