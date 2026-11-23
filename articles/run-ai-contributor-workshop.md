@@ -1,6 +1,6 @@
 # Build NVIDIA Run:ai With Us: Join the Run:ai Contributor Workshop
 
-GPUs are scarce, expensive, and shared, and the thing that decides who gets the next one is the scheduler. On [date], we are hosting the Run:ai Contributor Workshop [format and location], and we would like you to spend the day working with the maintainers of NVIDIA Run:ai and the open source projects around it.
+GPUs are scarce, expensive, and shared, and the thing that decides who gets the next one is the scheduler. On December 16, we are hosting the NVIDIA DSX Contributor Workshop for NVIDIA Run:ai and its family of related projects, in person at NVIDIA headquarters in Santa Clara, California, and online. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
 
 NVIDIA Run:ai is an open platform for orchestrating AI workloads and GPUs on Kubernetes, and the workshop covers eight projects around it. Each one is useful on its own:
 
@@ -13,7 +13,18 @@ NVIDIA Run:ai is an open platform for orchestrating AI workloads and GPUs on Kub
 - **[Snapshot](https://github.com/ai-dynamo/snapshot):** gets GPU pods ready in seconds instead of minutes by restoring a fully initialized workload.
 - **[Grove](https://github.com/ai-dynamo/grove):** Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
 
-If you run GPU clusters, build a platform on Kubernetes, or have ever worked around a scheduling limit instead of reporting it, this is a good day to come and say what is missing. The architecture is still taking shape, which means a pull request can influence how these projects handle real GPU fleets, and AI scheduling is one of the most useful skills in cloud native right now.
+## Why participate
+
+You get to work directly with the teams developing the software your platform can build on:
+
+- **Advance integrations:** explore architecture and resolve technical questions with the maintainers.
+- **Contribute improvements:** work on code, tests, documentation, examples, and actionable issues.
+- **Shape project direction:** share your deployment experience, requirements, and proposed enhancements.
+- **Build engineering relationships:** make contacts and agree on follow-up work.
+
+## Who should attend
+
+The workshop is for partner engineers, architects, and technical leads building GPU clouds, Kubernetes platforms, AI infrastructure, or complementary software, and both new and experienced contributors are welcome. If you have ever worked around a scheduling limit instead of reporting it, this is a good day to say what is missing. The architecture is still taking shape, so a pull request can influence how these projects handle real GPU fleets.
 
 ## What we are aiming for
 
@@ -24,9 +35,11 @@ The workshop is built around four goals:
 - **Accelerate ecosystem-wide collaboration.** Partners, platform builders, and maintainers in the same room make integration questions much easier to settle.
 - **Convert new contributors into merged-pull-request authors.** Maintainers are on hand all day to review in real time, so that a first contribution ends up merged and not abandoned in a fork.
 
+We would like you to leave with a contribution underway, an integration plan, a documented requirement, or a scoped joint engineering task.
+
 ## What the day looks like
 
-It is a hybrid session, so you can join in person or online. [All times are in time zone, to be confirmed.]
+The session runs in person and online, and all times are Pacific.
 
 | Time | Topic |
 | --- | --- |
@@ -49,11 +62,11 @@ You do not need to write code to take part. Discussing the roadmap, filing an is
 
 ## How to get ready
 
-Pick a good first issue in KAI Scheduler or KAI Resource Management, join the #kai-scheduler channel on the CNCF Slack, and [request an invite to the DSX AI Factory Slack](https://inviter.co/dsx-ai-factory) so you can reach the team before and during the day. Bring a laptop and your favorite AI coding assistant. [Confirm whether pre-event office hours are open to everyone, and add how to join them.]
+Bring a laptop and a use case, integration challenge, or contribution idea, and share your interests in advance so we can match your team with the right maintainers. Pick a good first issue in KAI Scheduler or KAI Resource Management, join the #kai-scheduler channel on the CNCF Slack, and [request an invite to the DSX AI Factory Slack](https://inviter.co/dsx-ai-factory) so you can reach the team before and during the day. You are welcome to bring your favorite AI coding assistant.
 
-## Register
+## Express interest
 
-[Registration link and any deadline.] If you cannot join us on the day, the issues are open and the maintainers are in the Slack, so you can start any time.
+[Contact and email.] Tell us your company, who is attending, the projects you are interested in, and optionally the work you would like to propose. Room details and preparation instructions will follow. If you cannot join us on the day, the issues are open and the maintainers are in the Slack, so you can start any time.
 
 ---
 
