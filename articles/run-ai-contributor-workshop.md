@@ -1,6 +1,6 @@
 # Build NVIDIA Run:ai With Us: Join the Contributor Workshop on December 16
 
-Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. On December 16, we are hosting the NVIDIA DSX Contributor Workshop for NVIDIA Run:ai and its family of related projects, in person at NVIDIA headquarters in Santa Clara, California, and online. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
+Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. On December 16, we are hosting the NVIDIA DSX Contributor Workshop in person at NVIDIA headquarters in Santa Clara, California, and online. It focuses on model serving and the platform side of [DSX OS](https://docs.nvidia.com/dsx#dsx-os), through NVIDIA Run:ai and its family of related projects. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
 
 The workshop covers eight projects, and each one is useful on its own:
 
@@ -12,10 +12,6 @@ The workshop covers eight projects, and each one is useful on its own:
 - **[Model Streamer](https://github.com/dsx-ai-factory/model-streamer):** [add a one-line description].
 - **[Snapshot](https://github.com/ai-dynamo/snapshot):** gets GPU pods ready in seconds instead of minutes by restoring a fully initialized workload.
 - **[Grove](https://github.com/ai-dynamo/grove):** Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
-
-## Where these projects fit in DSX OS
-
-These workshops are focused on model serving and the platform side of the DSX stack, the part where inference services get deployed and GPU capacity gets shared across workloads. In the [DSX OS documentation](https://docs.nvidia.com/dsx#dsx-os), that is the Model Serving domain, home to Model Streamer, Snapshot, and Grove, and the Workload and GPU Orchestration domain, home to NVIDIA Run:ai, KAI Scheduler, KAI Resource Management, the GPU Fractioning Operator, and Workload Map. The November workshop at KubeCon covered other parts of DSX OS, such as Accelerated Kubernetes and infrastructure, so this one is a chance to go deep on the platform your own services run on.
 
 ## Why participate
 
