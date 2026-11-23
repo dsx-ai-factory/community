@@ -9,7 +9,7 @@ The workshop covers eight projects, and each one is useful on its own:
 - **[KAI Resource Management](https://github.com/kai-scheduler/kai-resource-management):** Kubernetes-native resource management with projects, departments, quotas, and node pools.
 - **[GPU Fractioning Operator](https://github.com/kai-scheduler/gpu-fractioning):** CUDA-native GPU fractions with hard memory isolation.
 - **[Workload Map](https://github.com/dsx-ai-factory/workload-map):** a standard way to describe the structure of any Kubernetes workload type.
-- **[Model Streamer](https://github.com/dsx-ai-factory/model-streamer):** a streaming loader for SafeTensors model weights that moves tensors to the GPU while it is still reading from storage.
+- **[Model Streamer](https://github.com/dsx-ai-factory/model-streamer):** loads SafeTensors model weights as PyTorch tensors.
 - **[Snapshot](https://github.com/ai-dynamo/snapshot):** gets GPU pods ready in seconds instead of minutes by restoring a fully initialized workload.
 - **[Grove](https://github.com/ai-dynamo/grove):** Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
 
