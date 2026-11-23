@@ -1,6 +1,11 @@
 # Build NVIDIA Run:ai With Us: Join the Contributor Workshop on December 16
 
-Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. On December 16, we are hosting the NVIDIA DSX Contributor Workshop in person at NVIDIA headquarters in Santa Clara, California, and online. It focuses on model serving and the platform side of [DSX OS](https://docs.nvidia.com/dsx#dsx-os), through NVIDIA Run:ai and its family of related projects. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
+- **What:** the NVIDIA DSX Contributor Workshop for NVIDIA Run:ai and its family of related projects, with hands-on contribution sprints alongside the maintainers and product managers
+- **When:** Wednesday, December 16, 2026, 8:30 AM to 2:00 PM PT
+- **Where:** NVIDIA headquarters in Santa Clara, California, and online
+- **Register:** [sign up by December 7](https://forms.gle/DUbBKtEcSEmpKgU86)
+
+Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. The NVIDIA DSX Contributor Workshop focuses on exactly that: model serving and the platform side of [DSX OS](https://docs.nvidia.com/dsx#dsx-os), through NVIDIA Run:ai and its family of related projects. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
 
 The workshop covers eight projects, and each one is useful on its own:
 
@@ -52,9 +57,9 @@ You do not need to write code to take part. Discussing the roadmap, filing an is
 
 Bring a laptop and a use case, integration challenge, or contribution idea, and share your interests in advance so we can match your team with the right maintainers. Pick a good first issue in KAI Scheduler or KAI Resource Management, [request an invite to the DSX AI Factory Slack](https://inviter.co/dsx-ai-factory), and join [#nvidia-runai-contributor-workshop-dec16](https://dsx-ai-factory.slack.com/archives/C0CL68G71S9) so you can reach the team before and during the day. The channel is also open for discussions, so bring your questions, ideas, and integration challenges there. You are welcome to bring your favorite AI coding assistant.
 
-## Express interest
+## Register
 
-[Contact and email.] Tell us your company, who is attending, the projects you are interested in, and optionally the work you would like to propose. Room details and preparation instructions will follow. If you cannot join us on the day, the issues are open and the maintainers are in the Slack, so you can start any time.
+[Register for the workshop](https://forms.gle/DUbBKtEcSEmpKgU86) by Monday, December 7. The session is hybrid, and we strongly encourage you to join in person at NVIDIA headquarters for the most hands-on experience. Room details and preparation instructions will follow. If you cannot join us on the day, the issues are open and the maintainers are in the Slack, so you can start any time.
 
 ---
 
