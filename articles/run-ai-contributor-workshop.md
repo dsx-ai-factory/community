@@ -10,7 +10,7 @@ The workshop covers eight projects, and each one is useful on its own:
 - **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler):** gang scheduling, fair share, and topology-aware placement. It is a CNCF Sandbox project that NVIDIA donated, and the community shapes it.
 - **[KAI Resource Management](https://github.com/kai-scheduler/kai-resource-management):** projects, departments, quotas, and node pools.
 - **[GPU Fractioning Operator](https://github.com/kai-scheduler/gpu-fractioning):** CUDA-native GPU fractions with hard memory isolation.
-- **[Workload Map](https://github.com/dsx-ai-factory/workload-map):** one contract that describes any workload type.
+- **[Workload Map](https://github.com/dsx-ai-factory/workload-map):** a standard way to describe the structure of any Kubernetes workload type.
 - **[Model Streamer](https://github.com/dsx-ai-factory/model-streamer):** [add a one-line description].
 - **[Snapshot](https://github.com/ai-dynamo/snapshot):** gets GPU pods ready in seconds instead of minutes by restoring a fully initialized workload.
 - **[Grove](https://github.com/ai-dynamo/grove):** Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
