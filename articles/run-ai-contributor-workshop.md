@@ -28,15 +28,17 @@ The workshop is built around four goals:
 
 It is a hybrid session, so you can join in person or online. [All times are in time zone, to be confirmed.]
 
-| Time | Session |
+| Time | Topic |
 | --- | --- |
-| 8:30 – 9:00 AM | Arrival & Check-In (In-Person) |
-| 9:00 – 9:30 AM | Welcome, Introductions & Goals |
-| 9:30 AM – 12:30 PM | Project-Based Contribution Sessions |
+| 8:30 – 9:00 AM | Arrival and Setup |
+| 9:00 – 9:30 AM | Introduction to Run:ai platform and projects |
+| 9:30 – 10:00 AM | Project-specific sprint, starts with project introductions |
+| 10:00 AM – 12:30 PM | Contribution sprints |
 | 12:30 – 1:15 PM | Lunch |
-| 1:15 – 2:00 PM | Show & Tell |
+| 1:15 – 2:00 PM | Partner insights |
+| 2:00 PM onwards | Optional discussions |
 
-Most of the day is three hours of project-based contribution time, and there is plenty of room in it to talk with the product managers and maintainers of these projects. What you do with that time depends on where you are:
+Most of the morning goes to project-specific sprints, and there is plenty of time in them to talk with the product managers and maintainers of these projects. After lunch, partners share their insights, and the afternoon stays open for optional discussions. What you do with that time depends on where you are:
 
 - **Starting out:** discuss the roadmap with the product managers and identify areas where you can contribute.
 - **Already have an area in mind:** take that discussion further with the maintainers and land a pull request.
