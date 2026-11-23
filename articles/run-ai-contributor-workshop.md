@@ -37,7 +37,7 @@ We want more of the people who run these projects in production to help shape th
 
 The workshop is for partner engineers, architects, and technical leads building GPU clouds, Kubernetes platforms, AI infrastructure, or complementary software, and both new and experienced contributors are welcome. If you have ever worked around a scheduling limit instead of reporting it, this is a good day to say what is missing.
 
-You do not need to write code to take part. Discussing the roadmap, filing an issue, or giving a maintainer feedback in person all count, and so does opening a draft pull request and getting a live review.
+You do not need to write code to take part, and there is more to contribute than pull requests. You can add a workload definition to a catalog, fix or write a guide, test a feature on your own hardware or cluster, build an example or a dashboard, review someone else's pull request, reproduce and triage a bug, or give feedback on a design proposal or the roadmap. The maintainers have identified multiple items specific to their projects for you to pick up, and you are welcome to bring your own integrations.
 
 ## What the day looks like
 
