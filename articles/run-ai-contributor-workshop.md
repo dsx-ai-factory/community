@@ -4,7 +4,7 @@ Every AI platform eventually has to answer two questions: who gets the next GPU,
 
 The workshop covers eight projects, and each one is useful on its own:
 
-- **[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai):** an open platform for orchestrating AI workloads and GPUs on Kubernetes.
+- **[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai):** an open-source AI workload and GPU orchestration platform for managing shared AI infrastructure on Kubernetes.
 - **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler):** an open source Kubernetes-native scheduler for AI workloads at large scale, and a CNCF Sandbox project.
 - **[KAI Resource Management](https://github.com/kai-scheduler/kai-resource-management):** Kubernetes-native resource management with projects, departments, quotas, and node pools.
 - **[GPU Fractioning Operator](https://github.com/kai-scheduler/gpu-fractioning):** CUDA-native GPU fractions with hard memory isolation.
