@@ -2,18 +2,18 @@
 
 Every AI platform eventually has to answer two questions: who gets the next GPU, and how quickly can a model start serving on it. On December 16, we are hosting the NVIDIA DSX Contributor Workshop in person at NVIDIA headquarters in Santa Clara, California, and online. It focuses on model serving and the platform side of [DSX OS](https://docs.nvidia.com/dsx#dsx-os), through NVIDIA Run:ai and its family of related projects. Bring your engineering team, your technical challenges, and your integration ideas, and spend the day building with the NVIDIA maintainers.
 
-The timing is good for engineers who like to get in early. Snapshot can now keep checkpoints in any S3-compatible object store, and vLLM and TensorRT-LLM have both merged the pieces it relies on. Model Streamer is getting faster at moving weights onto GPUs, with direct io_uring reads from block devices and reads straight into the device under tensor parallelism. Grove's APIs just reached beta while its integrations with the KAI Scheduler and Kueue keep deepening, and a new alpha node-assignment plugin in the KAI Scheduler is the first of a stack, with filtering, reclaim, metrics, and docs still to come. Workload Map now ships a CLI and a Headlamp plugin that runs a WebAssembly build of its engine. Most of this is unfinished in the best way, which is where a pull request counts for the most.
-
 The workshop covers eight projects, and each one is useful on its own:
 
 - **[NVIDIA Run:ai](https://github.com/dsx-ai-factory/run-ai):** an open platform for orchestrating AI workloads and GPUs on Kubernetes.
-- **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler):** gang scheduling, fair share, and topology-aware placement. It is a CNCF Sandbox project that NVIDIA donated, and the community shapes it.
-- **[KAI Resource Management](https://github.com/kai-scheduler/kai-resource-management):** projects, departments, quotas, and node pools.
+- **[KAI Scheduler](https://github.com/kai-scheduler/KAI-Scheduler):** a Kubernetes-native scheduler for AI workloads at large scale, with batch scheduling, bin-packing and spread, workload priority, hierarchical queues, and fairness policies. It is a CNCF Sandbox project that NVIDIA donated, and the community shapes it.
+- **[KAI Resource Management](https://github.com/kai-scheduler/kai-resource-management):** Kubernetes-native resource management with projects, departments, quotas, and node pools.
 - **[GPU Fractioning Operator](https://github.com/kai-scheduler/gpu-fractioning):** CUDA-native GPU fractions with hard memory isolation.
 - **[Workload Map](https://github.com/dsx-ai-factory/workload-map):** a standard way to describe the structure of any Kubernetes workload type.
-- **[Model Streamer](https://github.com/dsx-ai-factory/model-streamer):** [add a one-line description].
+- **[Model Streamer](https://github.com/dsx-ai-factory/model-streamer):** a streaming loader for SafeTensors model weights that moves tensors to the GPU while it is still reading from storage.
 - **[Snapshot](https://github.com/ai-dynamo/snapshot):** gets GPU pods ready in seconds instead of minutes by restoring a fully initialized workload.
 - **[Grove](https://github.com/ai-dynamo/grove):** Kubernetes enhancements for network-topology-aware gang scheduling and autoscaling.
+
+The timing is good for engineers who like to get in early. Snapshot can now keep checkpoints in any S3-compatible object store, and vLLM and TensorRT-LLM have both merged the pieces it relies on. Model Streamer is getting faster at moving weights onto GPUs, with direct io_uring reads from block devices and reads straight into the device under tensor parallelism. Grove's APIs just reached beta while its integrations with the KAI Scheduler and Kueue keep deepening, and a new alpha node-assignment plugin in the KAI Scheduler is the first of a stack, with filtering, reclaim, metrics, and docs still to come. Workload Map now ships a CLI and a Headlamp plugin that runs a WebAssembly build of its engine. Most of this is unfinished in the best way, which is where a pull request counts for the most.
 
 ## Why participate
 
