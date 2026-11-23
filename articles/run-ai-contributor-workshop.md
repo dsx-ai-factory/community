@@ -38,7 +38,7 @@ It is a hybrid session, so you can join in person or online. [All times are in t
 | 1:15 – 2:00 PM | Partner insights |
 | 2:00 PM onwards | Optional discussions |
 
-Most of the morning goes to project-specific sprints, and there is plenty of time in them to talk with the product managers and maintainers of these projects. After lunch, partners share their insights, and the afternoon stays open for optional discussions. What you do with that time depends on where you are:
+Most of the morning goes to project-specific sprints, and there is plenty of time in them to talk with the product managers and maintainers of these projects. After lunch, partners share their insights, and the afternoon stays open for optional discussions. What you do in the sprints depends on where you are:
 
 - **Starting out:** discuss the roadmap with the product managers and identify areas where you can contribute.
 - **Already have an area in mind:** take that discussion further with the maintainers and land a pull request.
