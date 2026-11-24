@@ -16,7 +16,7 @@ To learn how meetings run, see [community-meetings.md](community-meetings.md).
 
 | Community | Slack | Mailing list | Meetings | Notes | Drive folder |
 | --- | --- | --- | --- | --- | --- |
-| [NVIDIA GPU Operator](#nvidia-gpu-operator) | `#gpu-operator` | [gpu-operator@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/gpu-operator) | Every 4 weeks on Mondays | [Notes](https://docs.google.com/document/d/1rHtnDgfv1IRiFmGpOrc7v1MGVfeCo2ASzWZOmKscyyg/edit) | [Folder](https://drive.google.com/drive/folders/1o7_A5w-Hq1jNgnwOj8Q415LLxlmLwNla) |
+| [NVIDIA GPU Operator](#nvidia-gpu-operator) | `#gpu-operator` | [gpu-operator@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/gpu-operator) | Monthly, second Tuesday, 9:00 AM PT | [Notes](https://docs.google.com/document/d/1rHtnDgfv1IRiFmGpOrc7v1MGVfeCo2ASzWZOmKscyyg/edit) | [Folder](https://drive.google.com/drive/folders/1o7_A5w-Hq1jNgnwOj8Q415LLxlmLwNla) |
 | [NVIDIA DSX K8s Cluster Management](#nvidia-dsx-k8s-cluster-management) | `#nvidia-dsx-k8s-cluster-management` | To be announced | To be announced | [Notes](https://docs.google.com/document/d/1l5jWUBUG5ZkuZTFFT55T1qpoIN7VCXoU0dAZu0LE4UQ/edit) | [Folder](https://drive.google.com/drive/folders/1U-MwG5p1apImw8tsuwCRoT-h3rl5XADP) |
 | [NVIDIA DSX K8s Cluster Health & Configuration](#nvidia-dsx-k8s-cluster-health--configuration) | `#nvidia-dsx-k8s-cluster-health-configuration` | To be announced | To be announced | [Notes](https://docs.google.com/document/d/1NE8SSWKVj17VJ_Cae186yf5xse2NpfW8t0633JKtZpk/edit) | [Folder](https://drive.google.com/drive/folders/1lF6WQo1kmeond1C3nKf2pSfBiZkpcPqV) |
 | [NVIDIA Run:ai](#nvidia-runai) | `#run-ai` | [run-ai@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/run-ai) | To be announced | [Notes](https://docs.google.com/document/d/1JbbBnGL-E0OS0pH0bjf7OSCYNRJyyMpzSkg2s12qHcc/edit) | [Folder](https://drive.google.com/drive/folders/18fJnJw4c9mTwq3IOvEL8zDqkxq_pullC) |
@@ -28,7 +28,7 @@ Creates, configures, and manages GPUs in Kubernetes.
 - **Repositories:** [NVIDIA/gpu-operator](https://github.com/NVIDIA/gpu-operator)
 - **Slack:** `#gpu-operator`
 - **Mailing list:** [gpu-operator@dsxaifactory.com](https://groups.google.com/a/dsxaifactory.com/g/gpu-operator)
-- **Meetings:** every 4 weeks on Mondays; time to be announced on the mailing list
+- **Meetings:** monthly on the second Tuesday at 9:00 AM PT; invites go to the mailing list
 - **First meeting:** in person at the [DSX OS Contributor Workshop](https://events.nvidia.com/dsx-os-inference-workshop), Monday, November 9, 2026, 4:45 to 5:45 PM MT, Salt Lake City
 - **Meeting notes:** [Google Doc](https://docs.google.com/document/d/1rHtnDgfv1IRiFmGpOrc7v1MGVfeCo2ASzWZOmKscyyg/edit)
 - **Drive folder:** [notes, recordings, and slides](https://drive.google.com/drive/folders/1o7_A5w-Hq1jNgnwOj8Q415LLxlmLwNla)
