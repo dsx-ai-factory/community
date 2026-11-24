@@ -52,6 +52,8 @@ Explore the DSX AI Factory projects, look for newcomer issues and let us know in
 
 Help shape the software your team depends on and build the relationships to keep improving it together.
 
+Reach out to the core team [Arun Gupta](https://dsx-ai-factory.slack.com/archives/D0BTF5HN763), [Shally Garg](https://dsx-ai-factory.slack.com/archives/D0BTWFCB2SE) or [Shweta Barge](https://dsx-ai-factory.slack.com/archives/D0CL7F0JG21) after joining the [DSX-ai-factory](https://inviter.co/dsx-ai-factory) Slack org.
+
 ---
 
 © 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, and other NVIDIA product and service names are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries and regions. Other company, product, and service names may be trademarks of their respective owners.
