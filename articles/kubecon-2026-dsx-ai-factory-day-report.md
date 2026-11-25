@@ -22,6 +22,8 @@ The quick reference below names every project in one line. The rest of the artic
 
 Short on time? This is what each project does, ordered from the power feed up to the AI agent. Details are in the sections below, and repos and presenters are in the Project reference at the end.
 
+Status labels follow the descriptions used during DSX Day: **Shipping** means available for use; **Preview** means available for evaluation but not intended for production; and **Graduated** is the presenters' label for a mature project, not a guarantee of production suitability. **CNCF Sandbox** is a separate CNCF project status. Other labels such as **Early** and **New** describe projects that are still developing.
+
 | Project | What it does | Status |
 | :---- | :---- | :---- |
 | **DSX Flex, Exchange, MaxLPS, Sim** | The facility layer: protocols for talking to the power grid and building systems, dynamic power software, and site simulation | On the DSX map; not covered in depth |
@@ -37,7 +39,7 @@ Short on time? This is what each project does, ordered from the power feed up to
 | **NVIDIA Run:ai** | Shares GPUs across teams and clusters with quotas, policies, scheduling and visibility | Open source |
 | **KAI Scheduler** | Decides which workload gets the next GPU: gang scheduling, fair share, GPU fractions, topology awareness | CNCF Sandbox |
 | **Workload Map (Karta)** | One standard description of any Kubernetes workload type, so tools handle them all without custom code | Pre-1.0 |
-| **Slinky** | Runs Slurm jobs and Kubernetes workloads in one queue on the same GPUs | Not yet part of DSX |
+| **Slinky** | Runs Slurm jobs and Kubernetes workloads in one queue on the same GPUs | Not part of DSX OS; NVIDIA contributes to the project |
 | **Dynamo** | Turns a GPU cluster into one inference system: smart routing, shared KV cache, split prefill and decode, autoscaling | 1.0 |
 | **Grove** | Places the parts of a multi-node inference workload together across the NVLink domain | Part of Dynamo |
 | **Model Express** | Starts new inference workers by copying model weights from a peer GPU instead of from disk | Part of Dynamo |
@@ -79,7 +81,7 @@ The sections that follow walk this slice from the bottom up.
 
 ## **The foundation: from bare metal to a working GPU cluster**
 
-NVIDIA's foundation message: getting a GPU cluster from racked hardware to "ready for AI" takes too long, and NVIDIA now ships open-source tools for every step. Eric Chapman summed up the direction as helping operators move "from bare-metal GPU capacity, to Kubernetes as a managed service, and ultimately to on-demand AI services on top of Kubernetes."
+NVIDIA's foundation message: getting a GPU cluster from racked hardware to "ready for AI" takes too long, and NVIDIA now ships open-source tools for every step. Eric Chapman, a product manager on NVIDIA's Cloud Native team, summed up the direction as helping operators move "from bare-metal GPU capacity, to Kubernetes as a managed service, and ultimately to on-demand AI services on top of Kubernetes."
 
 The chain runs in this order:
 
@@ -161,7 +163,7 @@ Hagay Sharon's pitch for KAI Scheduler was aimed squarely at contributors: the a
 
 **Workload Map** (Yael Frank), published as the open-source project **Karta**, solves a quieter problem: Kubernetes has no common way to see the status of every workload, because each framework brings its own CRD. A Karta definition uses jq path expressions to say where a workload's pod templates, replica counts and status live, so schedulers, controllers and dashboards can read and update any workload type through one SDK. The catalog covers 20+ frameworks (Dynamo, Grove, Ray, Kubeflow, Agent Sandbox, KServe and more). Tools such as KAI Scheduler, Run:ai, NVIDIA Cloud Functions and NVIDIA Recovery read it, so "build on it once, and your app supports them all." It includes a CLI and supports suspend and unified status. 
 
-**Slinky** brings Slurm and Kubernetes together. The Slurm team, which joined NVIDIA through an acquisition last year, presented two pieces: **slurm-operator** runs Slurm inside a Kubernetes cluster, and **slurm-bridge** translates Kubernetes pods into Slurm jobs. The result is one queue and one pool of compute where training and inference coexist, with Slurm's priority, preemption, backfill and fair share. Slinky is not yet formally part of DSX.
+**Slinky** brings Slurm and Kubernetes together. The Slurm team, which joined NVIDIA through an acquisition last year, presented two pieces: **slurm-operator** runs Slurm inside a Kubernetes cluster, and **slurm-bridge** translates Kubernetes pods into Slurm jobs. The result is one queue and one pool of compute where training and inference coexist, with Slurm's priority, preemption, backfill and fair share. Slinky is not part of DSX OS, though NVIDIA contributes to the project.
 
 ![Slinky unified scheduling of Slurm and Kubernetes slide][image8]
 
@@ -284,12 +286,14 @@ The point NVIDIA was making is that no single project is the product. Each one r
 Every NVIDIA speaker returned to the same request: contribute, give feedback, and shape the roadmap. The scale of the commitment was stated in numbers.
 
 * **Volume.** Over 200 projects released in the last 12 months and another 26 recently, plus projects donated to the community (OpenShell, the DRA driver and NVKE among those named).  
-* **People.** Arun Gupta now runs open-source strategy, and NVIDIA has hired long-time open-source figures. Aaron Boyd, who runs Kubernetes engineering, said the team is growing across AICR, NVKE, NVKR and related projects.  
+* **People.** Arun Gupta now runs open-source strategy, and NVIDIA has hired long-time open-source figures. Erin Boyd, who runs Kubernetes engineering, said the team is growing across AICR, NVKE, NVKR and related projects.
 * **Ecosystem.** NVIDIA became a CNCF Platinum member and KAI Scheduler is a CNCF Sandbox project. Speakers stressed vendor neutrality: "we don't care who you work for."
 
 Arun was precise about how feedback becomes roadmap. NVIDIA counts four kinds of contribution: a new issue, a PR, a comment on an existing issue, or a comment on an existing PR. His rule of thumb: "If it's not captured as an issue, it probably won't be acted upon." Doc fixes, UX feedback and "here is what you're not doing right" all count.
 
 If you want to act on that, start at [github.com/dsx-ai-factory](https://github.com/dsx-ai-factory). The DSX AI Factory projects are listed there, and every public project in the organization accepts issues and pull requests.
+
+Join the community on [Slack](https://inviter.co/dsx-ai-factory) to meet other contributors and follow project discussions.
 
 The event itself modeled the flywheel NVIDIA wants. A morning of talks was followed by an afternoon contributor workshop with product managers at assigned tables, a show-and-tell of what attendees built, and the first in-person community meetings, split into four groups. Several projects will now run virtual community meetings in CNCF style.
 
@@ -330,7 +334,7 @@ Repos as shown on the session slides; presenters as named on the slides. Descrip
 | NVKE | Accelerated Kubernetes | Eric Chapman | [github.com/dsx-ai-factory/nvke](https://github.com/dsx-ai-factory/nvke/) |
 | NVKR | Accelerated Kubernetes | Eric Chapman | [github.com/dsx-ai-factory/nvkr](https://github.com/dsx-ai-factory/nvkr/) |
 | GPU Operator | Accelerated Kubernetes | Francis Guillier | [github.com/NVIDIA/gpu-operator](https://github.com/NVIDIA/gpu-operator) |
-| NICo | Infrastructure operations | Ninad Desai | [DSX docs](https://docs.nvidia.com/dsx) |
+| NICo | Infrastructure operations | Ninad Desai | [github.com/dsx-ai-factory/infra-controller](https://github.com/dsx-ai-factory/infra-controller) |
 
 ## **Glossary**
 
