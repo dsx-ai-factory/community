@@ -2,29 +2,42 @@
 
 ## Reporting a vulnerability
 
-**Do not open a public issue or discussion to report a security vulnerability.**
+If you discover a potential security vulnerability, do not submit it through
+GitHub Issues, pull requests, Discussions, GitHub Security Advisories, GitHub
+private vulnerability reporting, or other public channels. Report it directly
+to NVIDIA PSIRT through one of these channels:
+
+- **Web (preferred):**
+  [NVIDIA Vulnerability Disclosure Program](https://www.nvidia.com/en-us/security/report-vulnerability/)
+- **Email:** [psirt@nvidia.com](mailto:psirt@nvidia.com). Encrypt sensitive
+  information using the
+  [NVIDIA public PGP key](https://www.nvidia.com/en-us/security/pgp-key).
 
 This repository publishes articles and hosts discussions. It contains no product
 source code, so a vulnerability is far more likely to belong to one of the DSX AI
-Factory components than to this repository.
+Factory components than to this repository. Report it to PSIRT either way; PSIRT
+routes it to the right team.
 
-Report vulnerabilities in NVIDIA products through the NVIDIA Product Security
-Incident Response Team (PSIRT):
+Please include the following information:
 
-- <https://www.nvidia.com/en-us/security/psirt-policies/>
+- The product or repository, and the affected component, article, file, or URL.
+- The type of vulnerability and how you found it.
+- Step-by-step reproduction instructions and any proof-of-concept code.
+- The expected impact.
+- Relevant logs or configuration snippets, with secrets and personal or customer
+  identifiers removed.
+
+NVIDIA PSIRT manages vulnerability intake, validation, remediation coordination,
+and disclosure. Response timing, coordinated disclosure, and reporter
+acknowledgement are governed by the
+[NVIDIA PSIRT policies](https://www.nvidia.com/en-us/security/psirt-policies/).
 
 ## Problems with this repository itself
 
 If you find a problem with the repository or the published site — a workflow
 misconfiguration, exposed credentials in an article or example, or content that
-should not be public — report it privately rather than in an issue:
-
-- GitHub's private vulnerability reporting is **not currently enabled** on this
-  repository (checked 2026-09-08) — the "Report a vulnerability" button will not
-  work until an admin turns it on under Settings → Security.
-- TODO-BEFORE-PUBLIC: enable private vulnerability reporting, or add a real
-  monitored security contact (email or form) here in the meantime —
-  "contact the maintainers directly" is not itself a reachable channel.
+should not be public — report it to NVIDIA PSIRT through the channels above
+rather than in an issue.
 
 ## Credentials in content
 
