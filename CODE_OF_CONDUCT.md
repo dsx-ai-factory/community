@@ -60,7 +60,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-TODO-BEFORE-PUBLIC: add the moderation contact (see the Community Representative role in the POR).
+[GitHub_Conduct@nvidia.com](mailto:GitHub_Conduct@nvidia.com).
 All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
